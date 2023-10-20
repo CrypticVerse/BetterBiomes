@@ -1,0 +1,5 @@
+// 1.20.2	2023-10-20T16:19:52.8256215	Better Biomes/Tags for minecraft:block
+c00f8bf26aa8d8dab61dc2d9d86539e294124d03 data\minecraft\tags\blocks\logs.json
+8a5877d80d4ac1e7844c9ff3f6a6ee1d963ed57b data\minecraft\tags\blocks\mineable\hoe.json
+8a5877d80d4ac1e7844c9ff3f6a6ee1d963ed57b data\minecraft\tags\blocks\leaves.json
+10b8384bb44b17d697864a5746f9a374499a76b8 data\minecraft\tags\blocks\saplings.json

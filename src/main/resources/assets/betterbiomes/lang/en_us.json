@@ -1,0 +1,14 @@
+{
+  "block.betterbiomes.maple_leaves": "Maple Leaves",
+  "block.betterbiomes.maple_log": "Maple Log",
+  "block.betterbiomes.maple_planks": "Maple Planks",
+  "block.betterbiomes.maple_sapling": "Maple Sapling",
+  "block.betterbiomes.maple_wood": "Maple Wood",
+  "block.betterbiomes.stripped_maple_log": "Stripped Maple Log",
+  "block.betterbiomes.stripped_maple_wood": "Stripped Maple Wood",
+  "block.betterbiomes.maple_syrup": "Maple Syrup",
+  "block.betterbiomes.maple_syrup_boiler": "Maple Syrup Boiler",
+  "item.betterbiomes.maple_syrup_bottle": "Maple Syrup Bottle",
+  "item.betterbiomes.maple_syrup_bucket": "Maple Syrup Bucket",
+  "itemgroup.betterbiomes": "Better Biomes Group"
+}

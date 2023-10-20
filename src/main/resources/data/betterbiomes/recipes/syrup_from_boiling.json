@@ -1,0 +1,11 @@
+{
+  "type": "betterbiomes:boiling",
+  "ingredients": [
+    {
+      "item": "betterbiomes:maple_log"
+    }
+  ],
+  "output": {
+    "item": "betterbiomes:maple_syrup_bottle"
+  }
+}
