@@ -1,4 +1,4 @@
-// 1.20.2	2023-10-20T16:19:52.8276215	Better Biomes/Model Definitions
+// 1.20.2	2023-10-21T19:23:48.7939531	Better Biomes/Model Definitions
 137b509e4b785273185e61bd130a1c62bfc8d064 assets\betterbiomes\models\item\stripped_maple_log.json
 a47b5b758b1978f422a440d32bd51e9ce5428cb7 assets\betterbiomes\models\item\stripped_maple_wood.json
 e9a9c758d20bacf0c44cbf2e3ac01b3202258b8d assets\betterbiomes\models\item\maple_leaves.json
@@ -9,16 +9,16 @@ a05fbbaa6d8a901e4001d5c1a426f6c5787f4a79 assets\betterbiomes\blockstates\maple_s
 f3a725a3c6a626ff77332ad0bb73efbb942d0c94 assets\betterbiomes\models\block\maple_log.json
 097d152a6ae23924add064b1fba0b7d5094091c0 assets\betterbiomes\models\block\maple_planks.json
 e0fca1c8124a7854450808792904516f0ce69907 assets\betterbiomes\blockstates\maple_log.json
-1e71fde3b9edbe855d7964b8297d906b3a33b7e9 assets\betterbiomes\models\item\maple_log.json
 b7ab19f51ec7fffca07e128478746f34d6faddad assets\betterbiomes\models\item\maple_syrup_bucket.json
+1e71fde3b9edbe855d7964b8297d906b3a33b7e9 assets\betterbiomes\models\item\maple_log.json
 5a847456117613c5fe58f266685a3a1e2995fc64 assets\betterbiomes\models\block\maple_log_horizontal.json
 a3d69f0c852cbd9ac02b26c2b223d6866b3b5623 assets\betterbiomes\models\block\stripped_maple_wood.json
 b08e41a5d8de414c2b44abc31aad7b0e93b320aa assets\betterbiomes\blockstates\maple_sapling.json
 fc5b3cb436ae398abd976dc77c40b345e9eb6b6b assets\betterbiomes\models\item\maple_syrup_bottle.json
 6e47469af40e8e3f69573a594aaeaf299ada331d assets\betterbiomes\blockstates\stripped_maple_wood.json
 f03f99d6d258cf27617907819ccd7679c0553fba assets\betterbiomes\models\item\maple_wood.json
-3b8dee6df2ac5352f659d72c5012b9be3a0c7fb2 assets\betterbiomes\models\block\maple_wood.json
 5c1cf8fb129056fa95651c3fb0ac366a15ead4f5 assets\betterbiomes\models\block\stripped_maple_log_horizontal.json
+3b8dee6df2ac5352f659d72c5012b9be3a0c7fb2 assets\betterbiomes\models\block\maple_wood.json
 c1884db4d05b7a063ba09e63f303d1c6865a447c assets\betterbiomes\blockstates\maple_planks.json
 a211f9813262a13440a738d28fef8b8cab65f8c4 assets\betterbiomes\models\item\maple_sapling.json
 cfe022b02f5f8e9cb4a674f70a9cd77ecc41e4bd assets\betterbiomes\blockstates\maple_leaves.json

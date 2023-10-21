@@ -28,7 +28,7 @@
 		"terrablender": [
 			"me.crypticverse.betterbiomes.world.biome.BiomeTerraBlenderAPI"
 		],
-		"rei-client": [
+		"rei_client": [
 			"me.crypticverse.betterbiomes.compat.BetterBiomesREIClientPlugin"
 		]
 	},
