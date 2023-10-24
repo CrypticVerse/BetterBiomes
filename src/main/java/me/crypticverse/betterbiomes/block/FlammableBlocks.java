@@ -15,5 +15,14 @@ public class FlammableBlocks {
         registry.add(BiomeBlocks.MAPLE_PLANKS, 5, 20);
 
 
+        registry.add(BiomeBlocks.PALM_LOG, 5, 5);
+        registry.add(BiomeBlocks.PALM_WOOD, 5, 5);
+        registry.add(BiomeBlocks.STRIPPED_PALM_LOG, 5, 5);
+        registry.add(BiomeBlocks.STRIPPED_PALM_WOOD, 5, 5);
+
+        registry.add(BiomeBlocks.PALM_LEAVES, 30, 60);
+        registry.add(BiomeBlocks.PALM_PLANKS, 5, 20);
+
+
     }
 }

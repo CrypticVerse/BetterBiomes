@@ -1,7 +1,13 @@
-// 1.20.2	2023-10-21T19:23:48.7909532	Better Biomes/Block Loot Tables
+// 1.20.2	2023-10-24T14:21:21.7697632	Better Biomes/Block Loot Tables
 4cb385543df01a017dfbeae12212c243e74bfcc9 data\betterbiomes\loot_tables\blocks\maple_leaves.json
-6e1a9179de611368f9b29adff178acf772ea47f4 data\betterbiomes\loot_tables\blocks\stripped_maple_log.json
+41b3e61a29b43773ef8225714c2f56c7e3c11a9e data\betterbiomes\loot_tables\blocks\palm_sapling.json
 b1a51c96037e2c71af318e824d243d7b984f9eb4 data\betterbiomes\loot_tables\blocks\maple_log.json
-ff6f531c1e8222aff602dcbbfed55b8c337030e9 data\betterbiomes\loot_tables\blocks\maple_planks.json
+edcf052d045034e514c81e572e698960556b7f0a data\betterbiomes\loot_tables\blocks\stripped_palm_wood.json
+f78e5a6227c3302ade233d0e36191c710f786924 data\betterbiomes\loot_tables\blocks\palm_log.json
+11a024d7d22b5af05ad4e1060e0d47845bde3b3a data\betterbiomes\loot_tables\blocks\palm_planks.json
+2c02a720a2177ad5e76b58ae7966825a90fa029e data\betterbiomes\loot_tables\blocks\palm_leaves.json
+6e1a9179de611368f9b29adff178acf772ea47f4 data\betterbiomes\loot_tables\blocks\stripped_maple_log.json
 1315a9cad838c37037062aee89f890273bacde62 data\betterbiomes\loot_tables\blocks\maple_sapling.json
+ff6f531c1e8222aff602dcbbfed55b8c337030e9 data\betterbiomes\loot_tables\blocks\maple_planks.json
+a3a6684571984fbc37ce546ed4b4b0fd8280d1e7 data\betterbiomes\loot_tables\blocks\stripped_palm_log.json
 ef3aab057aecae975d0a78bd1ddbfa4443436429 data\betterbiomes\loot_tables\blocks\stripped_maple_wood.json

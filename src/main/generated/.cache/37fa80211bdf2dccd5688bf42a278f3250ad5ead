@@ -1,7 +1,11 @@
-// 1.20.2	2023-10-21T19:23:48.7929532	Better Biomes/Recipes
+// 1.20.2	2023-10-24T14:21:21.7717563	Better Biomes/Recipes
 1472a158868382511a9262fac43dbab6dbc57b55 data\betterbiomes\recipes\maple_planks.json
 6dd98b2c3a5e722c680a010299d0d18caa254d6f data\betterbiomes\advancements\maple_syrup_bottle_from_maple_boiler.json
+782991f62c43fabeab4b5a17eba40528419c1be9 data\betterbiomes\advancements\recipes\tools\stick.json
+81a41d5bef00dc7c3ee1226f186c46169c8338e9 data\betterbiomes\recipes\stick.json
 400766f72edd6e7671b9f7a83d7979759204fe55 data\betterbiomes\advancements\recipes\building_blocks\maple_planks.json
+d404f38704ea76268b734069d7f0265b677e3fae data\betterbiomes\recipes\palm_planks.json
 4dc779f3f5498f2812cb752d9149d3c98518e9ae data\betterbiomes\recipes\maple_syrup_bottle_from_maple_boiler.json
+f508533f6ee909964e7eb11aae904d83009ff3cf data\betterbiomes\advancements\recipes\building_blocks\palm_planks.json
 d1e82d0a1658686db5bf31d61a6f4564eafed902 data\betterbiomes\recipes\crafting_table.json
 56f284709ea5fbd671c0318f6ee9b2812e1cef9e data\betterbiomes\advancements\recipes\tools\crafting_table.json

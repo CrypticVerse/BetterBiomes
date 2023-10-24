@@ -15,12 +15,16 @@ import java.util.List;
 public class BetterBiomesPlacedFeatures {
 
     public static final RegistryKey<PlacedFeature> MAPLE_PLACED_KEY = registerKey("maple");
+    public static final RegistryKey<PlacedFeature> PALM_PLACED_KEY = registerKey("palm");
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
         register(context, MAPLE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(BetterBiomesConfiguredFeatures.MAPLE_KEY),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.1f, 2),(BiomeBlocks.MAPLE_SAPLING)));
+
+        register(context, PALM_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(BetterBiomesConfiguredFeatures.PALM_KEY),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.1f ,2), BiomeBlocks.PALM_SAPLING));
     }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {

@@ -18,6 +18,7 @@ import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 
 public class BetterBiomesConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> MAPLE_KEY = registerKey("maple");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> PALM_KEY = registerKey("palm");
 
     public static void bootstrap(Registerable<ConfiguredFeature<? ,?>> context) {
 
@@ -27,6 +28,13 @@ public class BetterBiomesConfiguredFeatures {
                 BlockStateProvider.of(BiomeBlocks.MAPLE_LEAVES),
                 new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                 new TwoLayersFeatureSize(1, 0, 2)).build());
+
+        register(context, PALM_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(BiomeBlocks.PALM_LOG),
+                new StraightTrunkPlacer(5, 1, 2),
+                BlockStateProvider.of(BiomeBlocks.PALM_LEAVES),
+                new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(1), 4),
+                new TwoLayersFeatureSize(1, 1, 1)).build());
     }
 
 

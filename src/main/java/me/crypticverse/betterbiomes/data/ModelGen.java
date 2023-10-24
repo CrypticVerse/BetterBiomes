@@ -22,6 +22,16 @@ public class ModelGen extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(BiomeBlocks.MAPLE_LEAVES);
         blockStateModelGenerator.registerTintableCrossBlockState(BiomeBlocks.MAPLE_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerSimpleState(BiomeBlocks.MAPLE_SYRUP_BOILER);
+
+
+        blockStateModelGenerator.registerLog(BiomeBlocks.PALM_LOG).log(BiomeBlocks.PALM_LOG).wood(BiomeBlocks.PALM_WOOD);
+        blockStateModelGenerator.registerLog(BiomeBlocks.STRIPPED_PALM_LOG).log(BiomeBlocks.STRIPPED_PALM_LOG).wood(BiomeBlocks.STRIPPED_PALM_WOOD);
+        blockStateModelGenerator.registerSimpleCubeAll(BiomeBlocks.PALM_PLANKS);
+        blockStateModelGenerator.registerSimpleCubeAll(BiomeBlocks.PALM_LEAVES);
+        blockStateModelGenerator.registerTintableCrossBlockState(BiomeBlocks.PALM_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+
+
+
     }
 
     @Override

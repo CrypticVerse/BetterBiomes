@@ -2,7 +2,8 @@ package me.crypticverse.betterbiomes.block;
 
 import me.crypticverse.betterbiomes.BetterBiomes;
 import me.crypticverse.betterbiomes.block.custom.MapleSyrupStationBlock;
-import me.crypticverse.betterbiomes.world.tree.BetterBiomesSaplingGen;
+import me.crypticverse.betterbiomes.world.tree.MapleTreeSaplingGen;
+import me.crypticverse.betterbiomes.world.tree.PalmTreeSaplingGen;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -18,13 +19,18 @@ public class BiomeBlocks {
     public static final Block MAPLE_WOOD = registerBlock("maple_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD)));
     public static final Block STRIPPED_MAPLE_LOG = registerBlock("stripped_maple_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_LOG)));
     public static final Block STRIPPED_MAPLE_WOOD = registerBlock("stripped_maple_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD)));
-
     public static final Block MAPLE_PLANKS = registerBlock("maple_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
     public static final Block MAPLE_LEAVES = registerBlock("maple_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).requiresTool()));
+    public static final Block MAPLE_SAPLING = registerBlock("maple_sapling", new SaplingBlock(new MapleTreeSaplingGen(), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
+    public static final Block MAPLE_SYRUP_BOILER = registerBlock("maple_syrup_boiler", new MapleSyrupStationBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
 
-    public static final Block MAPLE_SAPLING = registerBlock("maple_sapling", new SaplingBlock(new BetterBiomesSaplingGen(), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
-    public static final Block MAPLE_SYRUP_BOILER = registerBlock("maple_syrup_boiler",
-            new MapleSyrupStationBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
+    public static final Block PALM_LOG = registerBlock("palm_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
+    public static final Block PALM_WOOD = registerBlock("palm_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD)));
+    public static final Block STRIPPED_PALM_LOG = registerBlock("stripped_palm_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_LOG)));
+    public static final Block STRIPPED_PALM_WOOD = registerBlock("stripped_palm_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD)));
+    public static final Block PALM_PLANKS = registerBlock("palm_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
+    public static final Block PALM_LEAVES = registerBlock("palm_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).requiresTool()));
+    public static final Block PALM_SAPLING = registerBlock("palm_sapling", new SaplingBlock(new PalmTreeSaplingGen(), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

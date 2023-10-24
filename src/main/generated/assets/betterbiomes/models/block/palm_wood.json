@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "betterbiomes:block/palm_log",
+    "side": "betterbiomes:block/palm_log"
+  }
+}

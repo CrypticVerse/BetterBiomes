@@ -2,8 +2,12 @@
   "replace": false,
   "values": [
     "betterbiomes:maple_log",
+    "betterbiomes:palm_log",
     "betterbiomes:maple_wood",
+    "betterbiomes:palm_wood",
     "betterbiomes:stripped_maple_wood",
-    "betterbiomes:stripped_maple_log"
+    "betterbiomes:stripped_palm_wood",
+    "betterbiomes:stripped_maple_log",
+    "betterbiomes:stripped_palm_log"
   ]
 }

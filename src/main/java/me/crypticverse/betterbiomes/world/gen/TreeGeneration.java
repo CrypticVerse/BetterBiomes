@@ -11,5 +11,7 @@ public class TreeGeneration {
     public static void generateTrees() {
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BetterBiomesBiomes.MAPLE_FOREST, BiomeKeys.FOREST, BiomeKeys.FLOWER_FOREST),
                 GenerationStep.Feature.VEGETAL_DECORATION, BetterBiomesPlacedFeatures.MAPLE_PLACED_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.BEACH),
+                GenerationStep.Feature.VEGETAL_DECORATION, BetterBiomesPlacedFeatures.PALM_PLACED_KEY);
     }
 }

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "betterbiomes:maple_leaves"
+    "betterbiomes:maple_leaves",
+    "betterbiomes:palm_leaves"
   ]
 }

@@ -17,14 +17,21 @@ public class BlockTagGen extends FabricTagProvider.BlockTagProvider {
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(BlockTags.LOGS)
                 .add(BiomeBlocks.MAPLE_LOG)
+                .add(BiomeBlocks.PALM_LOG)
                 .add(BiomeBlocks.MAPLE_WOOD)
+                .add(BiomeBlocks.PALM_WOOD)
                 .add(BiomeBlocks.STRIPPED_MAPLE_WOOD)
-                .add(BiomeBlocks.STRIPPED_MAPLE_LOG);
+                .add(BiomeBlocks.STRIPPED_PALM_WOOD)
+                .add(BiomeBlocks.STRIPPED_MAPLE_LOG)
+                .add(BiomeBlocks.STRIPPED_PALM_LOG);
         getOrCreateTagBuilder(BlockTags.HOE_MINEABLE)
-                .add(BiomeBlocks.MAPLE_LEAVES);
+                .add(BiomeBlocks.MAPLE_LEAVES)
+                .add(BiomeBlocks.PALM_LEAVES);
         getOrCreateTagBuilder(BlockTags.LEAVES)
-                .add(BiomeBlocks.MAPLE_LEAVES);
+                .add(BiomeBlocks.MAPLE_LEAVES)
+                .add(BiomeBlocks.PALM_LEAVES);
         getOrCreateTagBuilder(BlockTags.SAPLINGS)
-                .add(BiomeBlocks.MAPLE_SAPLING);
+                .add(BiomeBlocks.MAPLE_SAPLING)
+                .add(BiomeBlocks.PALM_SAPLING);
     }
 }

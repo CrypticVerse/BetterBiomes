@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "P": {
+      "item": "betterbiomes:palm_planks"
+    }
+  },
+  "pattern": [
+    " P ",
+    " P "
+  ],
+  "result": {
+    "count": 4,
+    "item": "minecraft:stick"
+  },
+  "show_notification": true
+}

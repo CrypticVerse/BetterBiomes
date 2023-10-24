@@ -9,6 +9,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
+import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Identifier;
 
@@ -26,11 +27,23 @@ public class RecipeGen extends FabricRecipeProvider {
                 .criterion(hasItem(BiomeBlocks.MAPLE_PLANKS), conditionsFromItem(BiomeBlocks.MAPLE_PLANKS))
                 .offerTo(exporter, new Identifier(getRecipeName(Blocks.CRAFTING_TABLE)));
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, Items.STICK, 4)
+                .pattern(" P ")
+                .pattern(" P ")
+                .input('P', BiomeBlocks.PALM_PLANKS)
+                .criterion(hasItem(BiomeBlocks.PALM_PLANKS), conditionsFromItem(BiomeBlocks.PALM_PLANKS))
+                .offerTo(exporter, new Identifier(getRecipeName(Items.STICK)));
+
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BiomeBlocks.MAPLE_PLANKS, 4)
                 .input(BiomeBlocks.MAPLE_LOG)
                 .criterion(hasItem(BiomeBlocks.MAPLE_LOG), FabricRecipeProvider.conditionsFromItem(BiomeBlocks.MAPLE_PLANKS))
                 .offerTo(exporter, new Identifier(getRecipeName(BiomeBlocks.MAPLE_PLANKS)));
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BiomeBlocks.PALM_PLANKS, 4)
+                .input(BiomeBlocks.PALM_LOG)
+                .criterion(hasItem(BiomeBlocks.PALM_LOG), FabricRecipeProvider.conditionsFromItem(BiomeBlocks.PALM_PLANKS))
+                .offerTo(exporter, new Identifier(getRecipeName(BiomeBlocks.PALM_PLANKS)));
 
 
         new MapleSyrupRecipeBuilder(BiomeBlocks.MAPLE_LOG, BiomeItems.MAPLE_SYRUP_BOTTLE, 1)
