@@ -27,6 +27,15 @@ public class BetterBiomesGroup {
                         entries.add(BiomeItems.MAPLE_SYRUP_BOTTLE);
                         entries.add(BiomeBlocks.MAPLE_SYRUP_BOILER);
 
+                        entries.add(BiomeBlocks.MAPLE_SLAB);
+                        entries.add(BiomeBlocks.MAPLE_STAIRS);
+                        entries.add(BiomeBlocks.MAPLE_PRESSURE_PLATE);
+                        entries.add(BiomeBlocks.MAPLE_BUTTON);
+                        entries.add(BiomeBlocks.MAPLE_FENCE);
+                        entries.add(BiomeBlocks.MAPLE_FENCE_GATE);
+                        entries.add(BiomeBlocks.MAPLE_TRAPDOOR);
+                        entries.add(BiomeBlocks.MAPLE_DOOR);
+
 
 
 

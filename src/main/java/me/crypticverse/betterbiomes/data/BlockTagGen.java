@@ -21,6 +21,7 @@ public class BlockTagGen extends FabricTagProvider.BlockTagProvider {
                 .add(BiomeBlocks.MAPLE_WOOD)
                 .add(BiomeBlocks.PALM_WOOD)
                 .add(BiomeBlocks.STRIPPED_MAPLE_WOOD)
+
                 .add(BiomeBlocks.STRIPPED_PALM_WOOD)
                 .add(BiomeBlocks.STRIPPED_MAPLE_LOG)
                 .add(BiomeBlocks.STRIPPED_PALM_LOG);
@@ -33,5 +34,23 @@ public class BlockTagGen extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.SAPLINGS)
                 .add(BiomeBlocks.MAPLE_SAPLING)
                 .add(BiomeBlocks.PALM_SAPLING);
+
+                .add(BiomeBlocks.STRIPPED_MAPLE_LOG);
+
+        getOrCreateTagBuilder(BlockTags.HOE_MINEABLE)
+                .add(BiomeBlocks.MAPLE_LEAVES);
+
+        getOrCreateTagBuilder(BlockTags.LEAVES)
+                .add(BiomeBlocks.MAPLE_LEAVES);
+
+        getOrCreateTagBuilder(BlockTags.SAPLINGS)
+                .add(BiomeBlocks.MAPLE_SAPLING);
+
+        getOrCreateTagBuilder(BlockTags.FENCES)
+                .add(BiomeBlocks.MAPLE_FENCE);
+
+        getOrCreateTagBuilder(BlockTags.FENCE_GATES)
+                .add(BiomeBlocks.MAPLE_FENCE_GATE);
+
     }
 }

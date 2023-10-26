@@ -18,6 +18,7 @@ public class LootTableGen extends FabricBlockLootTableProvider {
         addDrop(BiomeBlocks.STRIPPED_MAPLE_WOOD);
         addDrop(BiomeBlocks.MAPLE_LOG);
         addDrop(BiomeBlocks.STRIPPED_MAPLE_LOG);
+
         addDrop(BiomeBlocks.PALM_SAPLING);
         addDrop(BiomeBlocks.PALM_PLANKS);
         addDrop(BiomeBlocks.PALM_LEAVES);
@@ -25,5 +26,17 @@ public class LootTableGen extends FabricBlockLootTableProvider {
         addDrop(BiomeBlocks.STRIPPED_PALM_WOOD);
         addDrop(BiomeBlocks.PALM_LOG);
         addDrop(BiomeBlocks.STRIPPED_PALM_LOG);
+
+
+        addDrop(BiomeBlocks.MAPLE_STAIRS);
+        addDrop(BiomeBlocks.MAPLE_TRAPDOOR);
+        addDrop(BiomeBlocks.MAPLE_FENCE);
+        addDrop(BiomeBlocks.MAPLE_FENCE_GATE);
+        addDrop(BiomeBlocks.MAPLE_BUTTON);
+        addDrop(BiomeBlocks.MAPLE_PRESSURE_PLATE);
+
+        addDrop(BiomeBlocks.MAPLE_SLAB, slabDrops(BiomeBlocks.MAPLE_SLAB));
+        addDrop(BiomeBlocks.MAPLE_DOOR, doorDrops(BiomeBlocks.MAPLE_DOOR));
+
     }
 }
