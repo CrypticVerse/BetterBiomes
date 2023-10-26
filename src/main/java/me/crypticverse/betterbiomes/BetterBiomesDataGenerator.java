@@ -15,6 +15,7 @@ public class BetterBiomesDataGenerator implements DataGeneratorEntrypoint {
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
 		pack.addProvider(BlockTagGen::new);
+		pack.addProvider(ItemTagGen::new);
 		pack.addProvider(RecipeGen::new);
 		pack.addProvider(LootTableGen::new);
 		pack.addProvider(ModelGen::new);

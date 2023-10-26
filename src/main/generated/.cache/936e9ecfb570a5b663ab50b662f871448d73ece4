@@ -1,4 +1,4 @@
-// 1.20.2	2023-10-26T08:47:50.9919471	Better Biomes/Model Definitions
+// 1.20.2	2023-10-26T15:42:51.0111278	Better Biomes/Model Definitions
 be18031c1384195f7986ad548e646799a63116a6 assets\betterbiomes\models\block\maple_door_bottom_right_open.json
 fa5cc6dd59b16e9be78bcef992fd02dfe59c88c5 assets\betterbiomes\models\block\maple_trapdoor_top.json
 39a0b162553bcf3fad76f432f69461bdf0e93760 assets\betterbiomes\models\item\maple_button.json
@@ -42,9 +42,9 @@ e7d84f05782d40f403009c6669a062218e6418cc assets\betterbiomes\models\item\maple_d
 c2e50d71ae9ebd0142208a3165d13bd146234dc2 assets\betterbiomes\models\block\maple_sapling.json
 d5d17710a17969a3ff4c2e5b33de9eb4ae24716e assets\betterbiomes\models\block\maple_button_pressed.json
 137b509e4b785273185e61bd130a1c62bfc8d064 assets\betterbiomes\models\item\stripped_maple_log.json
-a47b5b758b1978f422a440d32bd51e9ce5428cb7 assets\betterbiomes\models\item\stripped_maple_wood.json
 49ce67e1a7eea6282d4056176ee51680a844bb14 assets\betterbiomes\models\block\maple_fence_gate_wall.json
 e3fd53da2ef806f67e9e405896d3890f0ebd6c02 assets\betterbiomes\models\block\maple_stairs_outer.json
+a47b5b758b1978f422a440d32bd51e9ce5428cb7 assets\betterbiomes\models\item\stripped_maple_wood.json
 e9a9c758d20bacf0c44cbf2e3ac01b3202258b8d assets\betterbiomes\models\item\maple_leaves.json
 ae5d061744af81ab3c48bf852b74eed7e23843af assets\betterbiomes\models\item\maple_planks.json
 09c3407c1b06a6df6263f2368eb67ba0d8b8013b assets\betterbiomes\blockstates\maple_pressure_plate.json

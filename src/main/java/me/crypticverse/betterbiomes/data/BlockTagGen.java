@@ -21,6 +21,12 @@ public class BlockTagGen extends FabricTagProvider.BlockTagProvider {
                 .add(BiomeBlocks.STRIPPED_MAPLE_WOOD)
                 .add(BiomeBlocks.STRIPPED_MAPLE_LOG);
 
+        getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
+                .add(BiomeBlocks.MAPLE_LOG)
+                .add(BiomeBlocks.MAPLE_WOOD)
+                .add(BiomeBlocks.STRIPPED_MAPLE_WOOD)
+                .add(BiomeBlocks.STRIPPED_MAPLE_LOG);
+
         getOrCreateTagBuilder(BlockTags.HOE_MINEABLE)
                 .add(BiomeBlocks.MAPLE_LEAVES);
 

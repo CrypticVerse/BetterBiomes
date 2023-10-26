@@ -1,0 +1,3 @@
+// 1.20.2	2023-10-26T15:42:51.0101309	Better Biomes/Tags for minecraft:item
+ef1ae98e462bb06674eb31062e83e0f02c82f881 data\minecraft\tags\items\planks.json
+5ddbc0be9a7cff15f816d00f5dc756a6600b7f02 data\minecraft\tags\items\logs_that_burn.json
