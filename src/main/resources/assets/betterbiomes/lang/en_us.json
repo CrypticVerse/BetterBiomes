@@ -6,6 +6,16 @@
   "block.betterbiomes.maple_wood": "Maple Wood",
   "block.betterbiomes.stripped_maple_log": "Stripped Maple Log",
   "block.betterbiomes.stripped_maple_wood": "Stripped Maple Wood",
+
+  "block.betterbiomes.maple_slab": "Maple Slab",
+  "block.betterbiomes.maple_stairs": "Maple Stairs",
+  "block.betterbiomes.maple_fence": "Maple Fence",
+  "block.betterbiomes.maple_fence_gate": "Maple Fence Gate",
+  "block.betterbiomes.maple_button": "Maple Button",
+  "block.betterbiomes.maple_pressure_plate": "Maple Pressure Plate",
+  "block.betterbiomes.maple_door": "Maple Door",
+  "block.betterbiomes.maple_trapdoor": "Maple Trapdoor",
+
   "block.betterbiomes.maple_syrup": "Maple Syrup",
   "block.betterbiomes.maple_syrup_boiler": "Maple Syrup Boiler",
   "item.betterbiomes.maple_syrup_bottle": "Maple Syrup Bottle",
