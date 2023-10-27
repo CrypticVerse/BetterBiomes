@@ -25,6 +25,10 @@ public class BetterBiomesGroup {
                         entries.add(BiomeBlocks.MAPLE_LEAVES);
                         entries.add(BiomeBlocks.MAPLE_PLANKS);
                         entries.add(BiomeItems.MAPLE_SYRUP_BOTTLE);
+                        entries.add(BiomeItems.MAPLE_SIGN);
+                        entries.add(BiomeItems.HANGING_MAPLE_SIGN);
+                        entries.add(BiomeItems.MAPLE_BOAT);
+                        entries.add(BiomeItems.MAPLE_CHEST_BOAT);
                         entries.add(BiomeBlocks.MAPLE_SYRUP_BOILER);
 
                         entries.add(BiomeBlocks.MAPLE_SLAB);

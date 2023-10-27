@@ -3,6 +3,7 @@ package me.crypticverse.betterbiomes;
 import me.crypticverse.betterbiomes.block.BiomeBlocks;
 import me.crypticverse.betterbiomes.block.FlammableBlocks;
 import me.crypticverse.betterbiomes.block.entity.BetterBiomesBlockEntities;
+import me.crypticverse.betterbiomes.entity.BiomeBoats;
 import me.crypticverse.betterbiomes.fluid.BetterBiomeFluids;
 import me.crypticverse.betterbiomes.item.BetterBiomesGroup;
 import me.crypticverse.betterbiomes.item.BiomeItems;
@@ -29,6 +30,7 @@ public class BetterBiomes implements ModInitializer {
 		BetterBiomesBlockEntities.registerBlockEntities();
 		BetterBiomesScreenHandlers.registerScreenHandlers();
 		BetterBiomesRecipes.registerRecipes();
+		BiomeBoats.registerBoats();
 
 		FlammableBlocks.registerFlammableBlocks();
 		StrippableBlockRegistry.register(BiomeBlocks.MAPLE_LOG, BiomeBlocks.STRIPPED_MAPLE_LOG);

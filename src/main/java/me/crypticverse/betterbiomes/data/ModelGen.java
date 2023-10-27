@@ -23,6 +23,7 @@ public class ModelGen extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleState(BiomeBlocks.MAPLE_SYRUP_BOILER);
 
         BlockStateModelGenerator.BlockTexturePool maple_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(BiomeBlocks.MAPLE_PLANKS);
+        maple_pool.family(BiomeBlocks.MAPLE_FAMILY);
 
         maple_pool.slab(BiomeBlocks.MAPLE_SLAB);
         maple_pool.stairs(BiomeBlocks.MAPLE_STAIRS);
@@ -39,5 +40,8 @@ public class ModelGen extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
             itemModelGenerator.register(BetterBiomeFluids.MAPLE_SYRUP_BUCKET, Models.GENERATED);
             itemModelGenerator.register(BiomeItems.MAPLE_SYRUP_BOTTLE, Models.GENERATED);
+            itemModelGenerator.register(BiomeItems.HANGING_MAPLE_SIGN, Models.GENERATED);
+            itemModelGenerator.register(BiomeItems.MAPLE_BOAT, Models.GENERATED);
+            itemModelGenerator.register(BiomeItems.MAPLE_CHEST_BOAT, Models.GENERATED);
     }
 }
