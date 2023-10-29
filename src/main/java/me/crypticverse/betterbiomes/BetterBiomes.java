@@ -9,6 +9,7 @@ import me.crypticverse.betterbiomes.item.BetterBiomesGroup;
 import me.crypticverse.betterbiomes.item.BiomeItems;
 import me.crypticverse.betterbiomes.recipe.BetterBiomesRecipes;
 import me.crypticverse.betterbiomes.screen.BetterBiomesScreenHandlers;
+import me.crypticverse.betterbiomes.util.BetterBiomeTags;
 import me.crypticverse.betterbiomes.world.gen.WorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
@@ -18,7 +19,7 @@ import org.slf4j.LoggerFactory;
 
 public class BetterBiomes implements ModInitializer {
 	public static final String MOD_ID = "betterbiomes";
-    public static final Logger LOGGER = LoggerFactory.getLogger("betterbiomes");
+    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	@Override
 	public void onInitialize() {
@@ -32,10 +33,11 @@ public class BetterBiomes implements ModInitializer {
 		BetterBiomesRecipes.registerRecipes();
 		BiomeBoats.registerBoats();
 
+
 		FlammableBlocks.registerFlammableBlocks();
 		StrippableBlockRegistry.register(BiomeBlocks.MAPLE_LOG, BiomeBlocks.STRIPPED_MAPLE_LOG);
 		StrippableBlockRegistry.register(BiomeBlocks.MAPLE_WOOD, BiomeBlocks.STRIPPED_MAPLE_WOOD);
 
-		LOGGER.info("Better Biomes Loaded Sucessfully!");
+		LOGGER.info("Better Biomes Loaded Successfully!");
 	}
 }

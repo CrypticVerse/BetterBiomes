@@ -5,12 +5,16 @@ import me.crypticverse.betterbiomes.data.recipe.MapleSyrupRecipeBuilder;
 import me.crypticverse.betterbiomes.item.BiomeItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Items;
+import net.minecraft.recipe.RecipeType;
 import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.registry.tag.TagBuilder;
 import net.minecraft.util.Identifier;
 
 public class RecipeGen extends FabricRecipeProvider {
@@ -27,7 +31,6 @@ public class RecipeGen extends FabricRecipeProvider {
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, Items.WOODEN_SHOVEL, 1).pattern(" P ").pattern(" S ").pattern(" S ").input('P', BiomeBlocks.MAPLE_PLANKS).input('S', Items.STICK).criterion(hasItem(BiomeBlocks.MAPLE_PLANKS), conditionsFromItem(BiomeBlocks.MAPLE_PLANKS)).criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK)).offerTo(exporter, new Identifier(getRecipeName(Items.WOODEN_SHOVEL)));
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, Items.WOODEN_HOE, 1).pattern("PP ").pattern(" S ").pattern(" S ").input('P', BiomeBlocks.MAPLE_PLANKS).input('S', Items.STICK).criterion(hasItem(BiomeBlocks.MAPLE_PLANKS), conditionsFromItem(BiomeBlocks.MAPLE_PLANKS)).criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK)).offerTo(exporter, new Identifier(getRecipeName(Items.WOODEN_HOE)));
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, Items.WOODEN_SWORD, 1).pattern(" P ").pattern(" P ").pattern(" S ").input('P', BiomeBlocks.MAPLE_PLANKS).input('S', Items.STICK).criterion(hasItem(BiomeBlocks.MAPLE_PLANKS), conditionsFromItem(BiomeBlocks.MAPLE_PLANKS)).criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK)).offerTo(exporter, new Identifier(getRecipeName(Items.WOODEN_SWORD)));
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BiomeBlocks.MAPLE_PLANKS, 4).input(BiomeBlocks.MAPLE_LOG).criterion(hasItem(BiomeBlocks.MAPLE_LOG), FabricRecipeProvider.conditionsFromItem(BiomeBlocks.MAPLE_PLANKS)).offerTo(exporter, new Identifier(getRecipeName(BiomeBlocks.MAPLE_PLANKS)));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, BiomeBlocks.MAPLE_BUTTON, 1).input(BiomeBlocks.MAPLE_PLANKS).criterion(hasItem(BiomeBlocks.MAPLE_PLANKS), FabricRecipeProvider.conditionsFromItem(BiomeBlocks.MAPLE_BUTTON)).offerTo(exporter, new Identifier(getRecipeName(BiomeBlocks.MAPLE_BUTTON)));
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, BiomeBlocks.MAPLE_SLAB, 6).pattern("PPP").input('P', BiomeBlocks.MAPLE_PLANKS).criterion(hasItem(BiomeBlocks.MAPLE_PLANKS), conditionsFromItem(BiomeBlocks.MAPLE_PLANKS)).offerTo(exporter, new Identifier(getRecipeName(BiomeBlocks.MAPLE_SLAB)));
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, BiomeBlocks.MAPLE_STAIRS, 4).pattern("P  ").pattern("PP ").pattern("PPP").input('P', BiomeBlocks.MAPLE_PLANKS).criterion(hasItem(BiomeBlocks.MAPLE_PLANKS), conditionsFromItem(BiomeBlocks.MAPLE_PLANKS)).offerTo(exporter, new Identifier(getRecipeName(BiomeBlocks.MAPLE_STAIRS)));
@@ -37,7 +40,6 @@ public class RecipeGen extends FabricRecipeProvider {
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, BiomeBlocks.MAPLE_DOOR, 3).pattern(" PP").pattern(" PP").pattern(" PP").input('P', BiomeBlocks.MAPLE_PLANKS).criterion(hasItem(BiomeBlocks.MAPLE_PLANKS), conditionsFromItem(BiomeBlocks.MAPLE_PLANKS)).offerTo(exporter, new Identifier(getRecipeName(BiomeBlocks.MAPLE_DOOR)));
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, BiomeBlocks.MAPLE_TRAPDOOR, 2).pattern("PPP").pattern("PPP").input('P', BiomeBlocks.MAPLE_PLANKS).criterion(hasItem(BiomeBlocks.MAPLE_PLANKS), conditionsFromItem(BiomeBlocks.MAPLE_PLANKS)).offerTo(exporter, new Identifier(getRecipeName(BiomeBlocks.MAPLE_TRAPDOOR)));
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, BiomeBlocks.MAPLE_WOOD, 3).pattern("LL ").pattern("LL ").input('L', BiomeBlocks.MAPLE_LOG).criterion(hasItem(BiomeBlocks.MAPLE_LOG), conditionsFromItem(BiomeBlocks.MAPLE_LOG)).offerTo(exporter, new Identifier(getRecipeName(BiomeBlocks.MAPLE_WOOD)));
-
 
         new MapleSyrupRecipeBuilder(BiomeBlocks.MAPLE_LOG, BiomeItems.MAPLE_SYRUP_BOTTLE, 1)
                 .criterion(hasItem(BiomeBlocks.MAPLE_LOG), conditionsFromItem(BiomeBlocks.MAPLE_LOG))

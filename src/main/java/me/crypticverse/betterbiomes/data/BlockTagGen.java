@@ -1,6 +1,7 @@
 package me.crypticverse.betterbiomes.data;
 
 import me.crypticverse.betterbiomes.block.BiomeBlocks;
+import me.crypticverse.betterbiomes.util.BetterBiomeTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
@@ -41,5 +42,11 @@ public class BlockTagGen extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.FENCE_GATES)
                 .add(BiomeBlocks.MAPLE_FENCE_GATE);
+
+        getOrCreateTagBuilder(BetterBiomeTags.Blocks.MAPLE_LOGS)
+                .add(BiomeBlocks.MAPLE_LOG)
+                .add(BiomeBlocks.MAPLE_WOOD)
+                .add(BiomeBlocks.STRIPPED_MAPLE_WOOD)
+                .add(BiomeBlocks.STRIPPED_MAPLE_LOG);
     }
 }
