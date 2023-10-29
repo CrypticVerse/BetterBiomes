@@ -20,7 +20,7 @@ public class BetterBiomesPlacedFeatures {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
         register(context, MAPLE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(BetterBiomesConfiguredFeatures.MAPLE_KEY),
-                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.025f, 2),(BiomeBlocks.MAPLE_SAPLING)));
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(1, 0.02f, 2),(BiomeBlocks.MAPLE_SAPLING)));
     }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {
