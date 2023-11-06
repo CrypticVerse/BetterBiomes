@@ -1,6 +1,5 @@
 package net.crypticverse.betterbiomes;
 
-import me.crypticverse.betterbiomes.data.*;
 import net.crypticverse.betterbiomes.data.*;
 import net.crypticverse.betterbiomes.world.BetterBiomesConfiguredFeatures;
 import net.crypticverse.betterbiomes.world.BetterBiomesPlacedFeatures;

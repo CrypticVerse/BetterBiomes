@@ -1,16 +1,18 @@
-package net.crypticverse.betterbiomes.compat;
+package net.crypticverse.betterbiomes.compat.rei;
 
-import net.crypticverse.betterbiomes.block.BiomeBlocks;
-import net.crypticverse.betterbiomes.recipe.MapleSyrupRecipe;
-import net.crypticverse.betterbiomes.screen.MapleSyrupScreen;
 import me.shedaniel.math.Rectangle;
 import me.shedaniel.rei.api.client.plugins.REIClientPlugin;
 import me.shedaniel.rei.api.client.registry.category.CategoryRegistry;
 import me.shedaniel.rei.api.client.registry.display.DisplayRegistry;
 import me.shedaniel.rei.api.client.registry.screen.ScreenRegistry;
 import me.shedaniel.rei.api.common.util.EntryStacks;
+import net.crypticverse.betterbiomes.block.BiomeBlocks;
+import net.crypticverse.betterbiomes.compat.MapleSyrupCategory;
+import net.crypticverse.betterbiomes.compat.MapleSyrupDisplay;
+import net.crypticverse.betterbiomes.recipe.MapleSyrupRecipe;
+import net.crypticverse.betterbiomes.screen.MapleSyrupScreen;
 
-public class BetterBiomesREIClientPlugin implements REIClientPlugin {
+public class BetterBiomeREIClientPlugin implements REIClientPlugin {
 
     @Override
     public void registerCategories(CategoryRegistry registry) {

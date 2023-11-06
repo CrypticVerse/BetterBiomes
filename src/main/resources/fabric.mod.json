@@ -29,7 +29,7 @@
           "net.crypticverse.betterbiomes.world.biome.BiomeTerraBlenderAPI"
 		],
 		"rei_client": [
-          "net.crypticverse.betterbiomes.compat.BetterBiomesREIClientPlugin"
+			"net.crypticverse.betterbiomes.compat.rei.BetterBiomeREIClientPlugin"
 		]
 	},
 	"mixins": [
