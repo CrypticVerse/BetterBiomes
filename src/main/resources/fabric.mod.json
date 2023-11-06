@@ -17,19 +17,19 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"me.crypticverse.betterbiomes.BetterBiomes"
+          "net.crypticverse.betterbiomes.BetterBiomes"
 		],
 		"client": [
-			"me.crypticverse.betterbiomes.BetterBiomesClient"
+          "net.crypticverse.betterbiomes.BetterBiomesClient"
 		],
 		"fabric-datagen": [
-			"me.crypticverse.betterbiomes.BetterBiomesDataGenerator"
+          "net.crypticverse.betterbiomes.BetterBiomesDataGenerator"
 		],
 		"terrablender": [
-			"me.crypticverse.betterbiomes.world.biome.BiomeTerraBlenderAPI"
+          "net.crypticverse.betterbiomes.world.biome.BiomeTerraBlenderAPI"
 		],
 		"rei_client": [
-			"me.crypticverse.betterbiomes.compat.BetterBiomesREIClientPlugin"
+          "net.crypticverse.betterbiomes.compat.BetterBiomesREIClientPlugin"
 		]
 	},
 	"mixins": [
