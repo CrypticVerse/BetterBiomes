@@ -13,7 +13,6 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "MIT",
-	"icon": "assets/betterbiomes/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
