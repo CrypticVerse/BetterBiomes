@@ -30,7 +30,7 @@ Better Biomes uses the normal Gradle project structure, and can be compiled by r
 #### Requirements
 
 - OpenJDK 17 or higher.
-  We recommend using the JDK from [Eclipse Termurin](https://adoptium.net/termurin/releases/?version=17), as it works without issues.
+  We recommend using the JDK from [Eclipse Termurin](https://adoptium.net/temurin/releases/?version=17), as it works without issues.
 
 - Gradle 8.3 or higher (optional)
   Gradle is already provided in this repository, so you do not need to download it seperatley
