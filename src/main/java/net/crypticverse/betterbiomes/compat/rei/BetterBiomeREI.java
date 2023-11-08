@@ -12,7 +12,7 @@ import net.crypticverse.betterbiomes.compat.MapleSyrupDisplay;
 import net.crypticverse.betterbiomes.recipe.MapleSyrupRecipe;
 import net.crypticverse.betterbiomes.screen.MapleSyrupScreen;
 
-public class BetterBiomeREIClientPlugin implements REIClientPlugin {
+public class BetterBiomeREI implements REIClientPlugin {
 
     @Override
     public void registerCategories(CategoryRegistry registry) {

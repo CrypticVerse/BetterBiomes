@@ -9,8 +9,9 @@
 		"MochaComa"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://modrinth.com/mod/better-biomes",
+		"sources": "https://github.com/CrypticVerse/BetterBiomes",
+		"issues": "https://github.com/CrypticVerse/BetterBiomes/issues"
 	},
 	"license": "MIT",
 	"environment": "*",
@@ -28,7 +29,7 @@
           "net.crypticverse.betterbiomes.world.biome.BiomeTerraBlenderAPI"
 		],
 		"rei_client": [
-			"net.crypticverse.betterbiomes.compat.rei.BetterBiomeREIClientPlugin"
+          "net.crypticverse.betterbiomes.compat.rei.BetterBiomeREI"
 		]
 	},
 	"mixins": [
