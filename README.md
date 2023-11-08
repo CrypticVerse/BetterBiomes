@@ -37,3 +37,5 @@ Better Biomes uses the normal Gradle project structure, and can be compiled by r
 
   ## License
   This mod is licensed under MIT License, which is free and open source. For more info, refer to the [license file](LICENSE)
+
+    [Looking for Forge? Find it here](https://github.com/CrypticVerse/BetterBiomes-Forge)
