@@ -3,7 +3,7 @@
 	"id": "betterbiomes",
 	"version": "${version}",
 	"name": "Better Biomes",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "A mod that adds different biomes into the game!",
 	"authors": [
 		"CrypticVerse",
 		"MochaComa"
