@@ -21,11 +21,24 @@ repositories {
 	maven {
 		name = 'TerraformersMC'
 		url = 'https://maven.terraformersmc.com/'
-
+	}
+	maven {
+		url "https://cursemaven.com"
+		content {
+			includeGroup "curse.maven"
+		}
+	}
+	maven {
+		name = "Modrinth"
+		url = "https://api.modrinth.com/maven"
+		content {
+			includeGroup "maven.modrinth"
+		}
 	}
 }
 
 modrinth {
+	String changelogfile = file("CHANGELOG.txt")
 	token = System.getenv("MODRINTH_TOKEN")
 	projectId = "Qs2o8KiI"
 	versionNumber = "fabric-0.1-beta.3"
@@ -34,13 +47,15 @@ modrinth {
 	uploadFile = remapJar
 	gameVersions = ["1.20.2"]
 	loaders = ["fabric"]
-	changelog = ("CHENGELOG.md")
+	changelog = changelogfile
 	dependencies {
-		required.project "fabric-api"
+		embedded.project "fabric-api"
+		embedded.project "terrablender"
 	}
 }
 curseforge {
-	apiKey = 'CURSEFORGE_TOKEN'
+	String token = System.getenv("CURSEFORGE_TOKEN")
+	apiKey = token == null || token.isEmpty() ? "N/A" : token
 	project {
 		mainArtifact remapJar
 		relations {
@@ -49,7 +64,7 @@ curseforge {
 		}
 		id = '938715'
 		changelogType = "markdown"
-		changelog = file("CHANGELOG.md")
+		changelog = file("CHANGELOG.txt")
 		releaseType = 'beta'
 		addGameVersion '1.20.2'
 	}

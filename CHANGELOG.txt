@@ -1,0 +1,12 @@
+These Maple Trees sure are dense!!!
+
+# Better Biomes Fabric 0.1.1 Beta 1
+This version brings changes to the maple forest.
+- Less Dense Maple Trees!
+- Forge is now the same density as Fabric!
+- Bump Version
+
+## New Version Format:
+The major version, ex. (1.x.x). This changes every major update.
+The updates, ex. (x.1.x). This changes every time a feature is introduced or changed
+The minor version, ex. (x.x.1). This changes when an updates brings only bug fixes and enhancements.
