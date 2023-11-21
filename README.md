@@ -15,7 +15,7 @@ Maple trees and the Maple forest biome
 
 ## Compatibility
 
-This mod is currently only compatible with the fabric ecosystem, so the requrements are as followed:
+This mod is compatible with Fabric, Quilt, Forge, and NeoForge. This repo is the Fabric/Quilt mod.
 - Minecraft 1.20.2 or higher
 - Fabric Loader 0.14.23 or higher
 - Fabric API
@@ -23,6 +23,7 @@ This mod is currently only compatible with the fabric ecosystem, so the requreme
 ## Contributing
 
 We need language files! To make a lang file, create a fork with the file, then pull request it into the master branch.
+Or, go to our Crowdin page and contribute there!
 
 ## Developing Guide
 Better Biomes uses the normal Gradle project structure, and can be compiled by running the gradle task `build`.
@@ -30,7 +31,7 @@ Better Biomes uses the normal Gradle project structure, and can be compiled by r
 #### Requirements
 
 - OpenJDK 17 or higher.
-  We recommend using the JDK from [Eclipse Termurin](https://adoptium.net/temurin/releases/?version=17), as it works without issues.
+  We recommend using the JDK from [Eclipse Temurin](https://adoptium.net/temurin/releases/?version=17), as it works without issues.
 
 - Gradle 8.3 or higher (optional)
   Gradle is already provided in this repository, so you do not need to download it seperatley
