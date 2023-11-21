@@ -1,31 +1,31 @@
 package net.crypticverse.betterbiomes.world.biome;
 
 import net.crypticverse.betterbiomes.BetterBiomes;
+import net.minecraft.client.sound.MusicType;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnGroup;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.sound.BiomeMoodSound;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.SpawnSettings;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SpawnGroup;
-import net.minecraft.sound.BiomeMoodSound;
 import net.minecraft.world.biome.BiomeEffects;
 import net.minecraft.world.biome.GenerationSettings;
+import net.minecraft.world.biome.SpawnSettings;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
 
 public class BetterBiomesBiomes {
-    public static final RegistryKey<Biome> MAPLE_FOREST = register("maple_forest");
+    public static final RegistryKey<Biome> MAPLE_FOREST = RegistryKey.of(RegistryKeys.BIOME,
+            new Identifier(BetterBiomes.MOD_ID, "maple_forest"));
 
-    public static RegistryKey<Biome> register(String name) {
-        return RegistryKey.of(RegistryKeys.BIOME, new Identifier(BetterBiomes.MOD_ID, name));
+    public static void boostrap(Registerable<Biome> context) {
+        context.register(MAPLE_FOREST, mapleForest(context));
     }
 
-    public static void bootstrap(Registerable<Biome> context) {
-        context.register(MAPLE_FOREST, mapleBiome(context));
-    }
     public static void globalOverworldGeneration(GenerationSettings.LookupBackedBuilder builder) {
         DefaultBiomeFeatures.addLandCarvers(builder);
         DefaultBiomeFeatures.addAmethystGeodes(builder);
@@ -35,7 +35,7 @@ public class BetterBiomesBiomes {
         DefaultBiomeFeatures.addFrozenTopLayer(builder);
     }
 
-    public static Biome mapleBiome(Registerable<Biome> context) {
+    public static Biome mapleForest(Registerable<Biome> context) {
         SpawnSettings.Builder spawnBuilder = new SpawnSettings.Builder();
 
         spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.WOLF, 5, 4, 4));
@@ -52,7 +52,7 @@ public class BetterBiomesBiomes {
 
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.TREES_PLAINS);
         DefaultBiomeFeatures.addForestFlowers(biomeBuilder);
-        DefaultBiomeFeatures.addForestGrass(biomeBuilder);
+        DefaultBiomeFeatures.addLargeFerns(biomeBuilder);
 
         DefaultBiomeFeatures.addDefaultMushrooms(biomeBuilder);
         DefaultBiomeFeatures.addDefaultVegetation(biomeBuilder);

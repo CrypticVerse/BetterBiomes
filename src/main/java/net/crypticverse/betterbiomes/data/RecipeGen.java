@@ -9,6 +9,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
+import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Identifier;
@@ -38,11 +39,14 @@ public class RecipeGen extends FabricRecipeProvider {
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, BiomeBlocks.MAPLE_WOOD, 3).pattern("LL ").pattern("LL ").input('L', BiomeBlocks.MAPLE_LOG).criterion(hasItem(BiomeBlocks.MAPLE_LOG), conditionsFromItem(BiomeBlocks.MAPLE_LOG)).offerTo(exporter, new Identifier(getRecipeName(BiomeBlocks.MAPLE_WOOD)));
         ShapedRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, BiomeItems.MAPLE_BOAT, 1).pattern("P P").pattern("PPP").input('P', BiomeBlocks.MAPLE_PLANKS).criterion(hasItem(BiomeBlocks.MAPLE_PLANKS),conditionsFromItem(BiomeBlocks.MAPLE_PLANKS)).offerTo(exporter, new Identifier(getRecipeName(BiomeItems.MAPLE_BOAT)));
         ShapedRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, BiomeItems.MAPLE_CHEST_BOAT, 1).pattern(" C ").pattern(" B ").input('B', BiomeItems.MAPLE_BOAT).input('C', Blocks.CHEST).criterion(hasItem(BiomeBlocks.MAPLE_PLANKS), conditionsFromItem(BiomeBlocks.MAPLE_PLANKS)).criterion(hasItem(Blocks.CHEST), conditionsFromItem(Blocks.CHEST)).offerTo(exporter, new Identifier(getRecipeName(BiomeItems.MAPLE_CHEST_BOAT)));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, BiomeItems.MAPLE_SIGN, 3).pattern("PPP").pattern("PPP").pattern(" S ").input('P', BiomeBlocks.MAPLE_PLANKS).input('S', Items.STICK).criterion(hasItem(BiomeBlocks.MAPLE_PLANKS),conditionsFromItem(BiomeBlocks.MAPLE_PLANKS)).criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK)).offerTo(exporter, new Identifier(getRecipeName(BiomeItems.MAPLE_BOAT)));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, BiomeItems.MAPLE_SIGN, 3).pattern("PPP").pattern("PPP").pattern(" S ").input('P', BiomeBlocks.MAPLE_PLANKS).input('S', Items.STICK).criterion(hasItem(BiomeBlocks.MAPLE_PLANKS),conditionsFromItem(BiomeBlocks.MAPLE_PLANKS)).criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK)).offerTo(exporter, new Identifier(getRecipeName(BiomeItems.MAPLE_SIGN)));
         ShapedRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, BiomeItems.HANGING_MAPLE_SIGN, 6).pattern("C C").pattern("LLL").pattern("LLL").input('L', BiomeBlocks.STRIPPED_MAPLE_LOG).input('C', Blocks.CHAIN).criterion(hasItem(BiomeBlocks.STRIPPED_MAPLE_LOG),conditionsFromItem(BiomeBlocks.STRIPPED_MAPLE_LOG)).criterion(hasItem(Blocks.CHAIN), conditionsFromItem(Blocks.CHAIN)).offerTo(exporter, new Identifier(getRecipeName(BiomeItems.HANGING_MAPLE_SIGN)));
 
-        new MapleSyrupRecipeBuilder(BiomeBlocks.MAPLE_LOG, BiomeItems.MAPLE_SYRUP_BOTTLE, 1)
-                .criterion(hasItem(BiomeBlocks.MAPLE_LOG), conditionsFromItem(BiomeBlocks.MAPLE_LOG))
-                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, BiomeBlocks.TAPPED_BUCKET, 1)
+                .input(Items.BUCKET)
+                .input(Items.IRON_INGOT)
+                .criterion(hasItem(Items.BUCKET), conditionsFromItem(Items.BUCKET))
+                .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(BiomeBlocks.TAPPED_BUCKET)));
     }
 }

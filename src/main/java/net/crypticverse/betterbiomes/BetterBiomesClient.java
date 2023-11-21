@@ -24,6 +24,7 @@ public class BetterBiomesClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(BiomeBlocks.MAPLE_SAPLING, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BiomeBlocks.MAPLE_TRAPDOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BiomeBlocks.MAPLE_DOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BiomeBlocks.TAPPED_BUCKET, RenderLayer.getCutout());
 
         SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, BiomeBlocks.MAPLE_SIGN_TEXTURE));
         SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, BiomeBlocks.MAPLE_HANGING_SIGN_TEXTURE));

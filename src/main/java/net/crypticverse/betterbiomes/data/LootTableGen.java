@@ -1,9 +1,14 @@
 package net.crypticverse.betterbiomes.data;
 
 import net.crypticverse.betterbiomes.block.BiomeBlocks;
+import net.crypticverse.betterbiomes.block.custom.TappedBucketBlock;
+import net.crypticverse.betterbiomes.item.BiomeItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
-import net.minecraft.block.Blocks;
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
+import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
+import net.minecraft.predicate.StatePredicate;
 
 public class LootTableGen extends FabricBlockLootTableProvider {
     public LootTableGen(FabricDataOutput dataOutput) {
@@ -14,7 +19,7 @@ public class LootTableGen extends FabricBlockLootTableProvider {
     public void generate() {
         addDrop(BiomeBlocks.MAPLE_SAPLING);
         addDrop(BiomeBlocks.MAPLE_PLANKS);
-        addDrop(BiomeBlocks.MAPLE_LEAVES, leavesDrops(BiomeBlocks.MAPLE_LEAVES, Blocks.AIR, 0.05f, 0.0625f, 0.083333336f, 0.1f));
+        addDrop(BiomeBlocks.MAPLE_LEAVES, leavesDrops(BiomeBlocks.MAPLE_LEAVES, BiomeBlocks.MAPLE_SAPLING, 0.0025f));
         addDrop(BiomeBlocks.STRIPPED_MAPLE_LOG);
         addDrop(BiomeBlocks.STRIPPED_MAPLE_WOOD);
         addDrop(BiomeBlocks.MAPLE_LOG);

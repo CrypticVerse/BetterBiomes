@@ -38,16 +38,24 @@ repositories {
 }
 
 modrinth {
-	String changelogfile = file("CHANGELOG.txt")
 	token = System.getenv("MODRINTH_TOKEN")
 	projectId = "Qs2o8KiI"
-	versionNumber = "fabric-0.1-beta.3"
-	versionName = "Better Biomes 0.1 Beta 3"
+	versionNumber = "fabric-0.1.2.1"
+	versionName = "Better Biomes Fabric 0.1.2.1"
 	versionType = "beta"
 	uploadFile = remapJar
 	gameVersions = ["1.20.2"]
-	loaders = ["fabric"]
-	changelog = changelogfile
+	loaders = ["fabric", "quilt"]
+	changelog = ("# Better Biomes Fabric 0.1.2.1\n" +
+			"\n" +
+			"This version brings additions and fixes\n" +
+			"\n" +
+			"## Additions\n" +
+			"- New Tapped Bucket and Tapped maple sap bucket!\n" +
+			"- Obtain by attaching a tapped bucket to a maple log!\n" +
+			"\n" +
+			"## Update to existing version format\n" +
+			"- Now includes 4 digits, ex. (1.0.4.12)\n")
 	dependencies {
 		embedded.project "fabric-api"
 		embedded.project "terrablender"
