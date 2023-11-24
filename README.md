@@ -28,6 +28,31 @@ Or, go to our Crowdin page and contribute there!
 ## Developing Guide
 Better Biomes uses the normal Gradle project structure, and can be compiled by running the gradle task `build`.
 
+## Implementation in your mod
+To implement this mod, follow the steps below.
+
+### Maven
+Add the maven for either Curse Maven or Modrinth's Maven.
+```gradle
+repositories {
+    maven { url = "https://cursemaven.com" }
+    maven { url = "https://api.modrinth.com/maven"}
+}
+```
+
+### Implementation for Fabric Loom
+For Fabric's Loom, include the following for either Curse Maven or Modrinth's Maven. You only need one. For ForgeGradle, check out the BetterBiomes-Forge repo.
+```gradle
+modImplementation "curse.maven:better-biomes-938715:<fileVersion>" //The Version number, ex. for Fabric 0.1.2.1, it is curseforge.com/minecraft/mc-mods/better-biomes/files/4886956, so the file ID is 4886956
+modImplementation "maven.modrinth:better-biomes:fabric-0.1.2.1" //For Fabric's 0.1.2.1 version of Better Biomes
+```
+
+Optionally, you can include this mod in the `build.gradle` file for it to NOT be downloaded seperately
+```gradle
+include "curse.maven:better-biomes-938715:<fileVersion>"
+include "maven.modrinth:better-biomes:fabric-0.1.2.1"
+```
+
 #### Requirements
 
 - OpenJDK 17 or higher.
@@ -36,7 +61,6 @@ Better Biomes uses the normal Gradle project structure, and can be compiled by r
 - Gradle 8.3 or higher (optional)
   Gradle is already provided in this repository, so you do not need to download it seperatley
 
-  ## License
-  This mod is licensed under MIT License, which is free and open source. For more info, refer to the [license file](LICENSE)
-
-    [Looking for Forge? Find it here](https://github.com/CrypticVerse/BetterBiomes-Forge)
+## License
+   This mod is licensed under MIT License, which is free and open source. For more info, refer to the [license file](LICENSE).
+   [Looking for Forge? Find it Here!](https://github.com?crypticVerse/BetterBiomes-Forge)
