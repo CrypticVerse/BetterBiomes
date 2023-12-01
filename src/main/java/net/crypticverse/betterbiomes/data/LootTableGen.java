@@ -6,7 +6,10 @@ import net.crypticverse.betterbiomes.item.BiomeItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemConvertible;
+import net.minecraft.item.Items;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
 import net.minecraft.predicate.StatePredicate;
 
@@ -31,6 +34,10 @@ public class LootTableGen extends FabricBlockLootTableProvider {
         addDrop(BiomeBlocks.MAPLE_FENCE_GATE);
         addDrop(BiomeBlocks.MAPLE_BUTTON);
         addDrop(BiomeBlocks.MAPLE_PRESSURE_PLATE);
+        BlockStatePropertyLootCondition.Builder builder = BlockStatePropertyLootCondition.builder(BiomeBlocks.TAPPED_BUCKET)
+                        .properties(StatePredicate.Builder.create().exactMatch(TappedBucketBlock.AGE, 2));
+        // Using Air gives the player only one filled bucket
+        this.addDrop(BiomeBlocks.TAPPED_BUCKET, this.cropDrops(Blocks.AIR, Items.AIR, BiomeItems.TAPPED_MAPLE_SAP_BUCKET, builder));
 
         addDrop(BiomeBlocks.MAPLE_SLAB, slabDrops(BiomeBlocks.MAPLE_SLAB));
         addDrop(BiomeBlocks.MAPLE_DOOR, doorDrops(BiomeBlocks.MAPLE_DOOR));

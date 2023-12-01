@@ -1,10 +1,6 @@
-# Better Biomes Fabric 0.1.2.1
+# Better Biomes Fabric 0.1.2.2
 
-This version brings additions and fixes
+This version brings bug fixes
 
-## Additions
-- New Tapped Bucket and Tapped maple sap bucket!
-- Obtain by attaching a tapped bucket to a maple log!
-
-## Update to existing version format
-- Now includes 4 digits, ex. (1.0.4.12)
+### Bug Fixes
+// TODO
