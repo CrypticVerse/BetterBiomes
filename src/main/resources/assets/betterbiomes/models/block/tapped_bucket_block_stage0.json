@@ -1,8 +1,8 @@
 {
   "ambientocclusion": false,
   "textures": {
-    "particle": "betterbiomes:block/tapped_bucket_stage2",
-    "tapped": "betterbiomes:block/tapped_bucket_stage2"
+    "particle": "betterbiomes:block/tapped_bucket_block_stage0",
+    "tapped": "betterbiomes:block/tapped_bucket_block_stage0"
   },
   "elements": [
     {

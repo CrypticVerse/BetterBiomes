@@ -27,7 +27,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:tapped_maple_sap_bucket"
+        "recipe": "minecraft:tapped_bucket"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -41,7 +41,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:tapped_maple_sap_bucket"
+      "minecraft:tapped_bucket"
     ]
   },
   "sends_telemetry_event": false
