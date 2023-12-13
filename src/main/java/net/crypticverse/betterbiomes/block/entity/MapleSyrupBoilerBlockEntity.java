@@ -30,6 +30,7 @@ public class MapleSyrupBoilerBlockEntity extends BlockEntity implements Extended
 
     private static final int INPUT_SLOT = 0;
     private static final int OUTPUT_SLOT = 1;
+    private static final int GLASS_SLOT = 2;
 
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
@@ -69,7 +70,7 @@ public class MapleSyrupBoilerBlockEntity extends BlockEntity implements Extended
 
     @Override
     public Text getDisplayName() {
-        return Text.literal("Gem Polishing Station");
+        return Text.literal("Maple Syrup Boiler");
     }
 
     @Override
@@ -81,14 +82,14 @@ public class MapleSyrupBoilerBlockEntity extends BlockEntity implements Extended
     protected void writeNbt(NbtCompound nbt) {
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, inventory);
-        nbt.putInt("gem_polishing_station.progress", progress);
+        nbt.putInt("maple_syrup_boiler.progress", progress);
     }
 
     @Override
     public void readNbt(NbtCompound nbt) {
         super.readNbt(nbt);
         Inventories.readNbt(nbt, inventory);
-        progress = nbt.getInt("gem_polishing_station.progress");
+        progress = nbt.getInt("maple_syrup_boiler.progress");
     }
 
     @Nullable

@@ -1,6 +1,0 @@
-# Better Biomes Fabric 0.1.2.2
-
-This version brings bug fixes
-
-### Bug Fixes
-// TODO

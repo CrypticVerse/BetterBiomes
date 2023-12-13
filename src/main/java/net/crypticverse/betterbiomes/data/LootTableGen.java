@@ -37,7 +37,7 @@ public class LootTableGen extends FabricBlockLootTableProvider {
         BlockStatePropertyLootCondition.Builder builder = BlockStatePropertyLootCondition.builder(BiomeBlocks.TAPPED_BUCKET)
                         .properties(StatePredicate.Builder.create().exactMatch(TappedBucketBlock.AGE, 2));
         // Using Air gives the player only one filled bucket
-        this.addDrop(BiomeBlocks.TAPPED_BUCKET, this.cropDrops(Blocks.AIR, Items.AIR, BiomeItems.TAPPED_MAPLE_SAP_BUCKET, builder));
+        this.addDrop(BiomeBlocks.TAPPED_BUCKET, BiomeItems.TAPPED_MAPLE_SAP_BUCKET);
 
         addDrop(BiomeBlocks.MAPLE_SLAB, slabDrops(BiomeBlocks.MAPLE_SLAB));
         addDrop(BiomeBlocks.MAPLE_DOOR, doorDrops(BiomeBlocks.MAPLE_DOOR));

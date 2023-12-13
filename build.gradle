@@ -63,7 +63,7 @@ curseforge {
 		}
 		id = '938715'
 		changelogType = "markdown"
-		changelog = file("CHANGELOG.txt")
+		changelog = file("CHANGELOG.md")
 		releaseType = 'beta'
 		addGameVersion '1.20.2'
 	}
@@ -115,6 +115,11 @@ dependencies {
 	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${project.rei_version}"
 	modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}"
 
+	// Resolve errors with the me.shedaniel.math package in cloth NOT required!!
+	modApi "me.shedaniel.cloth:basic-math:0.6.1"
+	// Resolves errors with the EntryStack class
+	// Not required!
+	modApi "dev.architectury:architectury-fabric:10.0.13"
 	// Uncomment the following line to enable the deprecated Fabric API modules. 
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
 

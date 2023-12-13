@@ -20,7 +20,7 @@ public class BiomeItems {
     public static final Item MAPLE_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(BiomeBoats.MAPLE_CHEST_BOAT_ID, BiomeBoats.MAPLE_BOAT_KEY, true);
 
     public static final Item TAPPED_MAPLE_SAP_BUCKET = registerItem("tapped_maple_sap_bucket",
-            new Item(new FabricItemSettings()));
+            new Item(new FabricItemSettings().recipeRemainder(BiomeItems.TAPPED_BUCKET)));
 
     public static final Item TAPPED_BUCKET = registerItem("tapped_bucket",
             new AliasedBlockItem(BiomeBlocks.TAPPED_BUCKET, new FabricItemSettings()));
