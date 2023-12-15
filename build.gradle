@@ -38,13 +38,13 @@ repositories {
 }
 
 modrinth {
-	token = System.getenv("MODRINTH_TOKEN")
+	token = providers.environmentVariable("MODRINTH_TOKEN")
 	projectId = "Qs2o8KiI"
-	versionNumber = "fabric-0.1.2.2"
-	versionName = "Better Biomes Fabric 0.1.2.2"
+	versionNumber = "fabric-0.1.2.3"
+	versionName = "Better Biomes Fabric 0.1.2.3"
 	versionType = "beta"
 	uploadFile = remapJar
-	gameVersions = ["1.20.2"]
+	gameVersions = ["1.20.4"]
 	loaders = ["fabric", "quilt"]
 	changelog = ("")
 	dependencies {
@@ -53,8 +53,7 @@ modrinth {
 	}
 }
 curseforge {
-	String token = System.getenv("CURSEFORGE_TOKEN")
-	apiKey = token == null || token.isEmpty() ? "N/A" : token
+	apiKey = providers.environmentVariable("CURSEFORGE_TOKEN")
 	project {
 		mainArtifact remapJar
 		relations {
@@ -65,7 +64,7 @@ curseforge {
 		changelogType = "markdown"
 		changelog = file("CHANGELOG.md")
 		releaseType = 'beta'
-		addGameVersion '1.20.2'
+		addGameVersion '1.20.4'
 	}
 	options {
 		forgeGradleIntegration = false
@@ -115,11 +114,10 @@ dependencies {
 	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${project.rei_version}"
 	modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}"
 
-	// Resolve errors with the me.shedaniel.math package in cloth NOT required!!
-	modApi "me.shedaniel.cloth:basic-math:0.6.1"
-	// Resolves errors with the EntryStack class
-	// Not required!
-	modApi "dev.architectury:architectury-fabric:10.0.13"
+	modApi ("me.shedaniel.cloth:cloth-config-fabric:13.0.114") {
+		exclude(group: "net.fabricmc.fabric-api")
+	}
+	modApi "dev.architectury:architectury-fabric:11.0.8"
 	// Uncomment the following line to enable the deprecated Fabric API modules. 
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
 

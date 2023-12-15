@@ -1,5 +1,6 @@
 package net.crypticverse.betterbiomes.block.custom;
 
+import com.mojang.serialization.MapCodec;
 import net.crypticverse.betterbiomes.block.entity.BetterBiomesBlockEntities;
 import net.crypticverse.betterbiomes.block.entity.MapleSyrupBoilerBlockEntity;
 import net.minecraft.block.*;
@@ -21,8 +22,15 @@ import org.jetbrains.annotations.Nullable;
 public class MapleSyrupStationBlock extends BlockWithEntity implements BlockEntityProvider {
     private static final VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 12, 16);
 
+    public static final MapCodec<MapleSyrupStationBlock> CODEC = MapleSyrupStationBlock.createCodec(MapleSyrupStationBlock::new);
+
     public MapleSyrupStationBlock(Settings settings) {
         super(settings);
+    }
+
+    @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec() {
+        return CODEC;
     }
 
     @Override
