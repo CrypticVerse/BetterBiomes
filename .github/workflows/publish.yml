@@ -18,6 +18,9 @@
             java-version: 17
             cache: gradle
 
+        - name: Setup Gradle
+          uses: gradle/gradle-build-action@v2
+
         - name: Build and Publish
           run: ./gradlew build modrinth curseforge --stacktrace
           env:

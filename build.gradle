@@ -46,7 +46,11 @@ modrinth {
 	uploadFile = remapJar
 	gameVersions = ["1.20.4"]
 	loaders = ["fabric", "quilt"]
-	changelog = ("")
+	changelog = ("This version brings updates\n" +
+			"\n" +
+			"### Updates\n" +
+			"- Updated to MC 1.20.4\n" +
+			"- Bump Version")
 	dependencies {
 		embedded.project "fabric-api"
 		embedded.project "terrablender"
