@@ -1,19 +1,17 @@
 package net.crypticverse.betterbiomes.world.tree;
 
 import net.crypticverse.betterbiomes.world.BetterBiomesConfiguredFeatures;
-import net.minecraft.block.sapling.SaplingGenerator;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.util.math.random.Random;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.block.SaplingGenerator;
 
 import java.util.Optional;
 
-public class BetterBiomesSaplingGen extends SaplingGenerator {
-    @Nullable
-    @Override
-    protected RegistryKey<ConfiguredFeature<?, ?>> getTreeFeature(Random random, boolean bees) {
-        return BetterBiomesConfiguredFeatures.MAPLE_KEY;
+public class BetterBiomesSaplingGen {
+    public static final SaplingGenerator MAPLE =
+            new SaplingGenerator("maple", 0f, Optional.empty(),
+                    Optional.empty(),
+                    Optional.of(BetterBiomesConfiguredFeatures.MAPLE_KEY),
+                    Optional.empty(),
+                    Optional.empty(),
+                    Optional.empty());
 
-    }
 }

@@ -75,7 +75,7 @@ public class MapleSyrupRecipe implements Recipe<SimpleInventory> {
 
         public static final Codec<MapleSyrupRecipe> CODEC = RecordCodecBuilder.create(in -> in.group(
                 validateAmount(Ingredient.DISALLOW_EMPTY_CODEC, 9).fieldOf("ingredients").forGetter(MapleSyrupRecipe::getIngredients),
-                RecipeCodecs.CRAFTING_RESULT.fieldOf("output").forGetter(r -> r.output)
+                ItemStack.RECIPE_RESULT_CODEC.fieldOf("output").forGetter(r -> r.output)
         ).apply(in, MapleSyrupRecipe::new));
 
         private static Codec<List<Ingredient>> validateAmount(Codec<Ingredient> delegate, int max) {
