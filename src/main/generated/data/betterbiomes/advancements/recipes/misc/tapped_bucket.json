@@ -43,6 +43,5 @@
     "recipes": [
       "minecraft:tapped_bucket"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }
