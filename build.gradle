@@ -38,7 +38,7 @@ repositories {
 }
 
 modrinth {
-	token = providers.environmentVariable("MODRINTH_TOKEN")
+	token = System.getenv("MODRINTH_TOKEN")
 	projectId = "Qs2o8KiI"
 	versionNumber = "fabric-0.1.3.1"
 	versionName = "Better Biomes Fabric 0.1.3.1"
@@ -57,7 +57,7 @@ modrinth {
 	}
 }
 curseforge {
-	apiKey = providers.environmentVariable("CURSEFORGE_TOKEN")
+	apiKey = System.getenv("CURSEFORGE_TOKEN")
 	project {
 		mainArtifact remapJar
 		relations {
