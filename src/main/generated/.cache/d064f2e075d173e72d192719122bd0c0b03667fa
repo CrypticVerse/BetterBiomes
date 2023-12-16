@@ -1,9 +1,9 @@
-// 1.20.4	2023-12-16T15:06:02.5170798	Better Biomes/Tags for minecraft:block
-8a5877d80d4ac1e7844c9ff3f6a6ee1d963ed57b data\minecraft\tags\blocks\mineable\hoe.json
+// 1.20.4	2023-12-16T15:19:31.2941242	Better Biomes/Tags for minecraft:block
 c00f8bf26aa8d8dab61dc2d9d86539e294124d03 data\betterbiomes\tags\blocks\maple_logs.json
-f93920c8b3dbb286e8e065fd59b16d064ace4997 data\minecraft\tags\blocks\fence_gates.json
-10b8384bb44b17d697864a5746f9a374499a76b8 data\minecraft\tags\blocks\saplings.json
-c00f8bf26aa8d8dab61dc2d9d86539e294124d03 data\minecraft\tags\blocks\logs_that_burn.json
-c00f8bf26aa8d8dab61dc2d9d86539e294124d03 data\minecraft\tags\blocks\logs.json
-7a37a918db26e19175ef0c4b4de2afc3822a37fc data\minecraft\tags\blocks\fences.json
 8a5877d80d4ac1e7844c9ff3f6a6ee1d963ed57b data\minecraft\tags\blocks\leaves.json
+8a5877d80d4ac1e7844c9ff3f6a6ee1d963ed57b data\minecraft\tags\blocks\mineable\hoe.json
+c00f8bf26aa8d8dab61dc2d9d86539e294124d03 data\minecraft\tags\blocks\logs_that_burn.json
+7a37a918db26e19175ef0c4b4de2afc3822a37fc data\minecraft\tags\blocks\fences.json
+c00f8bf26aa8d8dab61dc2d9d86539e294124d03 data\minecraft\tags\blocks\logs.json
+10b8384bb44b17d697864a5746f9a374499a76b8 data\minecraft\tags\blocks\saplings.json
+f93920c8b3dbb286e8e065fd59b16d064ace4997 data\minecraft\tags\blocks\fence_gates.json

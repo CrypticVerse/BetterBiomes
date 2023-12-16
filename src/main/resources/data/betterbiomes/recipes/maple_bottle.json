@@ -2,7 +2,7 @@
   "type": "betterbiomes:boiling",
   "ingredients": [
     {
-      "item": "betterbiomes:tapped_maple_sap_bucket"
+      "item": "betterbiomes:uncured_maple_syrup"
     }
   ],
   "output": {

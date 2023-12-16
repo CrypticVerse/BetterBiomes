@@ -44,5 +44,6 @@ public class ModelGen extends FabricModelProvider {
             itemModelGenerator.register(BiomeItems.MAPLE_BOAT, Models.GENERATED);
             itemModelGenerator.register(BiomeItems.MAPLE_CHEST_BOAT, Models.GENERATED);
             itemModelGenerator.register(BiomeItems.TAPPED_BUCKET, Models.GENERATED);
+            itemModelGenerator.register(BiomeItems.UNCURED_MAPLE_SYRUP, Models.GENERATED);
     }
 }

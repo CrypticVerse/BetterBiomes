@@ -25,6 +25,9 @@ public class BiomeItems {
     public static final Item TAPPED_BUCKET = registerItem("tapped_bucket",
             new AliasedBlockItem(BiomeBlocks.TAPPED_BUCKET, new FabricItemSettings()));
 
+    public static final Item UNCURED_MAPLE_SYRUP = registerItem("uncured_maple_syrup",
+            new Item(new FabricItemSettings()));
+
     private static Item registerItem(String name, Item item) {
             return Registry.register(Registries.ITEM, new Identifier(BetterBiomes.MOD_ID, name), item);
     }

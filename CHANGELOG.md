@@ -1,5 +1,5 @@
 This version brings updates
 
 ### Updates
-- Updated to MC 1.20.4
-- Bump Version
+- New Boiler recipe and maple syrup recipe
+- New Uncured Syrup

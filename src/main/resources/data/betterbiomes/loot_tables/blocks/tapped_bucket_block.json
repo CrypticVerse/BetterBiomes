@@ -11,7 +11,7 @@
               "add": false,
               "conditions": [
                 {
-                  "block": "betterbiomes:tapped_bucket",
+                  "block": "betterbiomes:tapped_bucket_block",
                   "condition": "minecraft:block_state_property",
                   "properties": {
                     "age": "2"
@@ -31,5 +31,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "betterbiomes:blocks/tapped_bucket"
+  "random_sequence": "betterbiomes:blocks/tapped_bucket_block"
 }
