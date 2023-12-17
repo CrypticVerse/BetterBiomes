@@ -46,11 +46,11 @@ modrinth {
 	uploadFile = remapJar
 	gameVersions = ["1.20.4", "1.20.3", "1.20.2"]
 	loaders = ["fabric", "quilt"]
-	changelog = ("This version brings updates\n" +
+	changelog = ("This version brings big fixes\n" +
 			"\n" +
-			"### Updates\n" +
-			"- New Boiler recipe and maple syrup recipe\n" +
-			"- New Uncured Syrup")
+			"### Fixes\n" +
+			"- Fixed game being incompatible with 1.20.4, despite being made for 1.20.4\n" +
+			"- Made for 1.20.2-1.20.4")
 	dependencies {
 		embedded.project "fabric-api"
 		embedded.project "terrablender"
