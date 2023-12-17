@@ -1,5 +1,5 @@
-This version brings updates
+This version brings big fixes
 
-### Updates
-- New Boiler recipe and maple syrup recipe
-- New Uncured Syrup
+### Fixes
+- Fixed game being incompatible with 1.20.4, despite being made for 1.20.4
+- Made for 1.20.2-1.20.4
