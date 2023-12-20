@@ -13,6 +13,7 @@ base {
 }
 
 repositories {
+	mavenLocal()
 	maven {
 		name = 'MinecraftForge'
 		url = 'https://maven.minecraftforge.net/'
@@ -40,8 +41,8 @@ repositories {
 modrinth {
 	token = System.getenv("MODRINTH_TOKEN")
 	projectId = "Qs2o8KiI"
-	versionNumber = "fabric-0.1.3.1-patch1"
-	versionName = "Better Biomes Fabric 0.1.3.1 Patch 1"
+	versionNumber = "fabric-0.1.3.2"
+	versionName = "Better Biomes Fabric 0.1.3.2"
 	versionType = "beta"
 	uploadFile = remapJar
 	gameVersions = ["1.20.4", "1.20.3", "1.20.2"]
@@ -49,8 +50,9 @@ modrinth {
 	changelog = ("This version brings big fixes\n" +
 			"\n" +
 			"### Fixes\n" +
-			"- Fixed game being incompatible with 1.20.4, despite being made for 1.20.4\n" +
-			"- Made for 1.20.2-1.20.4")
+			"- Fixed game crashing when on 1.20.4\n" +
+			"- All maple items (Slabs, Stairs, etc.) break faster with axes\n" +
+			"- Fixed signs dropping oak signs when mined")
 	dependencies {
 		embedded.project "fabric-api"
 		embedded.project "terrablender"
@@ -69,8 +71,6 @@ curseforge {
 		changelog = file("CHANGELOG.md")
 		releaseType = 'beta'
 		addGameVersion '1.20.4'
-		addGameVersion '1.20.3'
-		addGameVersion '1.20.2'
 	}
 	options {
 		forgeGradleIntegration = false
@@ -124,7 +124,11 @@ dependencies {
 		exclude(group: "net.fabricmc.fabric-api")
 	}
 	modApi "dev.architectury:architectury-fabric:11.0.8"
-	// Uncomment the following line to enable the deprecated Fabric API modules. 
+
+	// Find out SECRETS for yourself!
+	modImplementation "net.crypticverse.secret:BetterBiomes-Secret:1.0.1"
+	include "net.crypticverse.secret:BetterBiomes-Secret:1.0.1"
+	// Uncomment the following line to enable the deprecated Fabric API modules.
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
 
 	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"

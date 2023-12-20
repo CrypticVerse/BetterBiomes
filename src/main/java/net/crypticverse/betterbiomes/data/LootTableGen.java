@@ -34,6 +34,10 @@ public class LootTableGen extends FabricBlockLootTableProvider {
         addDrop(BiomeBlocks.MAPLE_FENCE_GATE);
         addDrop(BiomeBlocks.MAPLE_BUTTON);
         addDrop(BiomeBlocks.MAPLE_PRESSURE_PLATE);
+        addDrop(BiomeBlocks.STANDING_MAPLE_SIGN);
+        addDrop(BiomeBlocks.WALL_MAPLE_SIGN);
+        addDrop(BiomeBlocks.HANGING_MAPLE_SIGN);
+        addDrop(BiomeBlocks.WALL_HANGING_MAPLE_SIGN);
 
         addDrop(BiomeBlocks.MAPLE_SLAB, slabDrops(BiomeBlocks.MAPLE_SLAB));
         addDrop(BiomeBlocks.MAPLE_DOOR, doorDrops(BiomeBlocks.MAPLE_DOOR));

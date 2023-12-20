@@ -8,6 +8,9 @@
 		"CrypticVerse",
 		"MochaComa"
 	],
+	"contributors": [
+		"Fading-dragon"
+	],
 	"contact": {
 		"homepage": "https://modrinth.com/mod/better-biomes",
 		"sources": "https://github.com/CrypticVerse/BetterBiomes",
@@ -37,7 +40,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.15.0",
-		"minecraft": ">=1.20.2",
+		"minecraft": "~1.20.4",
 		"java": ">=17",
 		"fabric-api": "*",
 		"terrablender": "*"
