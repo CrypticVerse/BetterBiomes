@@ -1,6 +1,8 @@
   name: Publish Mod
   on:
-    [workflow_dispatch]
+    workflow_dispatch:
+       branches:
+          - 1.20.X
 
   permissions:
     contents: write
