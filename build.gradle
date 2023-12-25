@@ -43,7 +43,7 @@ modrinth {
 	token = System.getenv("MODRINTH_TOKEN")
 	projectId = "Qs2o8KiI"
 	versionNumber = "fabric-${mod_version}"
-	versionName = "Better Biomes Fabric ${mod_version}"
+	versionName = "Better Biomes Fabric ${mod_name}"
 	versionType = "beta"
 	uploadFile = remapJar
 	gameVersions = ["1.20.4"]
@@ -58,7 +58,7 @@ curseforge {
 	apiKey = System.getenv("CURSEFORGE_TOKEN")
 	project {
 		mainArtifact (remapJar) {
-			displayName = "Better Biomes Fabric ${mod_version}"
+			displayName = "Better Biomes Fabric ${mod_name}"
 		}
 		relations {
 			embeddedLibrary 'fabric-api'
