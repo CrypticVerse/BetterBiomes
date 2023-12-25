@@ -39,20 +39,16 @@ repositories {
 }
 
 modrinth {
+	String changelog_file = file("CHANGELOG.md")
 	token = System.getenv("MODRINTH_TOKEN")
 	projectId = "Qs2o8KiI"
-	versionNumber = "fabric-0.1.3.2"
-	versionName = "Better Biomes Fabric 0.1.3.2"
+	versionNumber = "fabric-2.1.3.2-1.20.4"
+	versionName = "Better Biomes Fabric ${mod_version}"
 	versionType = "beta"
 	uploadFile = remapJar
-	gameVersions = ["1.20.4", "1.20.3", "1.20.2"]
+	gameVersions = ["1.20.4"]
 	loaders = ["fabric", "quilt"]
-	changelog = ("This version brings big fixes\n" +
-			"\n" +
-			"### Fixes\n" +
-			"- Fixed game crashing when on 1.20.4\n" +
-			"- All maple items (Slabs, Stairs, etc.) break faster with axes\n" +
-			"- Fixed signs dropping oak signs when mined")
+	changelog = changelog_file
 	dependencies {
 		embedded.project "fabric-api"
 		embedded.project "terrablender"
@@ -61,7 +57,9 @@ modrinth {
 curseforge {
 	apiKey = System.getenv("CURSEFORGE_TOKEN")
 	project {
-		mainArtifact remapJar
+		mainArtifact (remapJar) {
+			displayName = "Better Biomes Fabric ${mod_version}"
+		}
 		relations {
 			embeddedLibrary 'fabric-api'
 			embeddedLibrary 'terrablender'
