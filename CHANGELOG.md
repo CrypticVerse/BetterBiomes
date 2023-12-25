@@ -1,6 +1,5 @@
 This version brings big fixes
 
 ### Fixes
-- Fixed game crashing when on 1.20.4
-- All maple items (Slabs, Stairs, etc.) break faster with axes
-- Fixed signs dropping oak signs when mined
+- Bump Version. Every major Minecraft Update that changes the code is now bumped by the major version
+- Ex. 1.20 is 1.0.2.3, 1.20.2 is 2.0.2.3
