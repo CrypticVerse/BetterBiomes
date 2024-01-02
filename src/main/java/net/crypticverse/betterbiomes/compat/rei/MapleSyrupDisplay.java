@@ -1,4 +1,4 @@
-package net.crypticverse.betterbiomes.compat;
+package net.crypticverse.betterbiomes.compat.rei;
 
 import net.crypticverse.betterbiomes.recipe.MapleSyrupRecipe;
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
@@ -28,6 +28,6 @@ public class MapleSyrupDisplay extends BasicDisplay {
 
     @Override
     public CategoryIdentifier<?> getCategoryIdentifier() {
-        return MapleSyrupCategory.MAPLE_SYRUP;
+        return MapleSyrupREICategory.MAPLE_SYRUP;
     }
 }

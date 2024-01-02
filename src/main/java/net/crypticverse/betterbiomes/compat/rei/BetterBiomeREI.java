@@ -7,8 +7,6 @@ import me.shedaniel.rei.api.client.registry.display.DisplayRegistry;
 import me.shedaniel.rei.api.client.registry.screen.ScreenRegistry;
 import me.shedaniel.rei.api.common.util.EntryStacks;
 import net.crypticverse.betterbiomes.block.BiomeBlocks;
-import net.crypticverse.betterbiomes.compat.MapleSyrupCategory;
-import net.crypticverse.betterbiomes.compat.MapleSyrupDisplay;
 import net.crypticverse.betterbiomes.recipe.MapleSyrupRecipe;
 import net.crypticverse.betterbiomes.screen.MapleSyrupScreen;
 
@@ -16,8 +14,8 @@ public class BetterBiomeREI implements REIClientPlugin {
 
     @Override
     public void registerCategories(CategoryRegistry registry) {
-        registry.add(new MapleSyrupCategory());
-        registry.addWorkstations(MapleSyrupCategory.MAPLE_SYRUP, EntryStacks.of(BiomeBlocks.MAPLE_SYRUP_BOILER));
+        registry.add(new MapleSyrupREICategory());
+        registry.addWorkstations(MapleSyrupREICategory.MAPLE_SYRUP, EntryStacks.of(BiomeBlocks.MAPLE_SYRUP_BOILER));
     }
 
     @Override
@@ -29,6 +27,6 @@ public class BetterBiomeREI implements REIClientPlugin {
     @Override
     public void registerScreens(ScreenRegistry registry) {
         registry.registerClickArea(screen -> new Rectangle(75, 30, 20, 30),
-                MapleSyrupScreen.class, MapleSyrupCategory.MAPLE_SYRUP);
+                MapleSyrupScreen.class, MapleSyrupREICategory.MAPLE_SYRUP);
     }
 }

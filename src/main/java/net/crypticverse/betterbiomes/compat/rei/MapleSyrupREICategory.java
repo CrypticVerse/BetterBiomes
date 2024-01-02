@@ -1,4 +1,4 @@
-package net.crypticverse.betterbiomes.compat;
+package net.crypticverse.betterbiomes.compat.rei;
 
 import me.shedaniel.math.Point;
 import me.shedaniel.math.Rectangle;
@@ -17,7 +17,7 @@ import net.minecraft.util.Identifier;
 import java.util.LinkedList;
 import java.util.List;
 
-public class MapleSyrupCategory implements DisplayCategory<BasicDisplay> {
+public class MapleSyrupREICategory implements DisplayCategory<BasicDisplay> {
     public static final Identifier TEXTURE =
             new Identifier(BetterBiomes.MOD_ID, "textures/gui/maple_syrup_boiler_gui.png");
     public static final CategoryIdentifier<MapleSyrupDisplay> MAPLE_SYRUP =
