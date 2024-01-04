@@ -35,22 +35,14 @@ To implement this mod, follow the steps below.
 Add the maven for either Curse Maven or Modrinth's Maven.
 ```gradle
 repositories {
-    maven { url = "https://cursemaven.com" }
-    maven { url = "https://api.modrinth.com/maven"}
+    maven { url = "https://raw.githubusercontent.com/CrypticVerse/projectresources/master/maven" }
 }
 ```
 
 ### Implementation for Fabric Loom
 For Fabric's Loom, include the following for either Curse Maven or Modrinth's Maven. You only need one. For ForgeGradle, check out the BetterBiomes-Forge repo.
 ```gradle
-modImplementation "curse.maven:better-biomes-938715:<fileVersion>" //The Version number, ex. for Fabric 0.1.2.1, it is curseforge.com/minecraft/mc-mods/better-biomes/files/4886956, so the file ID is 4886956
-modImplementation "maven.modrinth:better-biomes:fabric-<modVersion>" //For Fabric's 0.1.2.1 version of Better Biomes
-```
-
-Optionally, you can include this mod in the `build.gradle` file for it to NOT be downloaded seperately
-```gradle
-include "curse.maven:better-biomes-938715:<fileVersion>"
-include "maven.modrinth:better-biomes:fabric-<modVersion>"
+modImplementation "net.crypticverse.betterbiomes:BetterBiomes-Fabric:${betterbiomes_version)-${mc_verison}"
 ```
 
 #### Requirements
