@@ -36,59 +36,58 @@ repositories {
 			includeGroup "maven.modrinth"
 		}
 	}
-}
 
-modrinth {
-	String changelog_file = file("CHANGELOG.md")
-	token = System.getenv("MODRINTH_TOKEN")
-	projectId = "Qs2o8KiI"
-	versionNumber = "fabric-${mod_version}"
-	versionName = "Better Biomes Fabric ${mod_name}"
-	versionType = "beta"
-	uploadFile = remapJar
-	gameVersions = ["1.20.2"]
-	loaders = ["fabric", "quilt"]
-	changelog = changelog_file
-	dependencies {
-		embedded.project "fabric-api"
-		embedded.project "terrablender"
-	}
-}
-curseforge {
-	apiKey = System.getenv("CURSEFORGE_TOKEN")
-	project {
-		mainArtifact (remapJar) {
-			displayName = "Better Biomes Fabric ${mod_name}"
-		}
-		relations {
-			embeddedLibrary 'fabric-api'
-			embeddedLibrary 'terrablender'
-		}
-		id = '938715'
-		changelogType = "markdown"
-		changelog = file("CHANGELOG.md")
-		releaseType = 'beta'
-		addGameVersion '1.20.2'
-	}
-	options {
-		forgeGradleIntegration = false
-		javaIntegration = false
-	}
-}
-loom {
-    runs {
-		// This adds a new gradle task that runs the datagen API: "gradlew runDatagen"
-		datagen {
-			inherit server
-			name "Data Generation"
-			vmArg "-Dfabric-api.datagen"
-			vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated")}"
-			vmArg "-Dfabric-api.datagen.modid=betterbiomes"
- 
-			runDir "build/datagen"
+	modrinth {
+		String changelog_file = file("CHANGELOG.md")
+		token = System.getenv("MODRINTH_TOKEN")
+		projectId = "Qs2o8KiI"
+		versionNumber = "fabric-${mod_version}"
+		versionName = "Better Biomes Fabric ${mod_name}"
+		versionType = "beta"
+		uploadFile = remapJar
+		gameVersions = ["1.20.2"]
+		loaders = ["fabric", "quilt"]
+		changelog = changelog_file
+		dependencies {
+			embedded.project "fabric-api"
+			embedded.project "terrablender"
 		}
 	}
-}
+	curseforge {
+		apiKey = System.getenv("CURSEFORGE_TOKEN")
+		project {
+			mainArtifact(remapJar) {
+				displayName = "Better Biomes Fabric ${mod_name}"
+			}
+			relations {
+				embeddedLibrary 'fabric-api'
+				embeddedLibrary 'terrablender'
+			}
+			id = '938715'
+			changelogType = "markdown"
+			changelog = file("CHANGELOG.md")
+			releaseType = 'beta'
+			addGameVersion '1.20.2'
+		}
+		options {
+			forgeGradleIntegration = false
+			javaIntegration = false
+		}
+	}
+	loom {
+		runs {
+			// This adds a new gradle task that runs the datagen API: "gradlew runDatagen"
+			datagen {
+				inherit server
+				name "Data Generation"
+				vmArg "-Dfabric-api.datagen"
+				vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated")}"
+				vmArg "-Dfabric-api.datagen.modid=betterbiomes"
+
+				runDir "build/datagen"
+			}
+		}
+	}
 
 // Add the generated resources to the main source set
 sourceSets {
@@ -108,27 +107,28 @@ dependencies {
 
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	include "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
 	modImplementation "com.github.glitchfiend:TerraBlender-fabric:${project.minecraft_version}-${project.terrablender_version}"
 	include "com.github.glitchfiend:TerraBlender-fabric:${project.minecraft_version}-${project.terrablender_version}"
 
-	modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_wood_api_version}"
-	include "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_wood_api_version}"
+		modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_wood_api_version}"
+		include "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_wood_api_version}"
 
 	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${project.rei_version}"
 	modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}"
 	// Uncomment the following line to enable the deprecated Fabric API modules.
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
 
-	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
-}
+		// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
+	}
 
 processResources {
 	inputs.property "version", project.version
 
-	filesMatching("fabric.mod.json") {
-		expand "version": project.version
+		filesMatching("fabric.mod.json") {
+			expand "version": project.version
+		}
 	}
-}
 
 tasks.withType(JavaCompile).configureEach {
 	it.options.release = 17
@@ -152,15 +152,21 @@ jar {
 publishing {
 	publications {
 		mavenJava(MavenPublication) {
+			artifactId = "BetterBiomes-Fabric"
+			version = mod_version
 			from components.java
 		}
 	}
 
-	// See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
-	repositories {
-		// Add repositories to publish to here.
-		// Notice: This block does NOT have the same function as the block in the top level.
-		// The repositories here will be used for publishing your artifact, not for
-		// retrieving dependencies.
+		// See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
+		repositories {
+			maven {
+				url = System.getenv("MAVEN_URL").toString()
+			}
+			// Add repositories to publish to here.
+			// Notice: This block does NOT have the same function as the block in the top level.
+			// The repositories here will be used for publishing your artifact, not for
+			// retrieving dependencies.
+		}
 	}
 }
