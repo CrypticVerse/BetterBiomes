@@ -35,12 +35,11 @@ To implement this mod, follow the steps below.
 Add the maven repo for CrypticVerse's Resources
 ```gradle
 repositories {
-    maven { url = "https://raw.githubusercontent.com/CrypticVerse/projectresources/master/maven }
+    maven { url = "https://raw.githubusercontent.com/CrypticVerse/projectresources/master/maven" }
 }
 ```
 
-### Implementation for Fabric Loom
-For Fabric's Loom, include the following for either Curse Maven or Modrinth's Maven. You only need one. For ForgeGradle, check out the BetterBiomes-Forge repo.
+### Implementation
 ```gradle
 modImplementation "net.crypticverse.betterbiomes:BetterBiomes-Fabric:${betterbiomes_version}-${mc_verison}
 ```
