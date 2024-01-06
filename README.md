@@ -39,12 +39,18 @@ repositories {
 }
 ```
 
-### Implementation for Fabric Loom
-For Fabric's Loom, include the following for either Curse Maven or Modrinth's Maven. You only need one. For ForgeGradle, check out the BetterBiomes-Forge repo.
+### Implementation
 ```gradle
 modImplementation "net.crypticverse.betterbiomes:BetterBiomes-Fabric:${betterbiomes_version)-${mc_verison}"
 ```
 
+### A quick note
+If you are using an implementation, you need to include yhr maven for other project resources.
+```gradle
+maven {url = "https://maven.shedaniel.me"}
+maven {url = "https://maven.minecraftforge.net"}
+maven {url = "https://maven.terraformersmc.com"}
+```
 #### Requirements
 
 - OpenJDK 17 or higher.
