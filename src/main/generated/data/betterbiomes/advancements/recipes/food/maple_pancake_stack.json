@@ -1,24 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_maple_planks": {
+    "has_maple_pancake": {
       "conditions": {
         "items": [
           {
             "items": [
-              "betterbiomes:maple_planks"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_stick": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "minecraft:stick"
+              "betterbiomes:maple_pancake"
             ]
           }
         ]
@@ -27,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:wooden_sword"
+        "recipe": "minecraft:maple_pancake_stack"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -35,13 +23,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_maple_planks",
-      "has_stick"
+      "has_maple_pancake"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:wooden_sword"
+      "minecraft:maple_pancake_stack"
     ]
   }
 }

@@ -13,7 +13,7 @@ import net.minecraft.util.Identifier;
 
 public class BetterBiomesGroup {
     public static final ItemGroup BETTER_BIOMES_GROUP = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(BetterBiomes.MOD_ID, "ruby"),
+            new Identifier(BetterBiomes.MOD_ID, "betterbiomes"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.betterbiomes"))
                     .icon(() -> new ItemStack(BetterBiomeFluids.MAPLE_SYRUP_BUCKET)).entries((displayContext, entries) -> {
                         entries.add(BetterBiomeFluids.MAPLE_SYRUP_BUCKET);
@@ -29,6 +29,12 @@ public class BetterBiomesGroup {
                         entries.add(BiomeItems.HANGING_MAPLE_SIGN);
                         entries.add(BiomeItems.MAPLE_BOAT);
                         entries.add(BiomeItems.MAPLE_CHEST_BOAT);
+                        entries.add(BiomeItems.PANCAKE);
+                        entries.add(BiomeItems.PANCAKE_STACK);
+                        entries.add(BiomeItems.MAPLE_PANCAKE);
+                        entries.add(BiomeItems.MAPLE_PANCAKE_STACK);
+                        entries.add(BiomeItems.CHOCOLATE_PANCAKE);
+                        entries.add(BiomeItems.CHOCOLATE_PANCAKE_STACK);
                         entries.add(BiomeBlocks.MAPLE_SYRUP_BOILER);
 
                         entries.add(BiomeBlocks.MAPLE_SLAB);

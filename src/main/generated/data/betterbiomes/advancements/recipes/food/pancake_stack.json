@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_maple_planks": {
+    "has_pancake": {
       "conditions": {
         "items": [
           {
             "items": [
-              "betterbiomes:maple_planks"
+              "betterbiomes:pancake"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:stick"
+        "recipe": "minecraft:pancake_stack"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -23,12 +23,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_maple_planks"
+      "has_pancake"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:stick"
+      "minecraft:pancake_stack"
     ]
   }
 }
