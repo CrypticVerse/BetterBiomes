@@ -1,4 +1,4 @@
-This version brings big fixes
+This version brings additions
 
 ### Additions
 - New pancakes! Craft 3 of them using 4 wheat, 1 sugar, 1 egg, and 1 milk bucket
