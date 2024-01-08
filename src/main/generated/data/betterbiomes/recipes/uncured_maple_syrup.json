@@ -17,5 +17,6 @@
   "result": {
     "count": 4,
     "item": "betterbiomes:uncured_maple_syrup"
-  }
+  },
+  "show_notification": true
 }

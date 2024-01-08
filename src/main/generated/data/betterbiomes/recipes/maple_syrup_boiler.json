@@ -19,5 +19,6 @@
   ],
   "result": {
     "item": "betterbiomes:maple_syrup_boiler"
-  }
+  },
+  "show_notification": true
 }

@@ -43,5 +43,6 @@
     "recipes": [
       "minecraft:uncured_maple_syrup"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -1,7 +1,7 @@
-// 1.20.4	2023-12-19T18:18:52.0282623	Better Biomes/Tags for minecraft:block
+// 1.20.2	2024-01-08T12:36:15.3866479	Better Biomes/Tags for minecraft:block
 c00f8bf26aa8d8dab61dc2d9d86539e294124d03 data\betterbiomes\tags\blocks\maple_logs.json
-4365346350a9bfd79ed614c3ea48d39da1ff700b data\minecraft\tags\blocks\wooden_doors.json
 e63b8d6fafd215fc5a76136eab93dae3b465f221 data\minecraft\tags\blocks\wooden_slabs.json
+4365346350a9bfd79ed614c3ea48d39da1ff700b data\minecraft\tags\blocks\wooden_doors.json
 186141fb42621ca1c6307c64bbb7f65a9409abf3 data\minecraft\tags\blocks\wooden_trapdoors.json
 8a5877d80d4ac1e7844c9ff3f6a6ee1d963ed57b data\minecraft\tags\blocks\leaves.json
 8c1beecead4cc3cdf3236f42b200934c7d5d2315 data\minecraft\tags\blocks\wall_signs.json

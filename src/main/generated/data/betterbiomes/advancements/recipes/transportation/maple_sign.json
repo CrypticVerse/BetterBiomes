@@ -43,5 +43,6 @@
     "recipes": [
       "minecraft:maple_sign"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

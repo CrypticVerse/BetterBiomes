@@ -1,24 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_maple_planks": {
+    "has_chocolate_pancake": {
       "conditions": {
         "items": [
           {
             "items": [
-              "betterbiomes:maple_planks"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_stick": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "minecraft:stick"
+              "betterbiomes:chocolate_pancake"
             ]
           }
         ]
@@ -27,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:wooden_shovel"
+        "recipe": "minecraft:chocolate_pancake_stack"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -35,13 +23,13 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_maple_planks",
-      "has_stick"
+      "has_chocolate_pancake"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:wooden_shovel"
+      "minecraft:chocolate_pancake_stack"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

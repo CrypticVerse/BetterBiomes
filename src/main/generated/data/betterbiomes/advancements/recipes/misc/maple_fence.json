@@ -43,5 +43,6 @@
     "recipes": [
       "minecraft:maple_fence"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

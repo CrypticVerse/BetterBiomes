@@ -1,36 +1,36 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_glass": {
+    "has_egg": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:glass"
+              "minecraft:egg"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_iron_ingot": {
+    "has_milk_bucket": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:iron_ingot"
+              "minecraft:milk_bucket"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_lava_bucket": {
+    "has_sugar": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:lava_bucket"
+              "minecraft:sugar"
             ]
           }
         ]
@@ -39,22 +39,35 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:maple_syrup_boiler"
+        "recipe": "minecraft:pancake"
       },
       "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wheat": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:wheat"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
     [
       "has_the_recipe",
-      "has_iron_ingot",
-      "has_glass",
-      "has_lava_bucket"
+      "has_wheat",
+      "has_egg",
+      "has_sugar",
+      "has_milk_bucket"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:maple_syrup_boiler"
+      "minecraft:pancake"
     ]
   },
   "sends_telemetry_event": false
