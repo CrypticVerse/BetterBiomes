@@ -45,5 +45,11 @@ public class ModelGen extends FabricModelProvider {
             itemModelGenerator.register(BiomeItems.MAPLE_CHEST_BOAT, Models.GENERATED);
             itemModelGenerator.register(BiomeItems.TAPPED_BUCKET, Models.GENERATED);
             itemModelGenerator.register(BiomeItems.UNCURED_MAPLE_SYRUP, Models.GENERATED);
+            itemModelGenerator.register(BiomeItems.PANCAKE, Models.GENERATED);
+            itemModelGenerator.register(BiomeItems.MAPLE_PANCAKE, Models.GENERATED);
+            itemModelGenerator.register(BiomeItems.CHOCOLATE_PANCAKE, Models.GENERATED);
+            itemModelGenerator.register(BiomeItems.PANCAKE_STACK, Models.GENERATED);
+            itemModelGenerator.register(BiomeItems.MAPLE_PANCAKE_STACK, Models.GENERATED);
+            itemModelGenerator.register(BiomeItems.CHOCOLATE_PANCAKE_STACK, Models.GENERATED);
     }
 }
