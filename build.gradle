@@ -71,6 +71,8 @@ repositories {
 			changelog = file("CHANGELOG.md")
 			releaseType = 'beta'
 			addGameVersion '1.20.2'
+			addGameVersion 'Fabric'
+			addGameVersion 'Quilt'
 		}
 		options {
 			forgeGradleIntegration = false
