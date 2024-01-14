@@ -40,6 +40,11 @@ repositories {
 		url = "https://raw.githubusercontent.com/CrypticVerse/projectresources/master/maven"
 	}
 }
+tasks.register("publishMod") {
+	dependsOn publish
+	dependsOn modrinth
+	dependsOn curseforge
+}
 
 modrinth {
 	String changelog_file = file("CHANGELOG.md")
@@ -127,6 +132,9 @@ dependencies {
 		exclude(group: "net.fabricmc.fabric-api")
 	}
 	modApi "dev.architectury:architectury-fabric:11.0.9"
+
+	modImplementation "net.crypticverse.secret:BetterBiomes-Secret:1.0.1"
+	include "net.crypticverse.secret:BetterBiomes-Secret:1.0.1"
 	// Uncomment the following line to enable the deprecated Fabric API modules.
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
 
