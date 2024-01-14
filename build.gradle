@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.4-SNAPSHOT'
+	id 'fabric-loom' version '1.5-SNAPSHOT'
 	id 'maven-publish'
 	id 'com.modrinth.minotaur' version '2.+'
 	id 'com.matthewprenger.cursegradle' version '1.4.0'
@@ -39,6 +39,11 @@ repositories {
 	maven {
 		url = "https://raw.githubusercontent.com/CrypticVerse/projectresources/master/maven"
 	}
+}
+tasks.register("publishMod") {
+	dependsOn publish
+	dependsOn modrinth
+	dependsOn curseforge
 }
 	modrinth {
 		String changelog_file = file("CHANGELOG.md")
@@ -121,6 +126,11 @@ dependencies {
 
 	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${project.rei_version}"
 	modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}"
+
+	modApi ("me.shedaniel.cloth:cloth-config-fabric:12.0.119") {
+		exclude(group: "net.fabricmc.fabric-api")
+	}
+	modApi "dev.architectury:architectury-fabric:10.0.17"
 	// Uncomment the following line to enable the deprecated Fabric API modules.
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
 
