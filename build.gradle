@@ -56,10 +56,11 @@ modrinth {
 	uploadFile = remapJar
 	gameVersions = ["1.20.4"]
 	loaders = ["fabric", "quilt"]
-	changelog = changelog_file
+	changelog = project.file("CHANGELOG.md").text
 	dependencies {
 		embedded.project "fabric-api"
 		embedded.project "terrablender"
+		optional.project "rei"
 	}
 }
 curseforge {
@@ -70,7 +71,7 @@ curseforge {
 		}
 		relations {
 			embeddedLibrary 'fabric-api'
-			embeddedLibrary 'terrablender'
+			embeddedLibrary 'terrablender-fabric'
 		}
 		id = '938715'
 		changelogType = "markdown"
