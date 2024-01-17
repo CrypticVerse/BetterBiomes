@@ -21,7 +21,7 @@
           uses: gradle/gradle-build-action@v2.4.2
 
         - name: Build and Publish
-          run: ./gradlew clean build publishMod --stacktrace
+          run: ./gradlew clean build modrinth curseforge publish --stacktrace
           env:
             MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
             CURSEFORGE_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
