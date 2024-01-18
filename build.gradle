@@ -47,7 +47,6 @@ tasks.register("publishMod") {
 }
 
 modrinth {
-	String changelog_file = file("CHANGELOG.md")
 	token = System.getenv("MODRINTH_TOKEN")
 	projectId = "Qs2o8KiI"
 	versionNumber = "fabric-${mod_version}"

@@ -42,7 +42,7 @@ public class BiomeBlocks {
     public static final Identifier MAPLE_HANGING_SIGN_TEXTURE = new Identifier(BetterBiomes.MOD_ID, "entity/signs/hanging/maple");
     public static final Identifier MAPLE_HANGING_GUI_SIGN_TEXTURE = new Identifier(BetterBiomes.MOD_ID, "textures/gui/hanging_signs/maple");
 
-    public static final Block TAPPED_BUCKET = registerBlock("tapped_bucket_block", new TappedBucketBlock(FabricBlockSettings.copyOf(Blocks.COCOA)));
+    public static final Block TAPPED_BUCKET = registerWithoutBlockItem("tapped_bucket_block", new TappedBucketBlock(FabricBlockSettings.copyOf(Blocks.COCOA)));
 
     public static final Block STANDING_MAPLE_SIGN = Registry.register(Registries.BLOCK, new Identifier(BetterBiomes.MOD_ID, "maple_standing_sign"), new TerraformSignBlock(MAPLE_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_SIGN)));
     public static final Block WALL_MAPLE_SIGN = Registry.register(Registries.BLOCK, new Identifier(BetterBiomes.MOD_ID, "maple_wall_sign"), new TerraformWallSignBlock(MAPLE_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_SIGN)));
@@ -56,4 +56,8 @@ public class BiomeBlocks {
     private static Block registerBlock(String name, Block block) {registerBlockItem(name, block);return Registry.register(Registries.BLOCK, new Identifier(BetterBiomes.MOD_ID, name), block);}
     private static Item registerBlockItem(String name, Block block) {return Registry.register(Registries.ITEM, new Identifier(BetterBiomes.MOD_ID, name), new BlockItem(block, new FabricItemSettings()));}
     public static void registerModBlocks() {BetterBiomes.LOGGER.info("Registering Blocks for" + BetterBiomes.MOD_ID);}
+
+    public static Block registerWithoutBlockItem(String name, Block block) {
+        return Registry.register(Registries.BLOCK, new Identifier(BetterBiomes.MOD_ID, name), block);
+    }
 }
