@@ -40,7 +40,6 @@ repositories {
 		url = "https://raw.githubusercontent.com/CrypticVerse/projectresources/master/maven"
 	}
 }
-tasks.register("publishMod") {
 	modrinth {
 		token = System.getenv("MODRINTH_TOKEN")
 		projectId = "Qs2o8KiI"
@@ -80,7 +79,6 @@ tasks.register("publishMod") {
 			javaIntegration = false
 		}
 	}
-}
 loom {
     runs {
 		// This adds a new gradle task that runs the datagen API: "gradlew runDatagen"
