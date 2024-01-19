@@ -27,6 +27,7 @@ public class LootTableGen extends FabricBlockLootTableProvider {
         addDrop(BiomeBlocks.STRIPPED_MAPLE_WOOD);
         addDrop(BiomeBlocks.MAPLE_LOG);
         addDrop(BiomeBlocks.STRIPPED_MAPLE_LOG);
+        addDrop(BiomeBlocks.MAPLE_SYRUP_BOILER);
 
         addDrop(BiomeBlocks.MAPLE_STAIRS);
         addDrop(BiomeBlocks.MAPLE_TRAPDOOR);
