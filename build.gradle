@@ -41,10 +41,6 @@ repositories {
 	}
 }
 tasks.register("publishMod") {
-	dependsOn publish
-	dependsOn modrinth
-	dependsOn curseforge
-}
 	modrinth {
 		token = System.getenv("MODRINTH_TOKEN")
 		projectId = "Qs2o8KiI"
@@ -84,6 +80,7 @@ tasks.register("publishMod") {
 			javaIntegration = false
 		}
 	}
+}
 	loom {
 		runs {
 			// This adds a new gradle task that runs the datagen API: "gradlew runDatagen"
