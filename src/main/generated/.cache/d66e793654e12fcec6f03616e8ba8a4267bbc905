@@ -1,4 +1,4 @@
-// 1.20.4	2024-01-08T11:37:11.6373503	Better Biomes/Block Loot Tables
+// 1.20.4	2024-01-21T11:43:45.8583163	Better Biomes/Block Loot Tables
 356e3cf3e11d5c59361c6cdbca02a6aee864949c data\betterbiomes\loot_tables\blocks\maple_door.json
 79a75fe93d3516d8cb12e240211c3f18a708fbc5 data\betterbiomes\loot_tables\blocks\maple_standing_sign.json
 79a75fe93d3516d8cb12e240211c3f18a708fbc5 data\minecraft\loot_tables\blocks\oak_sign.json
@@ -10,6 +10,7 @@ ef3aab057aecae975d0a78bd1ddbfa4443436429 data\betterbiomes\loot_tables\blocks\st
 c412847719fc0986d51827787d79224324bcaa5b data\minecraft\loot_tables\blocks\oak_hanging_sign.json
 e364aae1443c8a41becd81355d468214eab9f289 data\betterbiomes\loot_tables\blocks\maple_fence_gate.json
 393a23fb0fe3a7bdcdf078faceb76b309afccd81 data\betterbiomes\loot_tables\blocks\maple_stairs.json
+377d046d388239b024b7dd84d552dbff181ff5ca data\betterbiomes\loot_tables\blocks\maple_syrup_boiler.json
 ff6f531c1e8222aff602dcbbfed55b8c337030e9 data\betterbiomes\loot_tables\blocks\maple_planks.json
 4f3b45ad448cc2d807b55eadcfbe8fff743ffc04 data\betterbiomes\loot_tables\blocks\maple_button.json
 38dd151d876c352a4104487ad2689e1b2e6c7fd1 data\betterbiomes\loot_tables\blocks\maple_pressure_plate.json

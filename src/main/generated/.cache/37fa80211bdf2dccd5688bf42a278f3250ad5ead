@@ -1,13 +1,13 @@
-// 1.20.4	2024-01-08T11:37:11.63935	Better Biomes/Recipes
+// 1.20.4	2024-01-21T11:43:45.8603172	Better Biomes/Recipes
 22b12390648837f3b9e65c9df0be3dab4dff7ff1 data\betterbiomes\advancements\recipes\misc\maple_fence.json
 1c287bf234876099d1589db423be768612d32bba data\betterbiomes\advancements\recipes\misc\maple_fence_gate.json
 8f4428a754b178945e25414afc27c9aac6282268 data\betterbiomes\advancements\recipes\food\pancake_stack.json
-b89638f9cd2a48e088da4e1cbd31e650c6486e48 data\betterbiomes\advancements\recipes\misc\uncured_maple_syrup.json
+c3abdc7ae69aea9d1c40ac4b793f5fd187ecca2b data\betterbiomes\advancements\recipes\misc\uncured_maple_syrup.json
 736b41239325816388c3e80b47d7263b0fbcc345 data\betterbiomes\recipes\maple_stairs.json
 b9d0659da3e487f7c0b9ac47547114d462774a49 data\betterbiomes\recipes\maple_pressure_plate.json
 092da9f2b5d1c0cd9e46287b2daeb518ebbe8728 data\betterbiomes\recipes\maple_hanging_sign.json
 7c5ad1c2e99fbd38422f43746f758cdab41343d9 data\betterbiomes\advancements\recipes\misc\maple_stairs.json
-8ee708d19497647673a20618544ea3ee121d8a55 data\betterbiomes\recipes\uncured_maple_syrup.json
+ed4ab60347d4311561ff40b935fae2462d0c40d0 data\betterbiomes\recipes\uncured_maple_syrup.json
 8ace40c1bb8f4de545e91eac7b1bc63cc94ffc0f data\betterbiomes\recipes\maple_pancake.json
 96432b92f48966879ac7325cb82378e4d6ad28ff data\betterbiomes\recipes\maple_button.json
 719d1a05867d0f2fbf18f745b3b80bd7372d56f6 data\betterbiomes\advancements\recipes\transportation\maple_hanging_sign.json
