@@ -40,45 +40,45 @@ repositories {
 		url = "https://raw.githubusercontent.com/CrypticVerse/projectresources/master/maven"
 	}
 }
-	modrinth {
-		token = System.getenv("MODRINTH_TOKEN")
-		projectId = "Qs2o8KiI"
-		versionNumber = "fabric-${mod_version}"
-		versionName = "Better Biomes Fabric ${mod_name}"
-		versionType = "beta"
-		uploadFile = remapJar
-		gameVersions = ["1.20.2"]
-		loaders = ["fabric", "quilt"]
-		changelog = project.file("CHANGELOG.md").text
-		dependencies {
-			embedded.project "fabric-api"
-			embedded.project "terrablender"
-			optional.project "rei"
-		}
+modrinth {
+	token = System.getenv("MODRINTH_TOKEN")
+	projectId = "Qs2o8KiI"
+	versionNumber = "fabric-${mod_version}"
+	versionName = "Better Biomes Fabric ${mod_name}"
+	versionType = "beta"
+	uploadFile = remapJar
+	gameVersions = ["1.20.2"]
+	loaders = ["fabric", "quilt"]
+	changelog = project.file("CHANGELOG.md").text
+	dependencies {
+		embedded.project "fabric-api"
+		embedded.project "terrablender"
+		optional.project "rei"
 	}
-	curseforge {
-		apiKey = System.getenv("CURSEFORGE_TOKEN")
-		project {
-			mainArtifact(remapJar) {
-				displayName = "Better Biomes Fabric ${mod_name}"
-			}
-			relations {
-				embeddedLibrary 'fabric-api'
-				embeddedLibrary 'terrablender-fabric'
-			}
-			id = '938715'
-			changelogType = "markdown"
-			changelog = file("CHANGELOG.md")
-			releaseType = 'beta'
-			addGameVersion '1.20.2'
-			addGameVersion 'Fabric'
-			addGameVersion 'Quilt'
+}
+curseforge {
+	apiKey = System.getenv("CURSEFORGE_TOKEN")
+	project {
+		mainArtifact (remapJar) {
+			displayName = "Better Biomes Fabric ${mod_name}"
 		}
-		options {
-			forgeGradleIntegration = false
-			javaIntegration = false
+		relations {
+			embeddedLibrary 'fabric-api'
+			embeddedLibrary 'terrablender-fabric'
 		}
+		id = '938715'
+		changelogType = "markdown"
+		changelog = file("CHANGELOG.md")
+		releaseType = 'beta'
+		addGameVersion '1.20.2'
+		addGameVersion 'Fabric'
+		addGameVersion 'Quilt'
 	}
+	options {
+		forgeGradleIntegration = false
+		javaIntegration = false
+	}
+}
 	loom {
 		runs {
 			// This adds a new gradle task that runs the datagen API: "gradlew runDatagen"

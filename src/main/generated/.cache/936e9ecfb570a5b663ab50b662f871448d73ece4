@@ -1,4 +1,4 @@
-// 1.20.2	2024-01-08T12:36:15.387647	Better Biomes/Model Definitions
+// 1.20.2	2024-01-21T11:46:37.2155929	Better Biomes/Model Definitions
 584e6d41dc3a2240f03969e8f9debb62c17ebb2e assets\betterbiomes\blockstates\maple_door.json
 3aeaf57ed44d26650ba26e2853c840b4a79003ce assets\betterbiomes\models\item\maple_fence_gate.json
 fc5b3cb436ae398abd976dc77c40b345e9eb6b6b assets\betterbiomes\models\item\maple_syrup_bottle.json
@@ -7,8 +7,8 @@ fc5b3cb436ae398abd976dc77c40b345e9eb6b6b assets\betterbiomes\models\item\maple_s
 388ea0ce1b02f8f5df98cf1928252dc704a27110 assets\betterbiomes\models\item\maple_boat.json
 32220f2246b02b734484c61aca99ccb8b5982098 assets\betterbiomes\models\block\maple_button_inventory.json
 19f713616539f74856537c05bd6afa8cc65fa986 assets\betterbiomes\blockstates\maple_slab.json
-49ce67e1a7eea6282d4056176ee51680a844bb14 assets\betterbiomes\models\block\maple_fence_gate_wall.json
 a47b5b758b1978f422a440d32bd51e9ce5428cb7 assets\betterbiomes\models\item\stripped_maple_wood.json
+49ce67e1a7eea6282d4056176ee51680a844bb14 assets\betterbiomes\models\block\maple_fence_gate_wall.json
 ccd4b0b42460fb010fbb137d8eedfb3aaf99ea3a assets\betterbiomes\models\item\maple_fence.json
 be18031c1384195f7986ad548e646799a63116a6 assets\betterbiomes\models\block\maple_door_bottom_right_open.json
 5c1cf8fb129056fa95651c3fb0ac366a15ead4f5 assets\betterbiomes\models\block\stripped_maple_log_horizontal.json
@@ -44,8 +44,8 @@ da23968e0d794bc388e9440b84f2331ca42ce296 assets\betterbiomes\models\block\maple_
 a211f9813262a13440a738d28fef8b8cab65f8c4 assets\betterbiomes\models\item\maple_sapling.json
 f03f99d6d258cf27617907819ccd7679c0553fba assets\betterbiomes\models\item\maple_wood.json
 b87c2aec3437f342b2513fee9cc16fe16413448c assets\betterbiomes\blockstates\maple_button.json
-1450826f8f315e3fb2026e1de542e0af1d86278c assets\betterbiomes\models\item\maple_sign.json
 8260f0a14b0c9f7dc459283d74a3c452c5859052 assets\betterbiomes\models\item\maple_pressure_plate.json
+1450826f8f315e3fb2026e1de542e0af1d86278c assets\betterbiomes\models\item\maple_sign.json
 f1d984fbc34dfc3f1e78bb9f2c3c6cf8476310a2 assets\betterbiomes\blockstates\maple_wood.json
 f3a725a3c6a626ff77332ad0bb73efbb942d0c94 assets\betterbiomes\models\block\maple_log.json
 d7126f6feb2e0485449d9f76cc7fe5f602368e50 assets\betterbiomes\models\block\maple_slab.json
