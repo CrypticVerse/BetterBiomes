@@ -3,13 +3,7 @@ package net.crypticverse.betterbiomes;
 import net.crypticverse.betterbiomes.block.BiomeBlocks;
 import net.crypticverse.betterbiomes.block.FlammableBlocks;
 import net.crypticverse.betterbiomes.block.FuelingBlocks;
-import net.crypticverse.betterbiomes.block.entity.BetterBiomesBlockEntities;
-import net.crypticverse.betterbiomes.entity.BiomeBoats;
-import net.crypticverse.betterbiomes.fluid.BetterBiomeFluids;
-import net.crypticverse.betterbiomes.item.BetterBiomesGroup;
-import net.crypticverse.betterbiomes.item.BiomeItems;
-import net.crypticverse.betterbiomes.recipe.BetterBiomesRecipes;
-import net.crypticverse.betterbiomes.screen.BetterBiomesScreenHandlers;
+import net.crypticverse.betterbiomes.registry.CoreRegistryLoader;
 import net.crypticverse.betterbiomes.world.gen.WorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
@@ -19,19 +13,13 @@ import org.slf4j.LoggerFactory;
 
 public class BetterBiomes implements ModInitializer {
 	public static final String MOD_ID = "betterbiomes";
-    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+	public static final String REGISTRY_ID = "Better Biomes";
+    public static final Logger LOGGER = LoggerFactory.getLogger(REGISTRY_ID);
 
 	@Override
 	public void onInitialize() {
-		BetterBiomeFluids.register();
-		BetterBiomesGroup.registerItemGroups();
+		CoreRegistryLoader.loadCoreRegistries();
 		WorldGeneration.generateWorldGen();
-		BiomeBlocks.registerModBlocks();
-		BiomeItems.registerMapleItems();
-		BetterBiomesBlockEntities.registerBlockEntities();
-		BetterBiomesScreenHandlers.registerScreenHandlers();
-		BetterBiomesRecipes.registerRecipes();
-		BiomeBoats.registerBoats();
 		FuelingBlocks.registerFuelingBlocks();
 		FlammableBlocks.registerFlammableBlocks();
 		StrippableBlockRegistry.register(BiomeBlocks.MAPLE_LOG, BiomeBlocks.STRIPPED_MAPLE_LOG);

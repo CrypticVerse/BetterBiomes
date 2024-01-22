@@ -55,7 +55,7 @@ public class BiomeBlocks {
 
     private static Block registerBlock(String name, Block block) {registerBlockItem(name, block);return Registry.register(Registries.BLOCK, new Identifier(BetterBiomes.MOD_ID, name), block);}
     private static Item registerBlockItem(String name, Block block) {return Registry.register(Registries.ITEM, new Identifier(BetterBiomes.MOD_ID, name), new BlockItem(block, new FabricItemSettings()));}
-    public static void registerModBlocks() {BetterBiomes.LOGGER.info("Registering Blocks for" + BetterBiomes.MOD_ID);}
+    public static void registerModBlocks() {BetterBiomes.LOGGER.info("Registering Blocks for " + BetterBiomes.REGISTRY_ID);}
 
     public static Block registerWithoutBlockItem(String name, Block block) {
         return Registry.register(Registries.BLOCK, new Identifier(BetterBiomes.MOD_ID, name), block);

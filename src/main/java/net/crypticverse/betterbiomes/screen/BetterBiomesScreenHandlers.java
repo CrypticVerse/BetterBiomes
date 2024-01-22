@@ -13,6 +13,6 @@ public class BetterBiomesScreenHandlers {
                     new ExtendedScreenHandlerType<>(MapleSyrupScreenHandler::new));
 
     public static void registerScreenHandlers() {
-        BetterBiomes.LOGGER.info("Registering Screen Handlers for " + BetterBiomes.MOD_ID);
+        BetterBiomes.LOGGER.info("Registering Screen Handlers for " + BetterBiomes.REGISTRY_ID);
     }
 }

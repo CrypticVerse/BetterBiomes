@@ -15,6 +15,6 @@ public class BetterBiomesBlockEntities {
                             BiomeBlocks.MAPLE_SYRUP_BOILER).build());
 
     public static void registerBlockEntities() {
-        BetterBiomes.LOGGER.info("Registering Block Entities for " + BetterBiomes.MOD_ID);
+        BetterBiomes.LOGGER.info("Registering Block Entities for " + BetterBiomes.REGISTRY_ID);
     }
 }
