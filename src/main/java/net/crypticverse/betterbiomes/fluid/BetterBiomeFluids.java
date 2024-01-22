@@ -30,5 +30,6 @@ public class BetterBiomeFluids {
                 new FluidBlock(BetterBiomeFluids.STILL_MAPLE_SYRUP, FabricBlockSettings.copyOf(Blocks.WATER)){ });
         MAPLE_SYRUP_BUCKET = Registry.register(Registries.ITEM, new Identifier(BetterBiomes.MOD_ID, "maple_syrup_bucket"),
                 new BucketItem(BetterBiomeFluids.STILL_MAPLE_SYRUP, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1)));
+        BetterBiomes.LOGGER.info("Registering Fluids for " + BetterBiomes.REGISTRY_ID);
     }
 }
