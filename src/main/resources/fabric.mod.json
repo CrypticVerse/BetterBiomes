@@ -30,10 +30,10 @@
           "net.crypticverse.betterbiomes.BetterBiomesDataGenerator"
 		],
 		"terrablender": [
-          "net.crypticverse.betterbiomes.world.biome.BiomeTerraBlenderAPI"
+          "net.crypticverse.betterbiomes.BetterBiomes"
 		],
 		"rei_client": [
-          "net.crypticverse.betterbiomes.compat.rei.BetterBiomeREI"
+          "net.crypticverse.betterbiomes.compat.rei.BetterBiomesREIPlugin"
 		]
 	},
 	"mixins": [

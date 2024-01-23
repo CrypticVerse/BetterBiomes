@@ -14,5 +14,6 @@ public class BetterBiomesScreenHandlers {
 
     public static void registerScreenHandlers() {
         BetterBiomes.LOGGER.info("Registering Screen Handlers for " + BetterBiomes.REGISTRY_ID);
+        BetterBiomes.LOGGER.info("Successfully Registered Screen Handlers for " + BetterBiomes.REGISTRY_ID);
     }
 }

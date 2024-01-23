@@ -1,4 +1,4 @@
-package net.crypticverse.betterbiomes.compat;
+package net.crypticverse.betterbiomes.compat.rei;
 
 import me.shedaniel.math.Point;
 import me.shedaniel.math.Rectangle;
