@@ -16,5 +16,6 @@ public class BetterBiomesBlockEntities {
 
     public static void registerBlockEntities() {
         BetterBiomes.LOGGER.info("Registering Block Entities for " + BetterBiomes.REGISTRY_ID);
+        BetterBiomes.LOGGER.info("Successfully Registered Block Entities for " + BetterBiomes.REGISTRY_ID);
     }
 }

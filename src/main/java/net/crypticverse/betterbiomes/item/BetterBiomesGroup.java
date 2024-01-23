@@ -46,15 +46,11 @@ public class BetterBiomesGroup {
                         entries.add(BiomeBlocks.MAPLE_TRAPDOOR);
                         entries.add(BiomeBlocks.MAPLE_DOOR);
 
-
-
-
-
-
                     }).build());
 
 
     public static void registerItemGroups() {
-        BetterBiomes.LOGGER.info("Registering Item Groups for " + BetterBiomes.MOD_ID);
+        BetterBiomes.LOGGER.info("Registering Item Groups for " + BetterBiomes.REGISTRY_ID);
+        BetterBiomes.LOGGER.info("Successfully Registered Item Groups for " + BetterBiomes.REGISTRY_ID);
     }
 }

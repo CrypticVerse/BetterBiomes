@@ -41,5 +41,6 @@ public class BiomeItems {
 
     public static void registerMapleItems() {
         BetterBiomes.LOGGER.info("Registering Items for " + BetterBiomes.REGISTRY_ID);
+        BetterBiomes.LOGGER.info("Successfully Registered Items for " + BetterBiomes.REGISTRY_ID);
     }
 }
