@@ -62,6 +62,7 @@ task curseforge(type: TaskPublishCurseForge) {
 
 	def mainFile = upload(938715, remapJar)
 	mainFile.releaseType = 'beta'
+	mainFile.displayName = "Better Biomes Fabric ${mod_name}"
 	mainFile.addGameVersion("1.20.2")
 	mainFile.addModLoader("Fabric")
 	mainFile.addModLoader("Quilt")
