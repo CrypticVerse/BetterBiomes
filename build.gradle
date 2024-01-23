@@ -57,7 +57,7 @@ modrinth {
 		optional.project "rei"
 	}
 }
-task publishCurseForge(type: TaskPublishCurseForge) {
+task curseforge(type: TaskPublishCurseForge) {
 	apiToken = System.getenv("CURSEFORGE_TOKEN")
 
 	def mainFile = upload(938715, remapJar)
@@ -70,7 +70,7 @@ task publishCurseForge(type: TaskPublishCurseForge) {
 	mainFile.changelogType = 'markdown'
 	mainFile.addEmbedded("fabric-api")
 	mainFile.addEmbedded("terrablender-fabric")
-	mainFile.addOptional("rei")
+	mainFile.addOptional("roughly-enough-items")
 }
 loom {
     runs {
