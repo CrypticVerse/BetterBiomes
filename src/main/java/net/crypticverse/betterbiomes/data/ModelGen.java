@@ -5,9 +5,9 @@ import net.crypticverse.betterbiomes.fluid.BetterBiomeFluids;
 import net.crypticverse.betterbiomes.item.BiomeItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.data.client.BlockStateModelGenerator;
-import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.Models;
+import net.minecraft.data.models.BlockModelGenerators;
+import net.minecraft.data.models.ItemModelGenerators;
+import net.minecraft.data.models.model.ModelTemplates;
 
 public class ModelGen extends FabricModelProvider {
     public ModelGen(FabricDataOutput output) {
@@ -15,16 +15,14 @@ public class ModelGen extends FabricModelProvider {
     }
 
     @Override
-    public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        blockStateModelGenerator.registerLog(BiomeBlocks.MAPLE_LOG).log(BiomeBlocks.MAPLE_LOG).wood(BiomeBlocks.MAPLE_WOOD);
-        blockStateModelGenerator.registerLog(BiomeBlocks.STRIPPED_MAPLE_LOG).log(BiomeBlocks.STRIPPED_MAPLE_LOG).wood(BiomeBlocks.STRIPPED_MAPLE_WOOD);
-        blockStateModelGenerator.registerSimpleCubeAll(BiomeBlocks.MAPLE_LEAVES);
-        blockStateModelGenerator.registerTintableCrossBlockState(BiomeBlocks.MAPLE_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerSimpleState(BiomeBlocks.MAPLE_SYRUP_BOILER);
+    public void generateBlockStateModels(BlockModelGenerators blockStateModelGenerator) {
+        blockStateModelGenerator.woodProvider(BiomeBlocks.MAPLE_LOG).log(BiomeBlocks.MAPLE_LOG).wood(BiomeBlocks.MAPLE_WOOD);
+        blockStateModelGenerator.woodProvider(BiomeBlocks.STRIPPED_MAPLE_LOG).log(BiomeBlocks.STRIPPED_MAPLE_LOG).wood(BiomeBlocks.STRIPPED_MAPLE_WOOD);
+        blockStateModelGenerator.createTrivialCube(BiomeBlocks.MAPLE_LEAVES);
+        blockStateModelGenerator.createCrossBlock(BiomeBlocks.MAPLE_SAPLING, BlockModelGenerators.TintState.NOT_TINTED);
+        blockStateModelGenerator.createNonTemplateModelBlock(BiomeBlocks.MAPLE_SYRUP_BOILER);
 
-        BlockStateModelGenerator.BlockTexturePool maple_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(BiomeBlocks.MAPLE_PLANKS);
-        maple_pool.family(BiomeBlocks.MAPLE_FAMILY);
-
+        BlockModelGenerators.BlockFamilyProvider maple_pool = blockStateModelGenerator.family(BiomeBlocks.MAPLE_PLANKS);
         maple_pool.slab(BiomeBlocks.MAPLE_SLAB);
         maple_pool.stairs(BiomeBlocks.MAPLE_STAIRS);
         maple_pool.fence(BiomeBlocks.MAPLE_FENCE);
@@ -32,24 +30,25 @@ public class ModelGen extends FabricModelProvider {
         maple_pool.button(BiomeBlocks.MAPLE_BUTTON);
         maple_pool.pressurePlate(BiomeBlocks.MAPLE_PRESSURE_PLATE);
 
-        blockStateModelGenerator.registerDoor(BiomeBlocks.MAPLE_DOOR);
-        blockStateModelGenerator.registerTrapdoor(BiomeBlocks.MAPLE_TRAPDOOR);
+        blockStateModelGenerator.createDoor(BiomeBlocks.MAPLE_DOOR);
+        blockStateModelGenerator.createTrapdoor(BiomeBlocks.MAPLE_TRAPDOOR);
     }
 
     @Override
-    public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-            itemModelGenerator.register(BetterBiomeFluids.MAPLE_SYRUP_BUCKET, Models.GENERATED);
-            itemModelGenerator.register(BiomeItems.MAPLE_SYRUP_BOTTLE, Models.GENERATED);
-            itemModelGenerator.register(BiomeItems.HANGING_MAPLE_SIGN, Models.GENERATED);
-            itemModelGenerator.register(BiomeItems.MAPLE_BOAT, Models.GENERATED);
-            itemModelGenerator.register(BiomeItems.MAPLE_CHEST_BOAT, Models.GENERATED);
-            itemModelGenerator.register(BiomeItems.TAPPED_BUCKET, Models.GENERATED);
-            itemModelGenerator.register(BiomeItems.UNCURED_MAPLE_SYRUP, Models.GENERATED);
-            itemModelGenerator.register(BiomeItems.PANCAKE, Models.GENERATED);
-            itemModelGenerator.register(BiomeItems.MAPLE_PANCAKE, Models.GENERATED);
-            itemModelGenerator.register(BiomeItems.CHOCOLATE_PANCAKE, Models.GENERATED);
-            itemModelGenerator.register(BiomeItems.PANCAKE_STACK, Models.GENERATED);
-            itemModelGenerator.register(BiomeItems.MAPLE_PANCAKE_STACK, Models.GENERATED);
-            itemModelGenerator.register(BiomeItems.CHOCOLATE_PANCAKE_STACK, Models.GENERATED);
+    public void generateItemModels(ItemModelGenerators itemModelGenerator) {
+            itemModelGenerator.generateFlatItem(BetterBiomeFluids.MAPLE_SYRUP_BUCKET, ModelTemplates.FLAT_ITEM);
+            itemModelGenerator.generateFlatItem(BiomeItems.MAPLE_SYRUP_BOTTLE, ModelTemplates.FLAT_ITEM);
+            itemModelGenerator.generateFlatItem(BiomeItems.HANGING_MAPLE_SIGN, ModelTemplates.FLAT_ITEM);
+            itemModelGenerator.generateFlatItem(BiomeItems.MAPLE_SIGN, ModelTemplates.FLAT_ITEM);
+            itemModelGenerator.generateFlatItem(BiomeItems.MAPLE_BOAT, ModelTemplates.FLAT_ITEM);
+            itemModelGenerator.generateFlatItem(BiomeItems.MAPLE_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
+            itemModelGenerator.generateFlatItem(BiomeItems.TAPPED_BUCKET, ModelTemplates.FLAT_ITEM);
+            itemModelGenerator.generateFlatItem(BiomeItems.UNCURED_MAPLE_SYRUP, ModelTemplates.FLAT_ITEM);
+            itemModelGenerator.generateFlatItem(BiomeItems.PANCAKE, ModelTemplates.FLAT_ITEM);
+            itemModelGenerator.generateFlatItem(BiomeItems.MAPLE_PANCAKE, ModelTemplates.FLAT_ITEM);
+            itemModelGenerator.generateFlatItem(BiomeItems.CHOCOLATE_PANCAKE, ModelTemplates.FLAT_ITEM);
+            itemModelGenerator.generateFlatItem(BiomeItems.PANCAKE_STACK, ModelTemplates.FLAT_ITEM);
+            itemModelGenerator.generateFlatItem(BiomeItems.MAPLE_PANCAKE_STACK, ModelTemplates.FLAT_ITEM);
+            itemModelGenerator.generateFlatItem(BiomeItems.CHOCOLATE_PANCAKE_STACK, ModelTemplates.FLAT_ITEM);
     }
 }

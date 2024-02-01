@@ -9,6 +9,7 @@ import me.shedaniel.rei.api.common.util.EntryStacks;
 import net.crypticverse.betterbiomes.block.BiomeBlocks;
 import net.crypticverse.betterbiomes.recipe.MapleSyrupRecipe;
 import net.crypticverse.betterbiomes.screen.MapleSyrupScreen;
+import net.crypticverse.betterbiomes.screen.MapleSyrupScreenHandler;
 
 public class BetterBiomesREIPlugin implements REIClientPlugin {
 

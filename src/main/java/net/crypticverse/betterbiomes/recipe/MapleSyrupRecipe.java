@@ -3,18 +3,17 @@ package net.crypticverse.betterbiomes.recipe;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.minecraft.inventory.SimpleInventory;
-import net.minecraft.item.ItemStack;
-import net.minecraft.network.PacketByteBuf;
-import net.minecraft.recipe.*;
-import net.minecraft.registry.DynamicRegistryManager;
-import net.minecraft.util.collection.DefaultedList;
-import net.minecraft.util.dynamic.Codecs;
-import net.minecraft.world.World;
-
+import net.minecraft.core.NonNullList;
+import net.minecraft.core.RegistryAccess;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.util.ExtraCodecs;
+import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.*;
+import net.minecraft.world.level.Level;
 import java.util.List;
 
-public class MapleSyrupRecipe implements Recipe<SimpleInventory> {
+public class MapleSyrupRecipe implements Recipe<SimpleContainer> {
     private final ItemStack output;
     private final List<Ingredient> recipeItems;
 
@@ -24,32 +23,32 @@ public class MapleSyrupRecipe implements Recipe<SimpleInventory> {
     }
 
     @Override
-    public boolean matches(SimpleInventory inventory, World world) {
-        if(world.isClient()) {
+    public boolean matches(SimpleContainer inventory, Level world) {
+        if(world.isClientSide()) {
             return false;
         }
 
-        return recipeItems.get(0).test(inventory.getStack(0));
+        return recipeItems.get(0).test(inventory.getItem(0));
     }
 
     @Override
-    public ItemStack craft(SimpleInventory inventory, DynamicRegistryManager registryManager) {
+    public ItemStack assemble(SimpleContainer inventory, RegistryAccess registryManager) {
         return output;
     }
 
     @Override
-    public boolean fits(int width, int height) {
+    public boolean canCraftInDimensions(int width, int height) {
         return true;
     }
 
     @Override
-    public ItemStack getResult(DynamicRegistryManager registryManager) {
+    public ItemStack getResultItem(RegistryAccess registryManager) {
         return output;
     }
 
     @Override
-    public DefaultedList<Ingredient> getIngredients() {
-        DefaultedList<Ingredient> list = DefaultedList.ofSize(this.recipeItems.size());
+    public NonNullList<Ingredient> getIngredients() {
+        NonNullList<Ingredient> list = NonNullList.createWithCapacity(this.recipeItems.size());
         list.addAll(recipeItems);
         return list;
     }
@@ -74,12 +73,12 @@ public class MapleSyrupRecipe implements Recipe<SimpleInventory> {
         public static final String ID = "boiling";
 
         public static final Codec<MapleSyrupRecipe> CODEC = RecordCodecBuilder.create(in -> in.group(
-                validateAmount(Ingredient.DISALLOW_EMPTY_CODEC, 9).fieldOf("ingredients").forGetter(MapleSyrupRecipe::getIngredients),
-                ItemStack.RECIPE_RESULT_CODEC.fieldOf("output").forGetter(r -> r.output)
+                validateAmount(Ingredient.CODEC_NONEMPTY, 9).fieldOf("ingredients").forGetter(MapleSyrupRecipe::getIngredients),
+                ItemStack.ITEM_WITH_COUNT_CODEC.fieldOf("output").forGetter(r -> r.output)
         ).apply(in, MapleSyrupRecipe::new));
 
         private static Codec<List<Ingredient>> validateAmount(Codec<Ingredient> delegate, int max) {
-            return Codecs.validate(Codecs.validate(
+            return ExtraCodecs.validate(ExtraCodecs.validate(
                     delegate.listOf(), list -> list.size() > max ? DataResult.error(() -> "Recipe has too many ingredients!") : DataResult.success(list)
             ), list -> list.isEmpty() ? DataResult.error(() -> "Recipe has no ingredients!") : DataResult.success(list));
         }
@@ -90,26 +89,26 @@ public class MapleSyrupRecipe implements Recipe<SimpleInventory> {
         }
 
         @Override
-        public MapleSyrupRecipe read(PacketByteBuf buf) {
-            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(buf.readInt(), Ingredient.EMPTY);
+        public MapleSyrupRecipe fromNetwork(FriendlyByteBuf buf) {
+            NonNullList<Ingredient> inputs = NonNullList.withSize(buf.readInt(), Ingredient.EMPTY);
 
             for(int i = 0; i < inputs.size(); i++) {
-                inputs.set(i, Ingredient.fromPacket(buf));
+                inputs.set(i, Ingredient.fromNetwork(buf));
             }
 
-            ItemStack output = buf.readItemStack();
+            ItemStack output = buf.readItem();
             return new MapleSyrupRecipe(inputs, output);
         }
 
         @Override
-        public void write(PacketByteBuf buf, MapleSyrupRecipe recipe) {
+        public void toNetwork(FriendlyByteBuf buf, MapleSyrupRecipe recipe) {
             buf.writeInt(recipe.getIngredients().size());
 
             for (Ingredient ingredient : recipe.getIngredients()) {
-                ingredient.write(buf);
+                ingredient.toNetwork(buf);
             }
 
-            buf.writeItemStack(recipe.getResult(null));
+            buf.writeItem(recipe.getResultItem(null));
         }
     }
 }

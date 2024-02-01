@@ -11,15 +11,15 @@ import me.shedaniel.rei.api.common.display.basic.BasicDisplay;
 import me.shedaniel.rei.api.common.util.EntryStacks;
 import net.crypticverse.betterbiomes.BetterBiomes;
 import net.crypticverse.betterbiomes.block.BiomeBlocks;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
-
+import net.crypticverse.betterbiomes.compat.rei.MapleSyrupDisplay;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import java.util.LinkedList;
 import java.util.List;
 
 public class MapleSyrupCategory implements DisplayCategory<BasicDisplay> {
-    public static final Identifier TEXTURE =
-            new Identifier(BetterBiomes.MOD_ID, "textures/gui/maple_syrup_boiler_gui.png");
+    public static final ResourceLocation TEXTURE =
+            new ResourceLocation(BetterBiomes.MOD_ID, "textures/gui/maple_syrup_boiler_gui.png");
     public static final CategoryIdentifier<MapleSyrupDisplay> MAPLE_SYRUP =
             CategoryIdentifier.of(BetterBiomes.MOD_ID, "maple_syrup");
 
@@ -29,13 +29,13 @@ public class MapleSyrupCategory implements DisplayCategory<BasicDisplay> {
     }
 
     @Override
-    public Text getTitle() {
-        return Text.literal("Gem Polishing Station");
+    public Component getTitle() {
+        return Component.literal("Gem Polishing Station");
     }
 
     @Override
     public Renderer getIcon() {
-        return EntryStacks.of(BiomeBlocks.MAPLE_SYRUP_BOILER.asItem().getDefaultStack());
+        return EntryStacks.of(BiomeBlocks.MAPLE_SYRUP_BOILER.asItem().getDefaultInstance());
     }
 
     @Override

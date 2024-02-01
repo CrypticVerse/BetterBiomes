@@ -1,31 +1,31 @@
 package net.crypticverse.betterbiomes.world.biome.surface;
 
 import net.crypticverse.betterbiomes.world.biome.BetterBiomesBiomes;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.world.gen.surfacebuilder.MaterialRules;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.levelgen.SurfaceRules;
 
 public class BetterBiomesMaterialRules {
-    private static final MaterialRules.MaterialRule DIRT = makeStateRule(Blocks.DIRT);
-    private static final MaterialRules.MaterialRule GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
+    private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);
+    private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
 
 
 
-    public static MaterialRules.MaterialRule makeRules() {
-        MaterialRules.MaterialCondition isAtOrAboveWaterLevel = MaterialRules.water(-1, 0);
+    public static SurfaceRules.RuleSource makeRules() {
+        SurfaceRules.ConditionSource isAtOrAboveWaterLevel = SurfaceRules.waterBlockCheck(-1, 0);
 
-        MaterialRules.MaterialRule grassSurface = MaterialRules.sequence(MaterialRules.condition(isAtOrAboveWaterLevel, GRASS_BLOCK), DIRT);
+        SurfaceRules.RuleSource grassSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, GRASS_BLOCK), DIRT);
 
-        return MaterialRules.sequence(
-                MaterialRules.sequence(MaterialRules.condition(MaterialRules.biome(BetterBiomesBiomes.MAPLE_FOREST),
+        return SurfaceRules.sequence(
+                SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(BetterBiomesBiomes.MAPLE_FOREST),
 
 
-                MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR, grassSurface)
+                        SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, grassSurface)
                 )));
     }
 
 
-    private static MaterialRules.MaterialRule makeStateRule(Block block) {
-        return MaterialRules.block(block.getDefaultState());
+    private static SurfaceRules.RuleSource makeStateRule(Block block) {
+        return SurfaceRules.state(block.defaultBlockState());
     }
 }

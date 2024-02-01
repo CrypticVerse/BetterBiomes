@@ -1,33 +1,33 @@
 package net.crypticverse.betterbiomes.screen;
 
 import net.crypticverse.betterbiomes.block.entity.MapleSyrupBoilerBlockEntity;
-import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.inventory.Inventory;
-import net.minecraft.item.ItemStack;
-import net.minecraft.network.PacketByteBuf;
-import net.minecraft.screen.ArrayPropertyDelegate;
-import net.minecraft.screen.PropertyDelegate;
-import net.minecraft.screen.ScreenHandler;
-import net.minecraft.screen.slot.Slot;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.world.Container;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.inventory.SimpleContainerData;
+import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.entity.BlockEntity;
 
-public class MapleSyrupScreenHandler extends ScreenHandler {
-    private final Inventory inventory;
-    private final PropertyDelegate propertyDelegate;
+public class MapleSyrupScreenHandler extends AbstractContainerMenu {
+    private final Container inventory;
+    private final ContainerData propertyDelegate;
     public final MapleSyrupBoilerBlockEntity blockEntity;
 
-    public MapleSyrupScreenHandler(int syncId, PlayerInventory inventory, PacketByteBuf buf) {
-        this(syncId, inventory, inventory.player.getWorld().getBlockEntity(buf.readBlockPos()),
-                new ArrayPropertyDelegate(2));
+    public MapleSyrupScreenHandler(int syncId, Inventory inventory, FriendlyByteBuf buf) {
+        this(syncId, inventory, inventory.player.level().getBlockEntity(buf.readBlockPos()),
+                new SimpleContainerData(2));
     }
 
-    public MapleSyrupScreenHandler(int syncId, PlayerInventory playerInventory,
-                                     BlockEntity blockEntity, PropertyDelegate arrayPropertyDelegate) {
+    public MapleSyrupScreenHandler(int syncId, Inventory playerInventory,
+                                   BlockEntity blockEntity, ContainerData arrayPropertyDelegate) {
         super(BetterBiomesScreenHandlers.MAPLE_SYRUP_SCREEN_HANDLER, syncId);
-        checkSize(((Inventory) blockEntity), 2);
-        this.inventory = ((Inventory) blockEntity);
-        inventory.onOpen(playerInventory.player);
+        checkContainerSize(((Container) blockEntity), 2);
+        this.inventory = ((Container) blockEntity);
+        inventory.startOpen(playerInventory.player);
         this.propertyDelegate = arrayPropertyDelegate;
         this.blockEntity = ((MapleSyrupBoilerBlockEntity) blockEntity);
 
@@ -38,7 +38,7 @@ public class MapleSyrupScreenHandler extends ScreenHandler {
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
 
-        addProperties(arrayPropertyDelegate);
+        addDataSlots(arrayPropertyDelegate);
     }
 
     public boolean isCrafting() {
@@ -54,24 +54,24 @@ public class MapleSyrupScreenHandler extends ScreenHandler {
     }
 
     @Override
-    public ItemStack quickMove(PlayerEntity player, int invSlot) {
+    public ItemStack quickMoveStack(Player player, int invSlot) {
         ItemStack newStack = ItemStack.EMPTY;
         Slot slot = this.slots.get(invSlot);
-        if (slot != null && slot.hasStack()) {
-            ItemStack originalStack = slot.getStack();
+        if (slot != null && slot.hasItem()) {
+            ItemStack originalStack = slot.getItem();
             newStack = originalStack.copy();
-            if (invSlot < this.inventory.size()) {
-                if (!this.insertItem(originalStack, this.inventory.size(), this.slots.size(), true)) {
+            if (invSlot < this.inventory.getContainerSize()) {
+                if (!this.moveItemStackTo(originalStack, this.inventory.getContainerSize(), this.slots.size(), true)) {
                     return ItemStack.EMPTY;
                 }
-            } else if (!this.insertItem(originalStack, 0, this.inventory.size(), false)) {
+            } else if (!this.moveItemStackTo(originalStack, 0, this.inventory.getContainerSize(), false)) {
                 return ItemStack.EMPTY;
             }
 
             if (originalStack.isEmpty()) {
-                slot.setStack(ItemStack.EMPTY);
+                slot.setByPlayer(ItemStack.EMPTY);
             } else {
-                slot.markDirty();
+                slot.setChanged();
             }
         }
 
@@ -79,11 +79,11 @@ public class MapleSyrupScreenHandler extends ScreenHandler {
     }
 
     @Override
-    public boolean canUse(PlayerEntity player) {
-        return this.inventory.canPlayerUse(player);
+    public boolean stillValid(Player player) {
+        return this.inventory.stillValid(player);
     }
 
-    private void addPlayerInventory(PlayerInventory playerInventory) {
+    private void addPlayerInventory(Inventory playerInventory) {
         for (int i = 0; i < 3; ++i) {
             for (int l = 0; l < 9; ++l) {
                 this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 8 + l * 18, 84 + i * 18));
@@ -91,7 +91,7 @@ public class MapleSyrupScreenHandler extends ScreenHandler {
         }
     }
 
-    private void addPlayerHotbar(PlayerInventory playerInventory) {
+    private void addPlayerHotbar(Inventory playerInventory) {
         for (int i = 0; i < 9; ++i) {
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
         }

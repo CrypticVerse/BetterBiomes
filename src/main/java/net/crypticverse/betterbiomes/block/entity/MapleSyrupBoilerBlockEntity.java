@@ -3,42 +3,42 @@ package net.crypticverse.betterbiomes.block.entity;
 import net.crypticverse.betterbiomes.recipe.MapleSyrupRecipe;
 import net.crypticverse.betterbiomes.screen.MapleSyrupScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.inventory.Inventories;
-import net.minecraft.inventory.SimpleInventory;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.network.PacketByteBuf;
-import net.minecraft.recipe.RecipeEntry;
-import net.minecraft.screen.PropertyDelegate;
-import net.minecraft.screen.ScreenHandler;
-import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.text.Text;
-import net.minecraft.util.collection.DefaultedList;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.NonNullList;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.ContainerHelper;
+import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
 public class MapleSyrupBoilerBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(2, ItemStack.EMPTY);
+    private final NonNullList<ItemStack> inventory = NonNullList.withSize(2, ItemStack.EMPTY);
 
     private static final int INPUT_SLOT = 0;
     private static final int OUTPUT_SLOT = 1;
     private static final int GLASS_SLOT = 2;
 
-    protected final PropertyDelegate propertyDelegate;
+    protected final ContainerData propertyDelegate;
     private int progress = 0;
     private int maxProgress = 72;
 
     public MapleSyrupBoilerBlockEntity(BlockPos pos, BlockState state) {
         super(BetterBiomesBlockEntities.MAPLE_SYRUP_BOILER_BLOCK_ENTITY, pos, state);
-        this.propertyDelegate = new PropertyDelegate() {
+        this.propertyDelegate = new ContainerData() {
             @Override
             public int get(int index) {
                 return switch (index) {
@@ -57,56 +57,56 @@ public class MapleSyrupBoilerBlockEntity extends BlockEntity implements Extended
             }
 
             @Override
-            public int size() {
+            public int getCount() {
                 return 2;
             }
         };
     }
 
     @Override
-    public void writeScreenOpeningData(ServerPlayerEntity player, PacketByteBuf buf) {
-        buf.writeBlockPos(this.pos);
+    public void writeScreenOpeningData(ServerPlayer player, FriendlyByteBuf buf) {
+        buf.writeBlockPos(this.worldPosition);
     }
 
     @Override
-    public Text getDisplayName() {
-        return Text.literal("Maple Syrup Boiler");
+    public Component getDisplayName() {
+        return Component.literal("Maple Syrup Boiler");
     }
 
     @Override
-    public DefaultedList<ItemStack> getItems() {
+    public NonNullList<ItemStack> getItems() {
         return inventory;
     }
 
     @Override
-    protected void writeNbt(NbtCompound nbt) {
-        super.writeNbt(nbt);
-        Inventories.writeNbt(nbt, inventory);
+    protected void saveAdditional(CompoundTag nbt) {
+        super.saveAdditional(nbt);
+        ContainerHelper.saveAllItems(nbt, inventory);
         nbt.putInt("maple_syrup_boiler.progress", progress);
     }
 
     @Override
-    public void readNbt(NbtCompound nbt) {
-        super.readNbt(nbt);
-        Inventories.readNbt(nbt, inventory);
+    public void load(CompoundTag nbt) {
+        super.load(nbt);
+        ContainerHelper.loadAllItems(nbt, inventory);
         progress = nbt.getInt("maple_syrup_boiler.progress");
     }
 
     @Nullable
     @Override
-    public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
+    public AbstractContainerMenu createMenu(int syncId, Inventory playerInventory, Player player) {
         return new MapleSyrupScreenHandler(syncId, playerInventory, this, this.propertyDelegate);
     }
 
-    public void tick(World world, BlockPos pos, BlockState state) {
-        if(world.isClient()) {
+    public void tick(Level world, BlockPos pos, BlockState state) {
+        if(world.isClientSide()) {
             return;
         }
 
         if(isOutputSlotEmptyOrReceivable()) {
             if(this.hasRecipe()) {
                 this.increaseCraftProgress();
-                markDirty(world, pos, state);
+                setChanged(world, pos, state);
 
                 if(hasCraftingFinished()) {
                     this.craftItem();
@@ -117,7 +117,7 @@ public class MapleSyrupBoilerBlockEntity extends BlockEntity implements Extended
             }
         } else {
             this.resetProgress();
-            markDirty(world, pos, state);
+            setChanged(world, pos, state);
         }
     }
 
@@ -126,11 +126,11 @@ public class MapleSyrupBoilerBlockEntity extends BlockEntity implements Extended
     }
 
     private void craftItem() {
-        Optional<RecipeEntry<MapleSyrupRecipe>> recipe = getCurrentRecipe();
-        this.removeStack(INPUT_SLOT, 1);
+        Optional<RecipeHolder<MapleSyrupRecipe>> recipe = getCurrentRecipe();
+        this.removeItem(INPUT_SLOT, 1);
 
-        this.setStack(OUTPUT_SLOT, new ItemStack(recipe.get().value().getResult(null).getItem(),
-                getStack(OUTPUT_SLOT).getCount() + recipe.get().value().getResult(null).getCount()));
+        this.setItem(OUTPUT_SLOT, new ItemStack(recipe.get().value().getResultItem(null).getItem(),
+                getItem(OUTPUT_SLOT).getCount() + recipe.get().value().getResultItem(null).getCount()));
     }
 
     private boolean hasCraftingFinished() {
@@ -142,28 +142,28 @@ public class MapleSyrupBoilerBlockEntity extends BlockEntity implements Extended
     }
 
     private boolean hasRecipe() {
-        Optional<RecipeEntry<MapleSyrupRecipe>> recipe = getCurrentRecipe();
+        Optional<RecipeHolder<MapleSyrupRecipe>> recipe = getCurrentRecipe();
 
-        return recipe.isPresent() && canInsertAmountIntoOutputSlot(recipe.get().value().getResult(null))
-                && canInsertItemIntoOutputSlot(recipe.get().value().getResult(null).getItem());
+        return recipe.isPresent() && canInsertAmountIntoOutputSlot(recipe.get().value().getResultItem(null))
+                && canInsertItemIntoOutputSlot(recipe.get().value().getResultItem(null).getItem());
     }
-    private Optional<RecipeEntry<MapleSyrupRecipe>> getCurrentRecipe() {
-        SimpleInventory inv = new SimpleInventory(this.size());
-        for (int i = 0; i < this.size(); i++) {
-            inv.setStack(i, this.getStack(i));
+    private Optional<RecipeHolder<MapleSyrupRecipe>> getCurrentRecipe() {
+        SimpleContainer inv = new SimpleContainer(this.getContainerSize());
+        for (int i = 0; i < this.getContainerSize(); i++) {
+            inv.setItem(i, this.getItem(i));
         }
-        return getWorld().getRecipeManager().getFirstMatch(MapleSyrupRecipe.Type.INSTANCE, inv, getWorld());
+        return getLevel().getRecipeManager().getRecipeFor(MapleSyrupRecipe.Type.INSTANCE, inv, getLevel());
     }
 
     private boolean canInsertItemIntoOutputSlot(Item item) {
-        return this.getStack(OUTPUT_SLOT).getItem() == item || this.getStack(OUTPUT_SLOT).isEmpty();
+        return this.getItem(OUTPUT_SLOT).getItem() == item || this.getItem(OUTPUT_SLOT).isEmpty();
     }
 
     private boolean canInsertAmountIntoOutputSlot(ItemStack result) {
-        return this.getStack(OUTPUT_SLOT).getCount() + result.getCount() <= getStack(OUTPUT_SLOT).getMaxCount();
+        return this.getItem(OUTPUT_SLOT).getCount() + result.getCount() <= getItem(OUTPUT_SLOT).getMaxStackSize();
     }
 
     private boolean isOutputSlotEmptyOrReceivable() {
-        return this.getStack(OUTPUT_SLOT).isEmpty() || this.getStack(OUTPUT_SLOT).getCount() < this.getStack(OUTPUT_SLOT).getMaxCount();
+        return this.getItem(OUTPUT_SLOT).isEmpty() || this.getItem(OUTPUT_SLOT).getCount() < this.getItem(OUTPUT_SLOT).getMaxStackSize();
     }
 }

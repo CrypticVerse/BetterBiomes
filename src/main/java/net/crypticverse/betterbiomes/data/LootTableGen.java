@@ -1,17 +1,8 @@
 package net.crypticverse.betterbiomes.data;
 
 import net.crypticverse.betterbiomes.block.BiomeBlocks;
-import net.crypticverse.betterbiomes.block.custom.TappedBucketBlock;
-import net.crypticverse.betterbiomes.item.BiomeItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemConvertible;
-import net.minecraft.item.Items;
-import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
-import net.minecraft.predicate.StatePredicate;
 
 public class LootTableGen extends FabricBlockLootTableProvider {
     public LootTableGen(FabricDataOutput dataOutput) {
@@ -20,27 +11,27 @@ public class LootTableGen extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-        addDrop(BiomeBlocks.MAPLE_SAPLING);
-        addDrop(BiomeBlocks.MAPLE_PLANKS);
-        addDrop(BiomeBlocks.MAPLE_LEAVES, leavesDrops(BiomeBlocks.MAPLE_LEAVES, BiomeBlocks.MAPLE_SAPLING, 0.0025f));
-        addDrop(BiomeBlocks.STRIPPED_MAPLE_LOG);
-        addDrop(BiomeBlocks.STRIPPED_MAPLE_WOOD);
-        addDrop(BiomeBlocks.MAPLE_LOG);
-        addDrop(BiomeBlocks.STRIPPED_MAPLE_LOG);
-        addDrop(BiomeBlocks.MAPLE_SYRUP_BOILER);
+        dropSelf(BiomeBlocks.MAPLE_SAPLING);
+        dropSelf(BiomeBlocks.MAPLE_PLANKS);
+        add(BiomeBlocks.MAPLE_LEAVES, createLeavesDrops(BiomeBlocks.MAPLE_LEAVES, BiomeBlocks.MAPLE_SAPLING, 0.0025f));
+        dropSelf(BiomeBlocks.STRIPPED_MAPLE_LOG);
+        dropSelf(BiomeBlocks.STRIPPED_MAPLE_WOOD);
+        dropSelf(BiomeBlocks.MAPLE_LOG);
+        dropSelf(BiomeBlocks.STRIPPED_MAPLE_LOG);
+        dropSelf(BiomeBlocks.MAPLE_SYRUP_BOILER);
 
-        addDrop(BiomeBlocks.MAPLE_STAIRS);
-        addDrop(BiomeBlocks.MAPLE_TRAPDOOR);
-        addDrop(BiomeBlocks.MAPLE_FENCE);
-        addDrop(BiomeBlocks.MAPLE_FENCE_GATE);
-        addDrop(BiomeBlocks.MAPLE_BUTTON);
-        addDrop(BiomeBlocks.MAPLE_PRESSURE_PLATE);
-        addDrop(BiomeBlocks.STANDING_MAPLE_SIGN);
-        addDrop(BiomeBlocks.WALL_MAPLE_SIGN);
-        addDrop(BiomeBlocks.HANGING_MAPLE_SIGN);
-        addDrop(BiomeBlocks.WALL_HANGING_MAPLE_SIGN);
+        dropSelf(BiomeBlocks.MAPLE_STAIRS);
+        dropSelf(BiomeBlocks.MAPLE_TRAPDOOR);
+        dropSelf(BiomeBlocks.MAPLE_FENCE);
+        dropSelf(BiomeBlocks.MAPLE_FENCE_GATE);
+        dropSelf(BiomeBlocks.MAPLE_BUTTON);
+        dropSelf(BiomeBlocks.MAPLE_PRESSURE_PLATE);
+        dropSelf(BiomeBlocks.STANDING_MAPLE_SIGN);
+        dropSelf(BiomeBlocks.WALL_MAPLE_SIGN);
+        dropSelf(BiomeBlocks.HANGING_MAPLE_SIGN);
+        dropSelf(BiomeBlocks.WALL_HANGING_MAPLE_SIGN);
 
-        addDrop(BiomeBlocks.MAPLE_SLAB, slabDrops(BiomeBlocks.MAPLE_SLAB));
-        addDrop(BiomeBlocks.MAPLE_DOOR, doorDrops(BiomeBlocks.MAPLE_DOOR));
+        add(BiomeBlocks.MAPLE_SLAB, createSlabItemTable(BiomeBlocks.MAPLE_SLAB));
+        add(BiomeBlocks.MAPLE_DOOR, createDoorTable(BiomeBlocks.MAPLE_DOOR));
     }
 }

@@ -52,8 +52,8 @@ modrinth {
 	loaders = ["fabric", "quilt"]
 	changelog = project.file("CHANGELOG.md").text
 	dependencies {
-		embedded.project "fabric-api"
-		embedded.project "terrablender"
+		required.project "fabric-api"
+		required.project "terrablender"
 		optional.project "rei"
 	}
 }
@@ -64,16 +64,16 @@ task curseforge(type: TaskPublishCurseForge) {
 	mainFile.releaseType = 'beta'
 	mainFile.displayName = "Better Biomes Fabric ${mod_name}"
 	mainFile.addGameVersion("1.20.4")
-	mainFile.addModLoader("Fabric")
 	mainFile.addModLoader("Quilt")
 	mainFile.addJavaVersion("Java 17")
 	mainFile.changelog = project.file("CHANGELOG.md").text
 	mainFile.changelogType = 'markdown'
-	mainFile.addEmbedded("fabric-api")
-	mainFile.addEmbedded("terrablender-fabric")
+	mainFile.addRequirement("fabric-api")
+	mainFile.addRequirement("terrablender-fabric")
 	mainFile.addOptional("roughly-enough-items")
 }
 loom {
+	accessWidenerPath = file("src/main/resources/betterbiomes.accesswidener")
     runs {
 		// This adds a new gradle task that runs the datagen API: "gradlew runDatagen"
 		datagen {
@@ -101,7 +101,7 @@ sourceSets {
 dependencies {
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+	mappings loom.officialMojangMappings()
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"

@@ -1,75 +1,73 @@
 package net.crypticverse.betterbiomes.world.biome;
 
 import net.crypticverse.betterbiomes.BetterBiomes;
-import net.minecraft.client.sound.MusicType;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SpawnGroup;
-import net.minecraft.registry.Registerable;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.sound.BiomeMoodSound;
-import net.minecraft.util.Identifier;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeEffects;
-import net.minecraft.world.biome.GenerationSettings;
-import net.minecraft.world.biome.SpawnSettings;
-import net.minecraft.world.gen.GenerationStep;
-import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
-import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.worldgen.BiomeDefaultFeatures;
+import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.level.biome.AmbientMoodSettings;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.BiomeGenerationSettings;
+import net.minecraft.world.level.biome.BiomeSpecialEffects;
+import net.minecraft.world.level.biome.MobSpawnSettings;
+import net.minecraft.world.level.levelgen.GenerationStep;
 
 public class BetterBiomesBiomes {
-    public static final RegistryKey<Biome> MAPLE_FOREST = RegistryKey.of(RegistryKeys.BIOME,
-            new Identifier(BetterBiomes.MOD_ID, "maple_forest"));
+    public static final ResourceKey<Biome> MAPLE_FOREST = ResourceKey.create(Registries.BIOME,
+            new ResourceLocation(BetterBiomes.MOD_ID, "maple_forest"));
 
-    public static void boostrap(Registerable<Biome> context) {
+    public static void boostrap(BootstapContext<Biome> context) {
         context.register(MAPLE_FOREST, mapleForest(context));
     }
 
-    public static void globalOverworldGeneration(GenerationSettings.LookupBackedBuilder builder) {
-        DefaultBiomeFeatures.addLandCarvers(builder);
-        DefaultBiomeFeatures.addAmethystGeodes(builder);
-        DefaultBiomeFeatures.addDungeons(builder);
-        DefaultBiomeFeatures.addMineables(builder);
-        DefaultBiomeFeatures.addSprings(builder);
-        DefaultBiomeFeatures.addFrozenTopLayer(builder);
+    public static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder) {
+        BiomeDefaultFeatures.addDefaultCarversAndLakes(builder);
+        BiomeDefaultFeatures.addDefaultCrystalFormations(builder);
+        BiomeDefaultFeatures.addDefaultMonsterRoom(builder);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(builder);
+        BiomeDefaultFeatures.addDefaultSprings(builder);
+        BiomeDefaultFeatures.addSurfaceFreezing(builder);
     }
 
-    public static Biome mapleForest(Registerable<Biome> context) {
-        SpawnSettings.Builder spawnBuilder = new SpawnSettings.Builder();
+    public static Biome mapleForest(BootstapContext<Biome> context) {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 
-        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(EntityType.WOLF, 5, 4, 4));
+        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 5, 4, 4));
 
-        DefaultBiomeFeatures.addFarmAnimals(spawnBuilder);
-        DefaultBiomeFeatures.addBatsAndMonsters(spawnBuilder);
+        BiomeDefaultFeatures.farmAnimals(spawnBuilder);
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
 
-        GenerationSettings.LookupBackedBuilder biomeBuilder =
-                new GenerationSettings.LookupBackedBuilder(context.getRegistryLookup(RegistryKeys.PLACED_FEATURE),
-                        context.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER));
+        BiomeGenerationSettings.Builder biomeBuilder =
+                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE),
+                        context.lookup(Registries.CONFIGURED_CARVER));
 
         globalOverworldGeneration(biomeBuilder);
-        DefaultBiomeFeatures.addDefaultOres(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
 
-        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.TREES_PLAINS);
-        DefaultBiomeFeatures.addForestFlowers(biomeBuilder);
-        DefaultBiomeFeatures.addLargeFerns(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_PLAINS);
+        BiomeDefaultFeatures.addForestFlowers(biomeBuilder);
+        BiomeDefaultFeatures.addFerns(biomeBuilder);
 
-        DefaultBiomeFeatures.addDefaultMushrooms(biomeBuilder);
-        DefaultBiomeFeatures.addDefaultVegetation(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
 
-        return new Biome.Builder()
-                .precipitation(true)
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(true)
                 .downfall(0.4f)
                 .temperature(0.7f)
                 .generationSettings(biomeBuilder.build())
-                .spawnSettings(spawnBuilder.build())
-                .effects((new BiomeEffects.Builder())
+                .mobSpawnSettings(spawnBuilder.build())
+                .specialEffects((new BiomeSpecialEffects.Builder())
                         .waterColor(0x3f76e4)
                         .waterFogColor(0x050533)
                         .skyColor(0x79a6ff)
-                        .grassColor(0x79c05a)
+                        .grassColorOverride(0x79c05a)
                         .fogColor(0x22a1e6)
-                        .moodSound(BiomeMoodSound.CAVE)
+                        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
                         .build())
                 .build();
     }
