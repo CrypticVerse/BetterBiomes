@@ -1,11 +1,11 @@
 package net.crypticverse.betterbiomes.util;
 
 import net.crypticverse.betterbiomes.BetterBiomes;
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.tag.TagKey;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 
 public class BetterBiomeTags {
     public static class Blocks {
@@ -13,7 +13,7 @@ public class BetterBiomeTags {
                 createTag("maple_logs");
 
         private static TagKey<Block> createTag(String name) {
-            return TagKey.of(RegistryKeys.BLOCK, new Identifier(BetterBiomes.MOD_ID, name));
+            return TagKey.create(Registries.BLOCK, new ResourceLocation(BetterBiomes.MOD_ID, name));
         }
     }
     public static class Items {
@@ -21,7 +21,7 @@ public class BetterBiomeTags {
                 createTag("maple_logs");
 
         private static TagKey<Item> createTag(String name) {
-            return TagKey.of(RegistryKeys.ITEM, new Identifier(BetterBiomes.MOD_ID, name));
+            return TagKey.create(Registries.ITEM, new ResourceLocation(BetterBiomes.MOD_ID, name));
         }
     }
 }

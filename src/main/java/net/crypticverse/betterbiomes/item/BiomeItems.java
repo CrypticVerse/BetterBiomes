@@ -5,10 +5,10 @@ import net.crypticverse.betterbiomes.BetterBiomes;
 import net.crypticverse.betterbiomes.block.BiomeBlocks;
 import net.crypticverse.betterbiomes.entity.BiomeBoats;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.item.*;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.*;
 
 public class BiomeItems {
 
@@ -23,7 +23,7 @@ public class BiomeItems {
             new Item(new FabricItemSettings().recipeRemainder(BiomeItems.TAPPED_BUCKET)));
 
     public static final Item TAPPED_BUCKET = registerItem("tapped_bucket",
-            new AliasedBlockItem(BiomeBlocks.TAPPED_BUCKET, new FabricItemSettings()));
+            new ItemNameBlockItem(BiomeBlocks.TAPPED_BUCKET, new FabricItemSettings()));
 
     public static final Item UNCURED_MAPLE_SYRUP = registerItem("uncured_maple_syrup",
             new Item(new FabricItemSettings()));
@@ -36,7 +36,7 @@ public class BiomeItems {
     public static final Item CHOCOLATE_PANCAKE_STACK = registerItem("chocolate_pancake_stack", new Item(new FabricItemSettings().food(BiomeFoodComponents.CHOCOLATE_PANCAKE_STACK)));
 
     private static Item registerItem(String name, Item item) {
-            return Registry.register(Registries.ITEM, new Identifier(BetterBiomes.MOD_ID, name), item);
+            return Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(BetterBiomes.MOD_ID, name), item);
     }
 
     public static void registerMapleItems() {

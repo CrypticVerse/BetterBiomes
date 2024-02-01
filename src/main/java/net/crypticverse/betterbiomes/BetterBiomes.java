@@ -5,7 +5,7 @@ import net.crypticverse.betterbiomes.registry.LevelRegistryLoader;
 import net.crypticverse.betterbiomes.world.biome.BetterBiomesOverworldRegion;
 import net.crypticverse.betterbiomes.world.biome.surface.BetterBiomesMaterialRules;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.util.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import terrablender.api.Regions;
@@ -25,7 +25,7 @@ public class BetterBiomes implements ModInitializer, TerraBlenderApi {
 	}
 	@Override
 	public void onTerraBlenderInitialized() {
-		Regions.register(new BetterBiomesOverworldRegion(new Identifier(MOD_ID, "overworld"), 4));
+		Regions.register(new BetterBiomesOverworldRegion(new ResourceLocation(MOD_ID, "overworld"), 4));
 		SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, BetterBiomesMaterialRules.makeRules());
 	}
 }
