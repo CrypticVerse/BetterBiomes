@@ -22,13 +22,13 @@ public class ModelGen extends FabricModelProvider {
         blockStateModelGenerator.createCrossBlock(BiomeBlocks.MAPLE_SAPLING, BlockModelGenerators.TintState.NOT_TINTED);
         blockStateModelGenerator.createNonTemplateModelBlock(BiomeBlocks.MAPLE_SYRUP_BOILER);
 
-        BlockModelGenerators.BlockFamilyProvider maple_pool = blockStateModelGenerator.family(BiomeBlocks.MAPLE_PLANKS);
-        maple_pool.slab(BiomeBlocks.MAPLE_SLAB);
-        maple_pool.stairs(BiomeBlocks.MAPLE_STAIRS);
-        maple_pool.fence(BiomeBlocks.MAPLE_FENCE);
-        maple_pool.fenceGate(BiomeBlocks.MAPLE_FENCE_GATE);
-        maple_pool.button(BiomeBlocks.MAPLE_BUTTON);
-        maple_pool.pressurePlate(BiomeBlocks.MAPLE_PRESSURE_PLATE);
+        BlockModelGenerators.BlockFamilyProvider maplePool = blockStateModelGenerator.family(BiomeBlocks.MAPLE_PLANKS);
+        maplePool.slab(BiomeBlocks.MAPLE_SLAB);
+        maplePool.stairs(BiomeBlocks.MAPLE_STAIRS);
+        maplePool.fence(BiomeBlocks.MAPLE_FENCE);
+        maplePool.fenceGate(BiomeBlocks.MAPLE_FENCE_GATE);
+        maplePool.button(BiomeBlocks.MAPLE_BUTTON);
+        maplePool.pressurePlate(BiomeBlocks.MAPLE_PRESSURE_PLATE);
 
         blockStateModelGenerator.createDoor(BiomeBlocks.MAPLE_DOOR);
         blockStateModelGenerator.createTrapdoor(BiomeBlocks.MAPLE_TRAPDOOR);

@@ -19,6 +19,7 @@
 	"license": "MIT",
 	"environment": "*",
 	"icon": "icon.png",
+	"accessWidener": "betterbiomes.accesswidener",
 	"entrypoints": {
 		"main": [
           "net.crypticverse.betterbiomes.BetterBiomes"
