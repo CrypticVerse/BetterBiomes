@@ -1,8 +1,8 @@
-// 1.20.4	2024-02-01T10:04:16.9926183	Better Biomes/Tags for minecraft:block
+// 1.20.4	2024-02-03T14:49:38.6414201	Better Biomes/Tags for minecraft:block
 c00f8bf26aa8d8dab61dc2d9d86539e294124d03 data\betterbiomes\tags\blocks\maple_logs.json
-e63b8d6fafd215fc5a76136eab93dae3b465f221 data\minecraft\tags\blocks\wooden_slabs.json
 4365346350a9bfd79ed614c3ea48d39da1ff700b data\minecraft\tags\blocks\wooden_doors.json
 186141fb42621ca1c6307c64bbb7f65a9409abf3 data\minecraft\tags\blocks\wooden_trapdoors.json
+e63b8d6fafd215fc5a76136eab93dae3b465f221 data\minecraft\tags\blocks\wooden_slabs.json
 8a5877d80d4ac1e7844c9ff3f6a6ee1d963ed57b data\minecraft\tags\blocks\leaves.json
 8c1beecead4cc3cdf3236f42b200934c7d5d2315 data\minecraft\tags\blocks\wall_signs.json
 09a6e0b7ece62c1f08042e001a7d257da50e9654 data\minecraft\tags\blocks\wooden_pressure_plates.json
@@ -11,11 +11,11 @@ c00f8bf26aa8d8dab61dc2d9d86539e294124d03 data\minecraft\tags\blocks\logs.json
 2e606139c4a5f6490317cb686d6252a79cda1bbb data\minecraft\tags\blocks\standing_signs.json
 8a5877d80d4ac1e7844c9ff3f6a6ee1d963ed57b data\minecraft\tags\blocks\mineable\hoe.json
 97005ee86a8aac4233c5da1b82f0170d3811ccd5 data\minecraft\tags\blocks\wooden_fences.json
-c00f8bf26aa8d8dab61dc2d9d86539e294124d03 data\minecraft\tags\blocks\logs_that_burn.json
 7a37a918db26e19175ef0c4b4de2afc3822a37fc data\minecraft\tags\blocks\fences.json
+c00f8bf26aa8d8dab61dc2d9d86539e294124d03 data\minecraft\tags\blocks\logs_that_burn.json
 dfcea7c2ef134eaab2d7eb3e586c69d1c93635ac data\minecraft\tags\blocks\wooden_stairs.json
 525aecbdd5ef5acc0887ed52b54d2b16e7dac074 data\minecraft\tags\blocks\ceiling_hanging_signs.json
 10b8384bb44b17d697864a5746f9a374499a76b8 data\minecraft\tags\blocks\saplings.json
-ef1ae98e462bb06674eb31062e83e0f02c82f881 data\minecraft\tags\blocks\planks.json
 6cdd80fda26f8bbdb75028692bc26a3770507958 data\minecraft\tags\blocks\wooden_buttons.json
+ef1ae98e462bb06674eb31062e83e0f02c82f881 data\minecraft\tags\blocks\planks.json
 f93920c8b3dbb286e8e065fd59b16d064ace4997 data\minecraft\tags\blocks\fence_gates.json

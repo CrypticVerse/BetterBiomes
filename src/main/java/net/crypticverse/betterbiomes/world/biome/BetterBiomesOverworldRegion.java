@@ -19,8 +19,8 @@ public class BetterBiomesOverworldRegion extends Region {
 
     @Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper) {
-        this.addModifiedVanillaOverworldBiomes(mapper, modifiedVanillaOverworldBuilder -> {
-            modifiedVanillaOverworldBuilder.replaceBiome(Biomes.FOREST, BetterBiomesBiomes.MAPLE_FOREST);
+        this.addModifiedVanillaOverworldBiomes(mapper, builder -> {
+            builder.replaceBiome(Biomes.FOREST, BetterBiomesBiomes.MAPLE_FOREST);
         });
     }
 }
