@@ -11,7 +11,7 @@ To install this mod on the client, place the `.jar` file in your `mods` folder.
 For servers, place the file in the `mods` folder on the server. *Please note that the mod is both server and client side.*
 
 ### Current Features include:
-Maple trees and the Maple forest biome
+Maple trees, maple related items, and maple sap!
 
 ## Compatibility
 
@@ -41,11 +41,11 @@ repositories {
 
 ### Implementation
 ```gradle
-modImplementation "net.crypticverse.betterbiomes:BetterBiomes-Fabric:${betterbiomes_version}-${mc_verison}
+modImplementation "net.crypticverse.betterbiomes:BetterBiomes-Fabric:${betterbiomes_version}-1.20.4
 ```
 
 ### A quick note
-If you are using an implementation, you need to include yhr maven for other project resources.
+If you are using an implementation, you need to include the maven for other project resources.
 ```gradle
 maven {url = "https://maven.shedaniel.me"}
 maven {url = "https://maven.minecraftforge.net"}
@@ -57,7 +57,7 @@ maven {url = "https://maven.terraformersmc.com"}
 - OpenJDK 17 or higher.
   We recommend using the JDK from [Eclipse Temurin](https://adoptium.net/temurin/releases/?version=17), as it works without issues.
 
-- Gradle 8.3 or higher (optional)
+- Gradle 8.6 or higher (optional)
   Gradle is already provided in this repository, so you do not need to download it seperatley
 
 ## License
