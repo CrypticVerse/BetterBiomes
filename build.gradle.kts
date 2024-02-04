@@ -137,6 +137,6 @@ publishing {
         }
     }
     repositories {
-        maven("${System.getEnv("MAVEN_URL")}")
+        maven("${System.getenv("MAVEN_URL")}")
     }
 }
