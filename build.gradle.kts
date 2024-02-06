@@ -9,7 +9,7 @@ object Constants {
     const val mod_version: String = "2.1.4.6-1.20.4"
     const val mod_name: String = "2.1.4.6"
     const val maven_group: String = "net.crypticverse.betterbiomes"
-    const val  archives_base_name: String = "betterbiomes-fabric"
+    const val archives_base_name: String = "betterbiomes-fabric"
 }
 
 plugins {
@@ -20,15 +20,9 @@ plugins {
 }
 repositories {
     mavenLocal()
-    maven {
-        name = "MinecraftForge"
-        url = uri("https://maven.minecraftforge.net")
-    }
-    maven {
-        name = "TerraformersMC"
-        url = uri("https://maven.terraformersmc.com/")
-    }
-    maven {url = uri("https://maven.shedaniel.me")}
+    maven("https://maven.minecraftforge.net")
+    maven("https://maven.terraformersmc.com/")
+    maven("https://maven.shedaniel.me")
 }
 loom {
     accessWidenerPath = file("src/main/resources/betterbiomes.accesswidener")
