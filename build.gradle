@@ -54,6 +54,7 @@ modrinth {
     dependencies {
         required.project "fabric-api"
         required.project "terrablender"
+        required.project "notebook-api"
         optional.project "rei"
     }
 }
@@ -70,6 +71,7 @@ task curseforge(type: TaskPublishCurseForge) {
     mainFile.changelogType = 'markdown'
     mainFile.addRequirement("fabric-api")
     mainFile.addRequirement("terrablender-fabric")
+    mainFile.addRequirement("notebook-api")
     mainFile.addOptional("roughly-enough-items")
 }
 loom {
@@ -106,6 +108,9 @@ dependencies {
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     include "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+    modImplementation "net.crypticverse:Notebook-api-fabric-1.20.4:1.0"
+    include "net.crypticverse:Notebook-api-fabric-1.20.4:1.0"
 
     modImplementation "com.github.glitchfiend:TerraBlender-fabric:${project.minecraft_version}-${project.terrablender_version}"
     include "com.github.glitchfiend:TerraBlender-fabric:${project.minecraft_version}-${project.terrablender_version}"
