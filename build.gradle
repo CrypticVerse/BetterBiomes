@@ -109,8 +109,8 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     include "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-    modImplementation "net.crypticverse:Notebook-api-fabric-1.20.4:1.0"
-    include "net.crypticverse:Notebook-api-fabric-1.20.4:1.0"
+    modImplementation "dev.bookkeepersmc:Notebook-api-fabric-${minecraft_version}:${notebook_version}"
+    include "dev.bookkeepersmc:Notebook-api-fabric-${minecraft_version}:${notebook_version}"
 
     modImplementation "com.github.glitchfiend:TerraBlender-fabric:${project.minecraft_version}-${project.terrablender_version}"
     include "com.github.glitchfiend:TerraBlender-fabric:${project.minecraft_version}-${project.terrablender_version}"
