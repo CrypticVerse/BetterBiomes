@@ -2,12 +2,14 @@ package net.crypticverse.betterbiomes.entity;
 
 import com.terraformersmc.terraform.boat.api.TerraformBoatType;
 import com.terraformersmc.terraform.boat.api.TerraformBoatTypeRegistry;
-import net.crypticverse.betterbiomes.BetterBiomes;
-import net.crypticverse.betterbiomes.block.BiomeBlocks;
-import net.crypticverse.betterbiomes.item.BiomeItems;
+
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+
+import net.crypticverse.betterbiomes.BetterBiomes;
+import net.crypticverse.betterbiomes.block.BiomeBlocks;
+import net.crypticverse.betterbiomes.item.BiomeItems;
 
 public class BiomeBoats {
     public static final ResourceLocation MAPLE_BOAT_ID = new ResourceLocation(BetterBiomes.MOD_ID, "maple_boat");

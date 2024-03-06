@@ -1,8 +1,9 @@
 package net.crypticverse.betterbiomes.block.entity;
 
+import java.util.List;
+
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
 import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;

@@ -1,11 +1,12 @@
 package net.crypticverse.betterbiomes.registry;
 
+import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
+
 import net.crypticverse.betterbiomes.BetterBiomes;
 import net.crypticverse.betterbiomes.block.BiomeBlocks;
 import net.crypticverse.betterbiomes.block.FlammableBlocks;
 import net.crypticverse.betterbiomes.block.FuelingBlocks;
 import net.crypticverse.betterbiomes.world.gen.WorldGeneration;
-import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 
 public class LevelRegistryLoader implements RegistryProvider {
 

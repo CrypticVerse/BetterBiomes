@@ -1,8 +1,9 @@
 package net.crypticverse.betterbiomes.data;
 
-import net.crypticverse.betterbiomes.block.BiomeBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+
+import net.crypticverse.betterbiomes.block.BiomeBlocks;
 
 public class LootTableGen extends FabricBlockLootTableProvider {
     public LootTableGen(FabricDataOutput dataOutput) {
@@ -13,7 +14,7 @@ public class LootTableGen extends FabricBlockLootTableProvider {
     public void generate() {
         dropSelf(BiomeBlocks.MAPLE_SAPLING);
         dropSelf(BiomeBlocks.MAPLE_PLANKS);
-        add(BiomeBlocks.MAPLE_LEAVES, createLeavesDrops(BiomeBlocks.MAPLE_LEAVES, BiomeBlocks.MAPLE_SAPLING, 0.0025f));
+        add(BiomeBlocks.MAPLE_LEAVES, createLeavesDrops(BiomeBlocks.MAPLE_LEAVES, BiomeBlocks.MAPLE_SAPLING, 0.05f, 0.0025f, 0.083333336f, 0.1f));
         dropSelf(BiomeBlocks.STRIPPED_MAPLE_LOG);
         dropSelf(BiomeBlocks.STRIPPED_MAPLE_WOOD);
         dropSelf(BiomeBlocks.MAPLE_LOG);

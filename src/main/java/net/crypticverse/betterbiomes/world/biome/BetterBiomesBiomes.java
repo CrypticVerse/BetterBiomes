@@ -1,6 +1,5 @@
 package net.crypticverse.betterbiomes.world.biome;
 
-import net.crypticverse.betterbiomes.BetterBiomes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -15,6 +14,8 @@ import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.biome.BiomeSpecialEffects;
 import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.levelgen.GenerationStep;
+
+import net.crypticverse.betterbiomes.BetterBiomes;
 
 public class BetterBiomesBiomes {
     public static final ResourceKey<Biome> MAPLE_FOREST = ResourceKey.create(Registries.BIOME,

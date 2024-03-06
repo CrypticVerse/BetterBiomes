@@ -1,8 +1,8 @@
 package net.crypticverse.betterbiomes.block.custom;
 
 import com.mojang.serialization.MapCodec;
-import net.crypticverse.betterbiomes.block.entity.BetterBiomesBlockEntities;
-import net.crypticverse.betterbiomes.block.entity.MapleSyrupBoilerBlockEntity;
+import org.jetbrains.annotations.Nullable;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
@@ -22,7 +22,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.jetbrains.annotations.Nullable;
+
+import net.crypticverse.betterbiomes.block.entity.BetterBiomesBlockEntities;
+import net.crypticverse.betterbiomes.block.entity.MapleSyrupBoilerBlockEntity;
 
 public class MapleSyrupStationBlock extends BaseEntityBlock implements EntityBlock {
     private static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 12, 16);

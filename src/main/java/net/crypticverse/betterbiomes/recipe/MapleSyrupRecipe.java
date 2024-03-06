@@ -1,8 +1,11 @@
 package net.crypticverse.betterbiomes.recipe;
 
+import java.util.List;
+
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
@@ -11,7 +14,6 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
-import java.util.List;
 
 public class MapleSyrupRecipe implements Recipe<SimpleContainer> {
     private final ItemStack output;

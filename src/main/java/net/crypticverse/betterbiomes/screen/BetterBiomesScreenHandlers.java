@@ -1,11 +1,13 @@
 package net.crypticverse.betterbiomes.screen;
 
-import net.crypticverse.betterbiomes.BetterBiomes;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;
+
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.MenuType;
+
+import net.crypticverse.betterbiomes.BetterBiomes;
 
 public class BetterBiomesScreenHandlers {
     public static final MenuType<MapleSyrupScreenHandler> MAPLE_SYRUP_SCREEN_HANDLER =

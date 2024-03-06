@@ -1,11 +1,12 @@
 package net.crypticverse.betterbiomes.util;
 
-import net.crypticverse.betterbiomes.BetterBiomes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+
+import net.crypticverse.betterbiomes.BetterBiomes;
 
 public class BetterBiomeTags {
     public static class Blocks {

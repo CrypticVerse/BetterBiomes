@@ -1,9 +1,10 @@
 package net.crypticverse.betterbiomes.world.biome.surface;
 
-import net.crypticverse.betterbiomes.world.biome.BetterBiomesBiomes;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.SurfaceRules;
+
+import net.crypticverse.betterbiomes.world.biome.BetterBiomesBiomes;
 
 public class BetterBiomesMaterialRules {
     private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);

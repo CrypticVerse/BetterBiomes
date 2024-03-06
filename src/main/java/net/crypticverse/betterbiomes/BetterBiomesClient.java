@@ -2,20 +2,22 @@ package net.crypticverse.betterbiomes;
 
 import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import com.terraformersmc.terraform.sign.SpriteIdentifierRegistry;
-import net.crypticverse.betterbiomes.block.BiomeBlocks;
-import net.crypticverse.betterbiomes.entity.BiomeBoats;
-import net.crypticverse.betterbiomes.fluid.BetterBiomeFluids;
-import net.crypticverse.betterbiomes.screen.BetterBiomesScreenHandlers;
-import net.crypticverse.betterbiomes.screen.MapleSyrupScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
+
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.resources.model.Material;
 import net.minecraft.resources.ResourceLocation;
+
+import net.crypticverse.betterbiomes.block.BiomeBlocks;
+import net.crypticverse.betterbiomes.entity.BiomeBoats;
+import net.crypticverse.betterbiomes.fluid.BetterBiomeFluids;
+import net.crypticverse.betterbiomes.screen.BetterBiomesScreenHandlers;
+import net.crypticverse.betterbiomes.screen.MapleSyrupScreen;
 
 public class BetterBiomesClient implements ClientModInitializer {
     @Override

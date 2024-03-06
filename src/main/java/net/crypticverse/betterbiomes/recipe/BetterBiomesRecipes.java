@@ -1,9 +1,10 @@
 package net.crypticverse.betterbiomes.recipe;
 
-import net.crypticverse.betterbiomes.BetterBiomes;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
+
+import net.crypticverse.betterbiomes.BetterBiomes;
 
 public class BetterBiomesRecipes {
     public static void registerRecipes() {

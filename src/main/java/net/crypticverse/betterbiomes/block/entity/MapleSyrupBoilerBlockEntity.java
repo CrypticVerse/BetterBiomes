@@ -1,8 +1,10 @@
 package net.crypticverse.betterbiomes.block.entity;
 
-import net.crypticverse.betterbiomes.recipe.MapleSyrupRecipe;
-import net.crypticverse.betterbiomes.screen.MapleSyrupScreenHandler;
+import java.util.Optional;
+
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
+import org.jetbrains.annotations.Nullable;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
@@ -21,9 +23,9 @@ import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import org.jetbrains.annotations.Nullable;
 
-import java.util.Optional;
+import net.crypticverse.betterbiomes.recipe.MapleSyrupRecipe;
+import net.crypticverse.betterbiomes.screen.MapleSyrupScreenHandler;
 
 public class MapleSyrupBoilerBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
     private final NonNullList<ItemStack> inventory = NonNullList.withSize(2, ItemStack.EMPTY);

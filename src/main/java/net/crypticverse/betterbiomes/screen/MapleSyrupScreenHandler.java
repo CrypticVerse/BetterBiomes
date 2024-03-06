@@ -1,6 +1,5 @@
 package net.crypticverse.betterbiomes.screen;
 
-import net.crypticverse.betterbiomes.block.entity.MapleSyrupBoilerBlockEntity;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
@@ -11,6 +10,8 @@ import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
+
+import net.crypticverse.betterbiomes.block.entity.MapleSyrupBoilerBlockEntity;
 
 public class MapleSyrupScreenHandler extends AbstractContainerMenu {
     private final Container inventory;

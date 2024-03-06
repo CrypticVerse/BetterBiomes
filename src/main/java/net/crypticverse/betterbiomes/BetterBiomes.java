@@ -1,16 +1,18 @@
 package net.crypticverse.betterbiomes;
 
-import net.crypticverse.betterbiomes.registry.CoreRegistryLoader;
-import net.crypticverse.betterbiomes.registry.LevelRegistryLoader;
-import net.crypticverse.betterbiomes.world.biome.BetterBiomesOverworldRegion;
-import net.crypticverse.betterbiomes.world.biome.surface.BetterBiomesMaterialRules;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.resources.ResourceLocation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import terrablender.api.Regions;
 import terrablender.api.SurfaceRuleManager;
 import terrablender.api.TerraBlenderApi;
+
+import net.minecraft.resources.ResourceLocation;
+
+import net.crypticverse.betterbiomes.registry.CoreRegistryLoader;
+import net.crypticverse.betterbiomes.registry.LevelRegistryLoader;
+import net.crypticverse.betterbiomes.world.biome.BetterBiomesOverworldRegion;
+import net.crypticverse.betterbiomes.world.biome.surface.BetterBiomesMaterialRules;
 
 public class BetterBiomes implements ModInitializer, TerraBlenderApi {
 	public static final String MOD_ID = "betterbiomes";

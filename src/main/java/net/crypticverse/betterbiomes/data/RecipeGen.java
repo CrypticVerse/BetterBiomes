@@ -1,9 +1,8 @@
 package net.crypticverse.betterbiomes.data;
 
-import net.crypticverse.betterbiomes.block.BiomeBlocks;
-import net.crypticverse.betterbiomes.item.BiomeItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
@@ -11,6 +10,9 @@ import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
+
+import net.crypticverse.betterbiomes.block.BiomeBlocks;
+import net.crypticverse.betterbiomes.item.BiomeItems;
 
 public class RecipeGen extends FabricRecipeProvider {
     public RecipeGen(FabricDataOutput output) {

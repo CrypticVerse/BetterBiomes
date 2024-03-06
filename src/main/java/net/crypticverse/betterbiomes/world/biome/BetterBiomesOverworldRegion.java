@@ -1,10 +1,11 @@
 package net.crypticverse.betterbiomes.world.biome;
 
+import java.util.function.Consumer;
+
 import com.mojang.datafixers.util.Pair;
 import terrablender.api.Region;
 import terrablender.api.RegionType;
 
-import java.util.function.Consumer;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;

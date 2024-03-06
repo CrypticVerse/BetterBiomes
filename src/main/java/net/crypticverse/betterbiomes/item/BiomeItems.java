@@ -1,14 +1,16 @@
 package net.crypticverse.betterbiomes.item;
 
 import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
-import net.crypticverse.betterbiomes.BetterBiomes;
-import net.crypticverse.betterbiomes.block.BiomeBlocks;
-import net.crypticverse.betterbiomes.entity.BiomeBoats;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
+
+import net.crypticverse.betterbiomes.BetterBiomes;
+import net.crypticverse.betterbiomes.block.BiomeBlocks;
+import net.crypticverse.betterbiomes.entity.BiomeBoats;
 
 public class BiomeItems {
 
