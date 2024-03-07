@@ -67,7 +67,7 @@ public class LaunchWarn {
                     "</p>" +
                     "</body>" +
                     "</html>";
-    public static final String WINDOW_TITLE = "Sodium";
+    public static final String WINDOW_TITLE = "Better Biomes";
 
     public static void main(String[] args) {
         if (GraphicsEnvironment.isHeadless()) {
