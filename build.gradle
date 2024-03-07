@@ -108,6 +108,11 @@ sourceSets {
             ]
         }
     }
+    desktop {
+        java {
+            srcDirs("src/desktop/java")
+        }
+    }
 }
 dependencies {
     // To change the versions see the gradle.properties file
@@ -163,6 +168,10 @@ jar {
     from("LICENSE") {
         rename { "${it}_${project.base.archivesName.get()}"}
     }
+    def desktop = sourceSets.getByName("desktop")
+    from(desktop.output.classesDirs)
+    from(desktop.output.resourcesDir)
+    manifest.attributes["Main-Class"] = "net.crypticverse.desktop.LaunchWarn"
 }
 
 // configure the maven publication
