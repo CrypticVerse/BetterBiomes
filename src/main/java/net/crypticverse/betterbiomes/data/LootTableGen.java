@@ -4,7 +4,6 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 
 import net.crypticverse.betterbiomes.block.BiomeBlocks;
-import net.minecraft.world.level.block.Blocks;
 
 public class LootTableGen extends FabricBlockLootTableProvider {
     public LootTableGen(FabricDataOutput dataOutput) {
