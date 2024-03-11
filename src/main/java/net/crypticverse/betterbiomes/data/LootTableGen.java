@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 
 import net.crypticverse.betterbiomes.block.BiomeBlocks;
+import net.minecraft.world.level.block.Blocks;
 
 public class LootTableGen extends FabricBlockLootTableProvider {
     public LootTableGen(FabricDataOutput dataOutput) {
@@ -28,9 +29,7 @@ public class LootTableGen extends FabricBlockLootTableProvider {
         dropSelf(BiomeBlocks.MAPLE_BUTTON);
         dropSelf(BiomeBlocks.MAPLE_PRESSURE_PLATE);
         dropSelf(BiomeBlocks.STANDING_MAPLE_SIGN);
-        dropSelf(BiomeBlocks.WALL_MAPLE_SIGN);
         dropSelf(BiomeBlocks.HANGING_MAPLE_SIGN);
-        dropSelf(BiomeBlocks.WALL_HANGING_MAPLE_SIGN);
 
         add(BiomeBlocks.MAPLE_SLAB, createSlabItemTable(BiomeBlocks.MAPLE_SLAB));
         add(BiomeBlocks.MAPLE_DOOR, createDoorTable(BiomeBlocks.MAPLE_DOOR));

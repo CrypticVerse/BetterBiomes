@@ -65,9 +65,9 @@ public class BetterBiomesBiomes {
                 .specialEffects((new BiomeSpecialEffects.Builder())
                         .waterColor(0x3f76e4)
                         .waterFogColor(0x050533)
-                        .skyColor(0x79a6ff)
+                        .skyColor(0x79A6FF)
                         .grassColorOverride(0x79c05a)
-                        .fogColor(0x22a1e6)
+                        .fogColor(0x93CEF5)
                         .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
                         .build())
                 .build();

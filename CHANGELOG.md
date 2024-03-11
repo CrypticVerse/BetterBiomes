@@ -1,4 +1,6 @@
 This version brings bug fixes
 
 #### Forge and Fabric
-- New translations
+- Color is now fixed in Maple Forest
+- Particles of maple signs now render correctly
+- Oak Signs drop themselves, not maple signs
