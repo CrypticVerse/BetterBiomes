@@ -5,6 +5,7 @@ plugins {
     id 'com.modrinth.minotaur' version '2.+'
     id 'net.darkhax.curseforgegradle' version '1.1.18'
     id 'com.diffplug.spotless' version '6.25.0'
+    id 'signing'
 }
 
 version = project.mod_version
@@ -182,15 +183,12 @@ publishing {
             from components.java
         }
     }
-
-    // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
     repositories {
         maven {
             url = System.getenv("MAVEN_URL").toString()
         }
-        // Add repositories to publish to here.
-        // Notice: This block does NOT have the same function as the block in the top level.
-        // The repositories here will be used for publishing your artifact, not for
-        // retrieving dependencies.
     }
+}
+signing {
+    sign publishing.publications.mavenJava
 }
