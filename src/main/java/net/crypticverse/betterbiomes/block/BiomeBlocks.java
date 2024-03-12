@@ -30,7 +30,7 @@ public class BiomeBlocks {
     public static final Block STRIPPED_MAPLE_LOG = registerBlock("stripped_maple_log", new RotatedPillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_LOG)));
     public static final Block STRIPPED_MAPLE_WOOD = registerBlock("stripped_maple_wood", new RotatedPillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD)));
     public static final Block MAPLE_PLANKS = registerBlock("maple_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
-    public static final Block MAPLE_LEAVES = registerBlock("maple_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).requiresCorrectToolForDrops()));
+    public static final Block MAPLE_LEAVES = registerBlock("maple_leaves", Blocks.leaves(SoundType.GRASS));
     public static final Block MAPLE_SAPLING = registerBlock("maple_sapling", new SaplingBlock(BetterBiomesSaplingGen.MAPLE, FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
     public static final Block MAPLE_SYRUP_BOILER = registerBlock("maple_syrup_boiler", new MapleSyrupStationBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).noOcclusion()));
     public static final Block MAPLE_STAIRS = registerBlock("maple_stairs", new StairBlock(BiomeBlocks.MAPLE_PLANKS.defaultBlockState(), FabricBlockSettings.copyOf(Blocks.OAK_STAIRS)));
