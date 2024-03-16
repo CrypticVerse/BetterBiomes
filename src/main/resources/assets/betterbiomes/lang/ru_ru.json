@@ -33,5 +33,10 @@
   "item.betterbiomes.maple_pancake_stack": "Стопка кленовых блинов",
   "item.betterbiomes.chocolate_pancake": "Шоколадный блин",
   "item.betterbiomes.chocolate_pancake_stack": "Стопка шоколадных блинов",
-  "itemgroup.betterbiomes": "Группа лучших биомов"
+  "itemgroup.betterbiomes": "Группа лучших биомов",
+  "_comment": "For forge things",
+  "block.betterbiomes.maple_sign": "Maple Sign",
+  "creativetab.biome_group": "Better Biomes Group",
+  "entity.betterbiomes.mod_chest_boat": "Chest Boat",
+  "biome.betterbiomes.maple_forest": "Maple Forest"
 }
