@@ -1,8 +1,11 @@
+import net.darkhax.curseforgegradle.TaskPublishCurseForge
 plugins {
     id 'fabric-loom' version '1.5.+'
     id 'maven-publish'
+    id 'com.modrinth.minotaur' version '2.+'
+    id 'net.darkhax.curseforgegradle' version '1.1.18'
+    id 'com.github.breadmoirai.github-release' version '2.+'
     id 'com.diffplug.spotless' version '6.25.0'
-    id 'me.modmuss50.mod-publish-plugin' version '0.5.1'
     id 'signing'
 }
 
@@ -49,31 +52,7 @@ spotless {
     }
 
 }
-publishMods {
-    file = remapJar.archiveFile
-    changelog = rootProject.file("CHANGELOG.md").text
-    type = BETA
-    displayName = "Better Biomes Fabric ${mod_name}"
-    modLoaders.add("fabric")
-    modLoaders.add("quilt")
 
-    modrinth {
-        accessToken = System.getenv("MODRINTH_TOKEN")
-        projectId = "Qs2o8KiI"
-        minecraftVersions.add(minecraft_version)
-    }
-    curseforge {
-        accessToken = System.getenv("CURSEFORGE_TOKEN")
-        projectId = "938715"
-        minecraftVersions.add(minecraft_version)
-    }
-    github {
-        accessToken = System.getenv("GITHUB_TOKEN")
-        repository = "CrypticVerse/BetterBiomes"
-        commitish = "2.x-1.20.4"
-        tagName = "fabric-${mod_name}"
-    }
-}
 loom {
     accessWidenerPath = file("src/main/resources/betterbiomes.accesswidener")
     runs {
@@ -181,4 +160,53 @@ publishing {
 }
 signing {
     sign publishing.publications.mavenJava
+}
+modrinth {
+    token = System.getenv("MODRINTH_TOKEN")
+    projectId = "Qs2o8KiI"
+    versionNumber = "fabric-${mod_version}"
+    versionName = "Better Biomes Fabric ${mod_name}"
+    versionType = "beta"
+    uploadFile = remapJar
+    gameVersions = ["1.20.4"]
+    loaders = ["fabric", "quilt"]
+    changelog = project.file("CHANGELOG.md").text
+    dependencies {
+        required.project "fabric-api"
+        required.project "terrablender"
+        required.project "notebook-api"
+        optional.project "rei"
+    }
+}
+task curseforge(type: TaskPublishCurseForge) {
+    apiToken = System.getenv("CURSEFORGE_TOKEN")
+
+    def mainFile = upload(938715, remapJar)
+    mainFile.releaseType = 'beta'
+    mainFile.displayName = "Better Biomes Fabric ${mod_name}"
+    mainFile.addGameVersion("1.20.4")
+    mainFile.addModLoader("Quilt")
+    mainFile.addJavaVersion("Java 17")
+    mainFile.changelog = project.file("CHANGELOG.md").text
+    mainFile.changelogType = 'markdown'
+    mainFile.addRequirement("fabric-api")
+    mainFile.addRequirement("terrablender-fabric")
+    mainFile.addRequirement("notebook-api")
+    mainFile.addOptional("roughly-enough-items")
+}
+githubRelease {
+    owner = "CrypticVerse"
+    repo = "BetterBiomes"
+    tagName = "fabric-${mod_name}"
+    releaseName = "Better Biomes Fabric ${mod_name}"
+    targetCommitish = "2.x-1.20.4"
+    draft = false
+    releaseAssets tasks.remapJar
+    body = project.file("CHANGELOG.md").text
+    token System.getenv("GITHUB_TOKEN")
+}
+tasks.register("publishMods") {
+    dependsOn tasks.modrinth
+    dependsOn tasks.curseforge
+    dependsOn tasks.githubRelease
 }
