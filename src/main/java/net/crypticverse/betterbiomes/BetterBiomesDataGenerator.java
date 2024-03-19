@@ -29,6 +29,6 @@ public class BetterBiomesDataGenerator implements DataGeneratorEntrypoint {
 	public void buildRegistry(RegistrySetBuilder registryBuilder) {
 		registryBuilder.add(Registries.CONFIGURED_FEATURE, BetterBiomesConfiguredFeatures::bootstrap);
 		registryBuilder.add(Registries.PLACED_FEATURE, BetterBiomesPlacedFeatures::bootstrap);
-		registryBuilder.add(Registries.BIOME, BetterBiomesBiomes::boostrap);
+		registryBuilder.add(Registries.BIOME, BetterBiomesBiomes::bootstrap);
 	}
 }

@@ -21,7 +21,7 @@ public class BetterBiomesBiomes {
     public static final ResourceKey<Biome> MAPLE_FOREST = ResourceKey.create(Registries.BIOME,
             new ResourceLocation(BetterBiomes.MOD_ID, "maple_forest"));
 
-    public static void boostrap(BootstapContext<Biome> context) {
+    public static void bootstrap(BootstapContext<Biome> context) {
         context.register(MAPLE_FOREST, mapleForest(context));
     }
 
