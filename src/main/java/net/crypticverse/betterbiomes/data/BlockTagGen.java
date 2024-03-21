@@ -22,13 +22,55 @@ public class BlockTagGen extends FabricTagProvider.BlockTagProvider {
                 .add(BiomeBlocks.MAPLE_LOG)
                 .add(BiomeBlocks.MAPLE_WOOD)
                 .add(BiomeBlocks.STRIPPED_MAPLE_WOOD)
-                .add(BiomeBlocks.STRIPPED_MAPLE_LOG);
+                .add(BiomeBlocks.STRIPPED_MAPLE_LOG)
+                .add(BiomeBlocks.THIN_ACACIA_LOG)
+                .add(BiomeBlocks.THIN_BIRCH_LOG)
+                .add(BiomeBlocks.THIN_CHERRY_LOG)
+                .add(BiomeBlocks.THIN_DARK_OAK_LOG)
+                .add(BiomeBlocks.THIN_JUNGLE_LOG)
+                .add(BiomeBlocks.THIN_MANGROVE_LOG)
+                .add(BiomeBlocks.THIN_OAK_LOG)
+                .add(BiomeBlocks.THIN_SPRUCE_LOG)
+                .add(BiomeBlocks.STRIPPED_THIN_ACACIA_LOG)
+                .add(BiomeBlocks.STRIPPED_THIN_BIRCH_LOG)
+                .add(BiomeBlocks.STRIPPED_THIN_CHERRY_LOG)
+                .add(BiomeBlocks.STRIPPED_THIN_DARK_OAK_LOG)
+                .add(BiomeBlocks.STRIPPED_THIN_JUNGLE_LOG)
+                .add(BiomeBlocks.STRIPPED_THIN_MANGROVE_LOG)
+                .add(BiomeBlocks.STRIPPED_THIN_OAK_LOG)
+                .add(BiomeBlocks.STRIPPED_THIN_SPRUCE_LOG);
 
         getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
                 .add(BiomeBlocks.MAPLE_LOG)
                 .add(BiomeBlocks.MAPLE_WOOD)
                 .add(BiomeBlocks.STRIPPED_MAPLE_WOOD)
-                .add(BiomeBlocks.STRIPPED_MAPLE_LOG);
+                .add(BiomeBlocks.STRIPPED_MAPLE_LOG)
+                .add(BiomeBlocks.THIN_ACACIA_LOG)
+                .add(BiomeBlocks.THIN_BIRCH_LOG)
+                .add(BiomeBlocks.THIN_CHERRY_LOG)
+                .add(BiomeBlocks.THIN_DARK_OAK_LOG)
+                .add(BiomeBlocks.THIN_JUNGLE_LOG)
+                .add(BiomeBlocks.THIN_MANGROVE_LOG)
+                .add(BiomeBlocks.THIN_OAK_LOG)
+                .add(BiomeBlocks.THIN_SPRUCE_LOG)
+                .add(BiomeBlocks.STRIPPED_THIN_ACACIA_LOG)
+                .add(BiomeBlocks.STRIPPED_THIN_BIRCH_LOG)
+                .add(BiomeBlocks.STRIPPED_THIN_CHERRY_LOG)
+                .add(BiomeBlocks.STRIPPED_THIN_DARK_OAK_LOG)
+                .add(BiomeBlocks.STRIPPED_THIN_JUNGLE_LOG)
+                .add(BiomeBlocks.STRIPPED_THIN_MANGROVE_LOG)
+                .add(BiomeBlocks.STRIPPED_THIN_OAK_LOG)
+                .add(BiomeBlocks.STRIPPED_THIN_SPRUCE_LOG);
+
+        // Thin log groups
+        getOrCreateTagBuilder(BlockTags.ACACIA_LOGS).add(BiomeBlocks.THIN_ACACIA_LOG).add(BiomeBlocks.STRIPPED_THIN_ACACIA_LOG);
+        getOrCreateTagBuilder(BlockTags.BIRCH_LOGS).add(BiomeBlocks.THIN_BIRCH_LOG).add(BiomeBlocks.STRIPPED_THIN_BIRCH_LOG);
+        getOrCreateTagBuilder(BlockTags.CHERRY_LOGS).add(BiomeBlocks.THIN_CHERRY_LOG).add(BiomeBlocks.STRIPPED_THIN_CHERRY_LOG);
+        getOrCreateTagBuilder(BlockTags.DARK_OAK_LOGS).add(BiomeBlocks.THIN_DARK_OAK_LOG).add(BiomeBlocks.STRIPPED_THIN_ACACIA_LOG);
+        getOrCreateTagBuilder(BlockTags.JUNGLE_LOGS).add(BiomeBlocks.THIN_JUNGLE_LOG).add(BiomeBlocks.STRIPPED_THIN_ACACIA_LOG);
+        getOrCreateTagBuilder(BlockTags.MANGROVE_LOGS).add(BiomeBlocks.THIN_MANGROVE_LOG).add(BiomeBlocks.STRIPPED_THIN_ACACIA_LOG);
+        getOrCreateTagBuilder(BlockTags.OAK_LOGS).add(BiomeBlocks.THIN_OAK_LOG).add(BiomeBlocks.STRIPPED_THIN_ACACIA_LOG);
+        getOrCreateTagBuilder(BlockTags.SPRUCE_LOGS).add(BiomeBlocks.THIN_SPRUCE_LOG).add(BiomeBlocks.STRIPPED_THIN_ACACIA_LOG);
 
         getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_HOE)
                 .add(BiomeBlocks.MAPLE_LEAVES);

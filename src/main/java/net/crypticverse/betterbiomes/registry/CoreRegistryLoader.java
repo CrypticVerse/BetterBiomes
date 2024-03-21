@@ -10,7 +10,8 @@ import net.crypticverse.betterbiomes.item.BiomeItems;
 import net.crypticverse.betterbiomes.recipe.BetterBiomesRecipes;
 import net.crypticverse.betterbiomes.screen.BetterBiomesScreenHandlers;
 
-public class CoreRegistryLoader implements RegistryProvider {
+public class CoreRegistryLoader {
+
     public static void loadRegistries() {
         BetterBiomes.LOGGER.info("Starting load process for core registries");
         BiomeBlocks.registerModBlocks();

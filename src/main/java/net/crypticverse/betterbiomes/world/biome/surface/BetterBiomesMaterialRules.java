@@ -18,7 +18,7 @@ public class BetterBiomesMaterialRules {
         SurfaceRules.RuleSource grassSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, GRASS_BLOCK), DIRT);
 
         return SurfaceRules.sequence(
-                SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(BetterBiomesBiomes.MAPLE_FOREST),
+                SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(BetterBiomesBiomes.MAPLE_FOREST, BetterBiomesBiomes.THIN_FOREST),
 
 
                         SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, grassSurface)

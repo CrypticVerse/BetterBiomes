@@ -9,6 +9,7 @@ import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
@@ -21,12 +22,16 @@ import net.crypticverse.betterbiomes.block.BiomeBlocks;
 public class BetterBiomesPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> MAPLE_PLACED_KEY = registerKey("maple");
+    public static final ResourceKey<PlacedFeature> THIN_PLACED_KEY = registerKey("thin");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.lookup(Registries.CONFIGURED_FEATURE);
 
         register(context, MAPLE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(BetterBiomesConfiguredFeatures.MAPLE_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(9, 0.01f, 10),(BiomeBlocks.MAPLE_SAPLING)));
+
+        register(context, THIN_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(BetterBiomesConfiguredFeatures.THIN_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(9, 0.01f, 10),(Blocks.BIRCH_SAPLING)));
     }
 
     public static ResourceKey<PlacedFeature> registerKey(String name) {

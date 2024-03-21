@@ -23,9 +23,26 @@ public class ModelGen extends FabricModelProvider {
         blockStateModelGenerator.createTrivialCube(BiomeBlocks.MAPLE_LEAVES);
         blockStateModelGenerator.createCrossBlock(BiomeBlocks.MAPLE_SAPLING, BlockModelGenerators.TintState.NOT_TINTED);
         blockStateModelGenerator.createNonTemplateModelBlock(BiomeBlocks.MAPLE_SYRUP_BOILER);
+        blockStateModelGenerator.createNonTemplateModelBlock(BiomeBlocks.THIN_ACACIA_LOG);
+        blockStateModelGenerator.createNonTemplateModelBlock(BiomeBlocks.THIN_BIRCH_LOG);
+        blockStateModelGenerator.createNonTemplateModelBlock(BiomeBlocks.THIN_CHERRY_LOG);
+        blockStateModelGenerator.createNonTemplateModelBlock(BiomeBlocks.THIN_DARK_OAK_LOG);
+        blockStateModelGenerator.createNonTemplateModelBlock(BiomeBlocks.THIN_JUNGLE_LOG);
+        blockStateModelGenerator.createNonTemplateModelBlock(BiomeBlocks.THIN_MANGROVE_LOG);
+        blockStateModelGenerator.createNonTemplateModelBlock(BiomeBlocks.THIN_OAK_LOG);
+        blockStateModelGenerator.createNonTemplateModelBlock(BiomeBlocks.THIN_SPRUCE_LOG);
+        blockStateModelGenerator.createNonTemplateModelBlock(BiomeBlocks.STRIPPED_THIN_ACACIA_LOG);
+        blockStateModelGenerator.createNonTemplateModelBlock(BiomeBlocks.STRIPPED_THIN_BIRCH_LOG);
+        blockStateModelGenerator.createNonTemplateModelBlock(BiomeBlocks.STRIPPED_THIN_CHERRY_LOG);
+        blockStateModelGenerator.createNonTemplateModelBlock(BiomeBlocks.STRIPPED_THIN_DARK_OAK_LOG);
+        blockStateModelGenerator.createNonTemplateModelBlock(BiomeBlocks.STRIPPED_THIN_JUNGLE_LOG);
+        blockStateModelGenerator.createNonTemplateModelBlock(BiomeBlocks.STRIPPED_THIN_MANGROVE_LOG);
+        blockStateModelGenerator.createNonTemplateModelBlock(BiomeBlocks.STRIPPED_THIN_OAK_LOG);
+        blockStateModelGenerator.createNonTemplateModelBlock(BiomeBlocks.STRIPPED_THIN_SPRUCE_LOG);
 
         BlockModelGenerators.BlockFamilyProvider maplePool = blockStateModelGenerator.family(BiomeBlocks.MAPLE_PLANKS);
         maplePool.slab(BiomeBlocks.MAPLE_SLAB);
+        maplePool.generateFor(BiomeBlocks.MAPLE_STANDING_FAMILY);
         maplePool.stairs(BiomeBlocks.MAPLE_STAIRS);
         maplePool.fence(BiomeBlocks.MAPLE_FENCE);
         maplePool.fenceGate(BiomeBlocks.MAPLE_FENCE_GATE);
@@ -41,7 +58,6 @@ public class ModelGen extends FabricModelProvider {
             itemModelGenerator.generateFlatItem(BetterBiomeFluids.MAPLE_SYRUP_BUCKET, ModelTemplates.FLAT_ITEM);
             itemModelGenerator.generateFlatItem(BiomeItems.MAPLE_SYRUP_BOTTLE, ModelTemplates.FLAT_ITEM);
             itemModelGenerator.generateFlatItem(BiomeItems.HANGING_MAPLE_SIGN, ModelTemplates.FLAT_ITEM);
-            itemModelGenerator.generateFlatItem(BiomeItems.MAPLE_SIGN, ModelTemplates.FLAT_ITEM);
             itemModelGenerator.generateFlatItem(BiomeItems.MAPLE_BOAT, ModelTemplates.FLAT_ITEM);
             itemModelGenerator.generateFlatItem(BiomeItems.MAPLE_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
             itemModelGenerator.generateFlatItem(BiomeItems.TAPPED_BUCKET, ModelTemplates.FLAT_ITEM);

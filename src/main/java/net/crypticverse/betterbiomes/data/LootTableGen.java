@@ -30,6 +30,24 @@ public class LootTableGen extends FabricBlockLootTableProvider {
         dropSelf(BiomeBlocks.STANDING_MAPLE_SIGN);
         dropSelf(BiomeBlocks.HANGING_MAPLE_SIGN);
 
+        // Thin Logs
+        dropSelf(BiomeBlocks.THIN_ACACIA_LOG);
+        dropSelf(BiomeBlocks.THIN_BIRCH_LOG);
+        dropSelf(BiomeBlocks.THIN_CHERRY_LOG);
+        dropSelf(BiomeBlocks.THIN_DARK_OAK_LOG);
+        dropSelf(BiomeBlocks.THIN_JUNGLE_LOG);
+        dropSelf(BiomeBlocks.THIN_MANGROVE_LOG);
+        dropSelf(BiomeBlocks.THIN_OAK_LOG);
+        dropSelf(BiomeBlocks.THIN_SPRUCE_LOG);
+        dropSelf(BiomeBlocks.STRIPPED_THIN_ACACIA_LOG);
+        dropSelf(BiomeBlocks.STRIPPED_THIN_BIRCH_LOG);
+        dropSelf(BiomeBlocks.STRIPPED_THIN_CHERRY_LOG);
+        dropSelf(BiomeBlocks.STRIPPED_THIN_DARK_OAK_LOG);
+        dropSelf(BiomeBlocks.STRIPPED_THIN_JUNGLE_LOG);
+        dropSelf(BiomeBlocks.STRIPPED_THIN_MANGROVE_LOG);
+        dropSelf(BiomeBlocks.STRIPPED_THIN_OAK_LOG);
+        dropSelf(BiomeBlocks.STRIPPED_THIN_SPRUCE_LOG);
+
         add(BiomeBlocks.MAPLE_SLAB, createSlabItemTable(BiomeBlocks.MAPLE_SLAB));
         add(BiomeBlocks.MAPLE_DOOR, createDoorTable(BiomeBlocks.MAPLE_DOOR));
     }
