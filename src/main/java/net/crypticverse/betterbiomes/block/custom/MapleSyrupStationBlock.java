@@ -29,7 +29,7 @@ import net.crypticverse.betterbiomes.block.entity.MapleSyrupBoilerBlockEntity;
 public class MapleSyrupStationBlock extends BaseEntityBlock implements EntityBlock {
     private static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 12, 16);
 
-    public static final MapCodec<MapleSyrupStationBlock> CODEC = MapleSyrupStationBlock.simpleCodec(MapleSyrupStationBlock::new);
+    public static final MapCodec<MapleSyrupStationBlock> CODEC = simpleCodec(MapleSyrupStationBlock::new);
 
     public MapleSyrupStationBlock(Properties settings) {
         super(settings);
