@@ -1,7 +1,7 @@
-// 1.20.4	2024-03-21T16:01:26.0289276	Better Biomes/Tags for minecraft:item
+// 1.20.4	2024-03-22T08:24:42.9992314	Better Biomes/Tags for minecraft:item
 e880e9ab84852a8c728ebbdc4202975b6ac789ca data\minecraft\tags\items\cherry_logs.json
-9f9c6a08114c679f7ff74392be1da6244eab0360 data\minecraft\tags\items\mangrove_logs.json
 7d7cd3f6edf5e35f2aa925e300eca503d050b984 data\minecraft\tags\items\jungle_logs.json
+9f9c6a08114c679f7ff74392be1da6244eab0360 data\minecraft\tags\items\mangrove_logs.json
 5ddbc0be9a7cff15f816d00f5dc756a6600b7f02 data\betterbiomes\tags\items\maple_logs.json
 d722282e73501bce87bcda1f1110ec0c73a0e765 data\minecraft\tags\items\dark_oak_logs.json
 a594d68da0d1abcee37cda4eea530149680a8e46 data\minecraft\tags\items\birch_logs.json
