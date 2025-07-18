@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "betterbiomes:maple_planks"
+  ],
+  "result": {
+    "count": 1,
+    "id": "betterbiomes:maple_button"
+  }
+}

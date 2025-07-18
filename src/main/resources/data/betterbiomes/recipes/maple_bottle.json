@@ -1,0 +1,12 @@
+{
+  "type": "betterbiomes:boiling",
+  "ingredients": [
+    {
+      "item": "betterbiomes:uncured_maple_syrup"
+    }
+  ],
+  "output": {
+    "item": "betterbiomes:maple_syrup_bottle",
+    "count": 4
+  }
+}

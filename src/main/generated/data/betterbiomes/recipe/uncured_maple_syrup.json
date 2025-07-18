@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "betterbiomes:tapped_maple_sap_bucket",
+    "G": "minecraft:glass_bottle"
+  },
+  "pattern": [
+    " G ",
+    "GBG",
+    " G "
+  ],
+  "result": {
+    "count": 4,
+    "id": "betterbiomes:uncured_maple_syrup"
+  }
+}

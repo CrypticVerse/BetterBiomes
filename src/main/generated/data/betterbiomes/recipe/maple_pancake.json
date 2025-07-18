@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "betterbiomes:pancake",
+    "betterbiomes:maple_syrup_bottle"
+  ],
+  "result": {
+    "count": 1,
+    "id": "betterbiomes:maple_pancake"
+  }
+}

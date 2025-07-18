@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": "betterbiomes:maple_planks"
+  },
+  "pattern": [
+    " PP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "betterbiomes:maple_pressure_plate"
+  }
+}

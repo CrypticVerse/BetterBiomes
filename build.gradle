@@ -1,0 +1,129 @@
+plugins {
+	id 'fabric-loom' version '1.11-SNAPSHOT'
+	id 'maven-publish'
+	id 'me.modmuss50.mod-publish-plugin' version '0.8.4'
+	id 'com.diffplug.spotless' version "7.1.0"
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+	archivesName = project.archives_base_name
+}
+
+repositories {
+	maven {
+		name = 'MinecraftForge'
+		url = 'https://maven.minecraftforge.net/'
+	}
+	maven { url "https://maven.shedaniel.me" }
+	maven {
+		name = 'TerraformersMC'
+		url = 'https://maven.terraformersmc.com/'
+	}
+}
+
+fabricApi {
+	configureDataGeneration() {
+		client = true
+	}
+}
+
+dependencies {
+	// To change the versions see the gradle.properties file
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+	include "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+	modImplementation "com.github.glitchfiend:TerraBlender-fabric:${project.minecraft_version}-${project.terrablender_version}"
+	include "com.github.glitchfiend:TerraBlender-fabric:${project.minecraft_version}-${project.terrablender_version}"
+
+	modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_wood_api_version}"
+	include "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_wood_api_version}"
+
+	//modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${project.rei_version}"
+	//modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}"
+
+	modApi ("me.shedaniel.cloth:cloth-config-fabric:${cloth_version}") {
+		exclude(group: "net.fabricmc.fabric-api")
+	}
+	modApi "dev.architectury:architectury-fabric:${architectury_version}"
+}
+
+processResources {
+	inputs.property "version", project.version
+
+	filesMatching("fabric.mod.json") {
+		expand "version": project.version
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 21
+}
+
+spotless {
+	java {
+		removeUnusedImports()
+	}
+}
+
+java {
+	withSourcesJar()
+
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
+}
+
+jar {
+	from("LICENSE") {
+		rename { "${it}_${inputs.properties.archivesName}"}
+	}
+}
+
+
+publishMods {
+	file = remapJar.archiveFile
+	changelog = file("${project.rootDir}/CHANGELOG.md").text
+	type = STABLE
+	modLoaders.add("fabric")
+	modLoaders.add("quilt")
+	displayName.set("Better Biomes ${project.version} for Fabric ${minecraft_version}")
+	version = "${mod_version.toString()}"
+
+	curseforge {
+		projectId = "938715"
+		accessToken = System.getenv("CURSEFORGE_TOKEN")
+		minecraftVersions.add("${minecraft_version}")
+		javaVersions.add(JavaVersion.VERSION_21)
+	}
+
+	modrinth {
+		projectId = "Qs2o8KiI"
+		accessToken = System.getenv("MODRINTH_TOKEN")
+		minecraftVersions.add("${minecraft_version}")
+		embeds("terrablender")
+		embeds("fabric-api")
+	}
+
+	github {
+		accessToken = System.getenv("GITHUB_TOKEN")
+		repository = "Crypticverse/BetterBiomes"
+		commitish = "${minecraft_version}"
+	}
+}
+tasks.publishMods.dependsOn(tasks.remapJar)
+
+// configure the maven publication
+publishing {
+	publications {
+		create("mavenJava", MavenPublication) {
+			artifactId = "BetterBiomes-Fabric"
+			from components.java
+		}
+	}
+}

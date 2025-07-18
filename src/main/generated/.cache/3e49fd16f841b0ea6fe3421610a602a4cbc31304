@@ -1,0 +1,5 @@
+// 1.21.7	-999999999-01-01T00:00:00	Better Biomes/Tags for minecraft:item
+532d611487dd5fc2dc57373c2cebfd5c1fce7879 data/betterbiomes/tags/item/maple_logs.json
+09e3e245578d544dec59ea1fe9ad735ad3b09efc data/minecraft/tags/item/leaves.json
+532d611487dd5fc2dc57373c2cebfd5c1fce7879 data/minecraft/tags/item/logs_that_burn.json
+2982743d0f693b0960bfc9ed4c75a8a11d2097e0 data/minecraft/tags/item/planks.json
