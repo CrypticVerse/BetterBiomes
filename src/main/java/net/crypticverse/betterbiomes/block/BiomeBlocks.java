@@ -1,6 +1,5 @@
 package net.crypticverse.betterbiomes.block;
 
-import com.terraformersmc.terraform.sign.api.block.TerraformSignBlockHelper;
 import net.crypticverse.betterbiomes.BetterBiomes;
 import net.crypticverse.betterbiomes.block.custom.SignBlockHelper;
 import net.crypticverse.betterbiomes.block.custom.TappedBucketBlock;

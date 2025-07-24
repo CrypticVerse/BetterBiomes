@@ -1,6 +1,5 @@
 package net.crypticverse.betterbiomes.item;
 
-import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.crypticverse.betterbiomes.BetterBiomes;
 import net.crypticverse.betterbiomes.block.BiomeBlocks;
 import net.crypticverse.betterbiomes.entity.BBEntityTypes;
