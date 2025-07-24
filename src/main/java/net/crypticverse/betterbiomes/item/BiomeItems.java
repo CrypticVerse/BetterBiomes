@@ -3,6 +3,7 @@ package net.crypticverse.betterbiomes.item;
 import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.crypticverse.betterbiomes.BetterBiomes;
 import net.crypticverse.betterbiomes.block.BiomeBlocks;
+import net.crypticverse.betterbiomes.entity.BBEntityTypes;
 import net.crypticverse.betterbiomes.fluid.BetterBiomeFluids;
 import net.minecraft.block.Block;
 import net.minecraft.item.*;
@@ -19,8 +20,8 @@ public class BiomeItems {
 
     public static final Item MAPLE_SIGN = registerStandingSign("maple_sign", BiomeBlocks.STANDING_MAPLE_SIGN, BiomeBlocks.WALL_MAPLE_SIGN);
     public static final Item HANGING_MAPLE_SIGN = registerHangingSign("maple_hanging_sign", BiomeBlocks.HANGING_MAPLE_SIGN, BiomeBlocks.WALL_HANGING_MAPLE_SIGN);
-    public static final Item MAPLE_BOAT = TerraformBoatItemHelper.registerBoatItem(MAPLE_BOAT_ID, false);
-    public static final Item MAPLE_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(MAPLE_BOAT_ID, true);
+    public static final Item MAPLE_BOAT = registerItem("maple_boat", settings -> new BoatItem(BBEntityTypes.MAPLE_BOAT, settings.maxCount(1)));
+    public static final Item MAPLE_CHEST_BOAT = registerItem("maple_chest_boat", settings -> new BoatItem(BBEntityTypes.MAPLE_CHEST_BOAT, settings.maxCount(1)));
 
     public static final Item TAPPED_MAPLE_SAP_BUCKET = registerItem("tapped_maple_sap_bucket", createAliasedBlockItem(BiomeBlocks.TAPPED_BUCKET));
 

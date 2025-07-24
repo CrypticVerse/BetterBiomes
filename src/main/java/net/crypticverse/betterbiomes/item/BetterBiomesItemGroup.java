@@ -3,7 +3,6 @@ package net.crypticverse.betterbiomes.item;
 import com.google.common.collect.ImmutableList;
 import net.crypticverse.betterbiomes.block.BiomeBlocks;
 import net.crypticverse.betterbiomes.BetterBiomes;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -23,7 +22,7 @@ public class BetterBiomesItemGroup {
 
     public static final ItemGroup BETTER_BIOMES_GROUP = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(BetterBiomes.MOD_ID, "betterbiomes"),
-            FabricItemGroup.builder().icon(() -> new ItemStack(BiomeBlocks.MAPLE_PLANKS))
+            ItemGroup.create(ItemGroup.Row.TOP, 0).icon(() -> new ItemStack(BiomeBlocks.MAPLE_PLANKS))
                     .displayName(Text.translatable("itemgroup.betterbiomes"))
                     .entries((displayContext, entries) -> {
                         for (Field field : BiomeBlocks.class.getFields()) {
@@ -40,6 +39,7 @@ public class BetterBiomesItemGroup {
                             } catch (IllegalAccessException ignored) {}
                         }
                         for (Field field : BiomeItems.class.getFields()) {
+                            if (field.getType() != Item.class) continue;
                             try {
                                 Item item = (Item) field.get(null);
 

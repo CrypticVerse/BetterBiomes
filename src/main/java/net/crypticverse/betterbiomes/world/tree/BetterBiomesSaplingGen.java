@@ -1,6 +1,6 @@
 package net.crypticverse.betterbiomes.world.tree;
 
-import net.crypticverse.betterbiomes.world.BetterBiomesConfiguredFeatures;
+import net.crypticverse.betterbiomes.world.feature.BetterBiomesConfiguredFeatures;
 import net.minecraft.block.SaplingGenerator;
 
 import java.util.Optional;

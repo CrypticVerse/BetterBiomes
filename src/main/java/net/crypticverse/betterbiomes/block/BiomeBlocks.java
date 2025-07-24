@@ -2,6 +2,7 @@ package net.crypticverse.betterbiomes.block;
 
 import com.terraformersmc.terraform.sign.api.block.TerraformSignBlockHelper;
 import net.crypticverse.betterbiomes.BetterBiomes;
+import net.crypticverse.betterbiomes.block.custom.SignBlockHelper;
 import net.crypticverse.betterbiomes.block.custom.TappedBucketBlock;
 import net.crypticverse.betterbiomes.util.BBWoodTypes;
 import net.crypticverse.betterbiomes.world.tree.BetterBiomesSaplingGen;
@@ -37,10 +38,10 @@ public class BiomeBlocks {
 
     public static final Block TAPPED_BUCKET = registerBlockWithoutItem("tapped_bucket_block", TappedBucketBlock::new, AbstractBlock.Settings.copy(Blocks.COCOA));
 
-    public static final Block STANDING_MAPLE_SIGN = TerraformSignBlockHelper.registerSignBlock(Identifier.of(BetterBiomes.MOD_ID, "maple_sign"), settings -> new SignBlock(BBWoodTypes.MAPLE_WOOD_TYPE, settings), AbstractBlock.Settings.copy(Blocks.OAK_SIGN));
-    public static final Block WALL_MAPLE_SIGN = TerraformSignBlockHelper.registerSignBlock(Identifier.of(BetterBiomes.MOD_ID, "maple_wall_sign"), settings -> new WallSignBlock(BBWoodTypes.MAPLE_WOOD_TYPE, settings), AbstractBlock.Settings.copy(Blocks.OAK_WALL_SIGN));
-    public static final Block HANGING_MAPLE_SIGN = TerraformSignBlockHelper.registerSignBlock(Identifier.of(BetterBiomes.MOD_ID, "maple_hanging_sign"), settings -> new HangingSignBlock(BBWoodTypes.MAPLE_WOOD_TYPE, settings), AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN));
-    public static final Block WALL_HANGING_MAPLE_SIGN = TerraformSignBlockHelper.registerSignBlock(Identifier.of(BetterBiomes.MOD_ID, "maple_wall_hanging_sign"), settings -> new WallHangingSignBlock(BBWoodTypes.MAPLE_WOOD_TYPE, settings), AbstractBlock.Settings.copy(Blocks.OAK_WALL_HANGING_SIGN));
+    public static final Block STANDING_MAPLE_SIGN = SignBlockHelper.registerSign(Identifier.of(BetterBiomes.MOD_ID, "maple_sign"), settings -> new SignBlock(BBWoodTypes.MAPLE_WOOD_TYPE, settings), AbstractBlock.Settings.copy(Blocks.OAK_SIGN));
+    public static final Block WALL_MAPLE_SIGN = SignBlockHelper.registerSign(Identifier.of(BetterBiomes.MOD_ID, "maple_wall_sign"), settings -> new WallSignBlock(BBWoodTypes.MAPLE_WOOD_TYPE, settings), AbstractBlock.Settings.copy(Blocks.OAK_WALL_SIGN));
+    public static final Block HANGING_MAPLE_SIGN = SignBlockHelper.registerSign(Identifier.of(BetterBiomes.MOD_ID, "maple_hanging_sign"), settings -> new HangingSignBlock(BBWoodTypes.MAPLE_WOOD_TYPE, settings), AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN));
+    public static final Block WALL_HANGING_MAPLE_SIGN = SignBlockHelper.registerSign(Identifier.of(BetterBiomes.MOD_ID, "maple_wall_hanging_sign"), settings -> new WallHangingSignBlock(BBWoodTypes.MAPLE_WOOD_TYPE, settings), AbstractBlock.Settings.copy(Blocks.OAK_WALL_HANGING_SIGN));
 
     private static Block registerBlock(String name, Function<AbstractBlock.Settings, Block> function, AbstractBlock.Settings settings) {
         Block block = function.apply(settings.registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(BetterBiomes.MOD_ID, name))));

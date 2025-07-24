@@ -1,6 +1,7 @@
 package net.crypticverse.betterbiomes.world.biome;
 
 import net.crypticverse.betterbiomes.BetterBiomes;
+import net.crypticverse.betterbiomes.world.feature.BetterBiomesPlacedFeatures;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.registry.Registerable;
@@ -49,6 +50,7 @@ public class BetterBiomesBiomes {
         DefaultBiomeFeatures.addDefaultOres(biomeBuilder);
 
         biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, VegetationPlacedFeatures.TREES_PLAINS);
+        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, BetterBiomesPlacedFeatures.MAPLE_PLACED_KEY);
         DefaultBiomeFeatures.addDefaultVegetation(biomeBuilder, true);
 
         return new Biome.Builder()
@@ -62,7 +64,7 @@ public class BetterBiomesBiomes {
                         .waterFogColor(0x050533)
                         .skyColor(0x79a6ff)
                         .grassColor(0x79c05a)
-                        .fogColor(0x22a1e6)
+                        .fogColor(12638463)
                         .moodSound(BiomeMoodSound.CAVE)
                         .build())
                 .build();

@@ -1,4 +1,4 @@
-package net.crypticverse.betterbiomes.world;
+package net.crypticverse.betterbiomes.world.feature;
 
 import net.crypticverse.betterbiomes.BetterBiomes;
 import net.crypticverse.betterbiomes.block.BiomeBlocks;

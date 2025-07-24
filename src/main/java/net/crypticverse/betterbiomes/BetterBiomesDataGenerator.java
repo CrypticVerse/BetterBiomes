@@ -1,17 +1,14 @@
 package net.crypticverse.betterbiomes;
 
 import net.crypticverse.betterbiomes.data.*;
-import net.crypticverse.betterbiomes.world.BetterBiomesConfiguredFeatures;
-import net.crypticverse.betterbiomes.world.BetterBiomesPlacedFeatures;
+import net.crypticverse.betterbiomes.world.feature.BetterBiomesConfiguredFeatures;
+import net.crypticverse.betterbiomes.world.feature.BetterBiomesPlacedFeatures;
 import net.crypticverse.betterbiomes.world.biome.BetterBiomesBiomes;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.registry.RegistryBuilder;
 import net.minecraft.registry.RegistryKeys;
 
-@Environment(EnvType.CLIENT)
 public class BetterBiomesDataGenerator implements DataGeneratorEntrypoint {
 	@Override
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
