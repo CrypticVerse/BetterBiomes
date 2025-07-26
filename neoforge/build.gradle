@@ -1,0 +1,70 @@
+plugins {
+    id 'multiloader-loader'
+    id 'net.neoforged.moddev'
+}
+
+neoForge {
+    version = neoforge_version
+    // Automatically enable neoforge AccessTransformers if the file exists
+    def at = project(':common').file('src/main/resources/accesstransformer.cfg')
+    if (at.exists()) {
+        accessTransformers.from(at.absolutePath)
+    }
+    parchment {
+        minecraftVersion = parchment_minecraft
+        mappingsVersion = parchment_version
+    }
+    runs {
+        configureEach {
+            systemProperty('neoforge.enabledGameTestNamespaces', mod_id)
+            ideName = "NeoForge ${it.name.capitalize()} (${project.path})" // Unify the run config names with fabric
+        }
+        client {
+            client()
+        }
+        data {
+            clientData()
+            def projectCommon =
+            programArguments.addAll(
+                    "--mod", "betterbiomes", "--all",
+                    "--output", rootProject.project(":common").file("src/generated/resources").getAbsolutePath(),
+                    "--existing", rootProject.project(":common").file("src/main/resources").getAbsolutePath()
+            )
+        }
+    }
+    mods {
+        "${mod_id}" {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+dependencies {
+    implementation("com.github.glitchfiend:TerraBlender-neoforge:${minecraft_version}-${terrablender_version}")
+}
+
+TaskCollection.metaClass.excludingNeoTasks = { ->
+    delegate.matching { !it.name.startsWith("neo") }
+}
+
+tasks.withType(JavaCompile).excludingNeoTasks().configureEach {
+    source(project(":common").sourceSets.main.allSource)
+}
+
+tasks.withType(Javadoc).excludingNeoTasks().configureEach {
+    source(project(":common").sourceSets.main.allJava)
+}
+
+tasks.named("sourcesJar", Jar) {
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    from(project(":common").sourceSets.main.allSource)
+}
+
+compileTestJava.enabled = false
+
+processResources {
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    from(project(":common").sourceSets["main"].resources)
+}
+
+sourceSets.main.resources { srcDir project(":common").file('src/generated/resources') }

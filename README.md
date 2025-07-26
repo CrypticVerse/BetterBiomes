@@ -1,10 +1,8 @@
-# [BetterBiomes](https://modrinth.com/mod/better-biomes)
+# MultiLoader Template
 
-This is a mod that adds different biomes to the game!
+This project provides a Gradle project template that can compile Minecraft mods for multiple modloaders using a common project for the sources. This project does not require any third party libraries or dependencies. If you have any questions or want to discuss the project, please join our [Discord](https://discord.myceliummod.network).
 
-*Please note that this mod is in beta, and more features will be added along the way.
-
-## Installation
+## Getting Started
 
 To install this mod on the client, place the `.jar` file in your `mods` folder.
 
@@ -15,49 +13,17 @@ Maple trees and the Maple forest biome
 
 ## Compatibility
 
-This mod is compatible with Fabric, Quilt, Forge, and NeoForge. This repo is the Fabric/Quilt mod.
-- Minecraft 1.20.2 or higher
-- Fabric Loader 0.14.23 or higher
-- Fabric API
-
-## Contributing
-
-We need language files! To make a lang file, create a fork with the file, then pull request it into the master branch.
-Or, go to our Crowdin page and contribute there!
-
-## Developing Guide
-Better Biomes uses the normal Gradle project structure, and can be compiled by running the gradle task `build`.
-
-## Implementation in your mod
-To implement this mod, follow the steps below.
-
-### Maven
-Add the maven repo for CrypticVerse's Resources
-```gradle
-repositories {
-    maven { url = "https://raw.githubusercontent.com/CrypticVerse/projectresources/master/maven" }
-}
-```
-
-### Implementation
-```gradle
-modImplementation "net.crypticverse.betterbiomes:BetterBiomes-Fabric:${betterbiomes_version}-${mc_verison}
-```
-
-### A quick note
-If you are using an implementation, you need to include yhr maven for other project resources.
-```gradle
-maven {url = "https://maven.shedaniel.me"}
-maven {url = "https://maven.minecraftforge.net"}
-maven {url = "https://maven.terraformersmc.com"}
-```
+This mod is compatible with Fabric, Quilt, and NeoForge.
+- Minecraft 1.21.8 or higher
+- Fabric Loader 0.16.14, or NeoForge 21.8.15 or higher
+- Fabric API for Fabric
 
 #### Requirements
 
-- OpenJDK 17 or higher.
-  We recommend using the JDK from [Eclipse Temurin](https://adoptium.net/temurin/releases/?version=17), as it works without issues.
+- OpenJDK 21 or higher.
+  We recommend using the JDK from [Eclipse Temurin](https://adoptium.net/temurin/releases/?version=21), as it works without issues.
 
-- Gradle 8.3 or higher (optional)
+- Gradle 8.14 or higher (optional)
   Gradle is already provided in this repository, so you do not need to download it seperatley
 
 ## License

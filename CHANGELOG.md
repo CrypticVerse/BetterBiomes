@@ -1,8 +1,6 @@
-### 1.21.7 UPDATE
+### 1.21.8 UPDATE
 
-- New update!
-- Removed thin logs/forest
-- Stuff may be broken, make an issue if it is!
+- Multiloader!
 
 ### Happy adventuring!
 #### --- CrypticVerse Studios

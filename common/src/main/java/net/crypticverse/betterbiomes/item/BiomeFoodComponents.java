@@ -1,0 +1,14 @@
+package net.crypticverse.betterbiomes.item;
+
+
+import net.minecraft.world.food.FoodProperties;
+
+public class BiomeFoodComponents {
+    public static final FoodProperties PANCAKE = new FoodProperties.Builder().nutrition(3).saturationModifier(0.25f).build();
+    public static final FoodProperties MAPLE_PANCAKE = new FoodProperties.Builder().nutrition(4).saturationModifier(0.3f).build();
+    public static final FoodProperties CHOCOLATE_PANCAKE = new FoodProperties.Builder().nutrition(4).saturationModifier(0.3f).build();
+
+    public static final FoodProperties PANCAKE_STACK = new FoodProperties.Builder().nutrition(20).saturationModifier(0.7f).build();
+    public static final FoodProperties MAPLE_PANCAKE_STACK = new FoodProperties.Builder().nutrition(20).saturationModifier(1f).build();
+    public static final FoodProperties CHOCOLATE_PANCAKE_STACK = new FoodProperties.Builder().nutrition(20).saturationModifier(1f).build();
+}
