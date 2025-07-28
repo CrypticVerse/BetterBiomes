@@ -1,6 +1,7 @@
 plugins {
     id 'multiloader-loader'
     id 'net.neoforged.moddev'
+    id 'me.modmuss50.mod-publish-plugin' version '0.8.4'
 }
 
 neoForge {
@@ -68,3 +69,27 @@ processResources {
 }
 
 sourceSets.main.resources { srcDir project(":common").file('src/generated/resources') }
+
+publishMods {
+    file = jar.archiveFile
+    changelog = file("${project.rootDir}/CHANGELOG.md").text
+    type = STABLE
+    modLoaders.add("neoforge")
+    displayName.set("Better Biomes ${project.version} for NeoForge ${minecraft_version}")
+    version = "${version.toString()}"
+
+    curseforge {
+        projectId = "938715"
+        accessToken = System.getenv("CURSEFORGE_TOKEN")
+        minecraftVersions.add("${minecraft_version}")
+        javaVersions.add(JavaVersion.VERSION_21)
+        embeds("terrablender-neoforge")
+    }
+
+    modrinth {
+        projectId = "Qs2o8KiI"
+        accessToken = System.getenv("MODRINTH_TOKEN")
+        minecraftVersions.add("${minecraft_version}")
+        embeds("terrablender")
+    }
+}
