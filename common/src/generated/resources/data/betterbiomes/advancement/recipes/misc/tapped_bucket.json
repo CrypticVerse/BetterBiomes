@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "betterbiomes:tapped_maple_sap_bucket"
+        "recipe": "betterbiomes:tapped_bucket"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -37,7 +37,7 @@
   ],
   "rewards": {
     "recipes": [
-      "betterbiomes:tapped_maple_sap_bucket"
+      "betterbiomes:tapped_bucket"
     ]
   }
 }

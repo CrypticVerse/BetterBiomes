@@ -3,7 +3,6 @@ package net.crypticverse.betterbiomes;
 import net.crypticverse.betterbiomes.block.BiomeBlocks;
 import net.crypticverse.betterbiomes.block.FlammableBlocks;
 import net.crypticverse.betterbiomes.block.StrippableBlocks;
-import net.crypticverse.betterbiomes.fluid.BetterBiomeFluids;
 import net.crypticverse.betterbiomes.item.BetterBiomesItemGroup;
 import net.crypticverse.betterbiomes.item.BiomeItems;
 
@@ -15,7 +14,6 @@ public class BetterBiomes  {
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	public static void init() {
-		BetterBiomeFluids.register();
 		BetterBiomesItemGroup.registerItemGroups();
 		BiomeBlocks.registerModBlocks();
 		BiomeItems.registerItems();

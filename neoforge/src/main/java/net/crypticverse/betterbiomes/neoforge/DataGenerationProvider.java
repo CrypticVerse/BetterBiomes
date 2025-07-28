@@ -39,7 +39,6 @@ public class DataGenerationProvider {
 
         generator.addProvider(true, new BlockTagGen(output, lookupProvider));
         generator.addProvider(true, new ItemTagGen(output, lookupProvider));
-        generator.addProvider(true, new FluidTagGen(output, lookupProvider));
         generator.addProvider(true, new ModelGen(output));
     }
 }

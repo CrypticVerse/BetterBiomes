@@ -28,4 +28,3 @@ This mod is compatible with Fabric, Quilt, and NeoForge.
 
 ## License
    This mod is licensed under MIT License, which is free and open source. For more info, refer to the [license file](LICENSE).
-   [Looking for Forge? Find it Here!](https://github.com/CrypticVerse/BetterBiomes-Forge)

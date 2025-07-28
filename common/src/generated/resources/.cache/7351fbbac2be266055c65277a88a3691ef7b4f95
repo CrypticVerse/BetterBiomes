@@ -1,4 +1,4 @@
-// 1.21.8	2025-07-26T18:34:41.142961	Model Definitions - betterbiomes
+// 1.21.8	2025-07-28T19:13:18.8691325	Model Definitions - betterbiomes
 b87c2aec3437f342b2513fee9cc16fe16413448c assets/betterbiomes/blockstates/maple_button.json
 584e6d41dc3a2240f03969e8f9debb62c17ebb2e assets/betterbiomes/blockstates/maple_door.json
 0e30c659ef793a12ba210d7baef7095ab09302fd assets/betterbiomes/blockstates/maple_fence.json
@@ -37,7 +37,6 @@ ee44c04ad1fccb3e5adba90e244bf7a5201d4074 assets/betterbiomes/items/maple_sapling
 ed0e3ec8933ccbcafa4b3ab76377bc239497119e assets/betterbiomes/items/maple_sign.json
 27dd5ed320c9f00236421b777138cc81c7d2a221 assets/betterbiomes/items/maple_slab.json
 85391eaf22bcf8edba542e4ac29f665185ba64cb assets/betterbiomes/items/maple_stairs.json
-471f8b2b316ced801818717adc0f370f774c2cb2 assets/betterbiomes/items/maple_syrup_bucket.json
 83a0cacad84eaa0aedfcce78261a44c427d0c257 assets/betterbiomes/items/maple_trapdoor.json
 504a290f5a534f945b8352566e4214ae12a26580 assets/betterbiomes/items/maple_wood.json
 08aa6f77d8329dad370fa55d8c57aca35fe59b4e assets/betterbiomes/items/pancake.json
@@ -93,7 +92,6 @@ e7d84f05782d40f403009c6669a062218e6418cc assets/betterbiomes/models/item/maple_d
 ce8952be0e798b572ccab528d1175399b63b6565 assets/betterbiomes/models/item/maple_pancake.json
 27a856c5ac7ea4c9d3b36e4f9e9046ce23c2a923 assets/betterbiomes/models/item/maple_pancake_stack.json
 1450826f8f315e3fb2026e1de542e0af1d86278c assets/betterbiomes/models/item/maple_sign.json
-b7ab19f51ec7fffca07e128478746f34d6faddad assets/betterbiomes/models/item/maple_syrup_bucket.json
 4ec536846f896b9b8412858b2ff9cc29a13ca789 assets/betterbiomes/models/item/pancake.json
 b052e34c7d8be7e63d0dbfa163e11ae313b8b981 assets/betterbiomes/models/item/pancake_stack.json
 bb4c7a4e1124607e9fe8c0a338a539be081ed54d assets/betterbiomes/models/item/tapped_bucket.json

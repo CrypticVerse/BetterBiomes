@@ -4,12 +4,8 @@
   "package": "net.crypticverse.betterbiomes.mixin",
   "refmap": "${mod_id}.refmap.json",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [
-    "CommandSourceMixin"
-  ],
-  "client": [
-    "EntityModelsMixin"
-  ],
+  "mixins": [],
+  "client": [],
   "server": [],
   "injectors": {
     "defaultRequire": 1

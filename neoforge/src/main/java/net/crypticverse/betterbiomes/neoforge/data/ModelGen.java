@@ -2,16 +2,13 @@ package net.crypticverse.betterbiomes.neoforge.data;
 
 import net.crypticverse.betterbiomes.BetterBiomes;
 import net.crypticverse.betterbiomes.block.BiomeBlocks;
-import net.crypticverse.betterbiomes.fluid.BetterBiomeFluids;
 import net.crypticverse.betterbiomes.item.BiomeItems;
 import net.crypticverse.betterbiomes.util.BiomeBlockFamilies;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.client.data.models.model.ModelTemplates;
-import net.minecraft.client.data.models.model.TexturedModel;
 import net.minecraft.core.Holder;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -46,7 +43,6 @@ public class ModelGen extends ModelProvider {
         blockStateModelGenerator.createDoor(BiomeBlocks.MAPLE_DOOR);
         blockStateModelGenerator.createTrapdoor(BiomeBlocks.MAPLE_TRAPDOOR);
 
-        itemModelGenerator.generateFlatItem(BetterBiomeFluids.MAPLE_SYRUP_BUCKET, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(BiomeItems.MAPLE_BOAT, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(BiomeItems.MAPLE_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(BiomeItems.TAPPED_BUCKET, ModelTemplates.FLAT_ITEM);
@@ -62,10 +58,7 @@ public class ModelGen extends ModelProvider {
 
     @Override
     protected Stream<? extends Holder<Block>> getKnownBlocks() {
-        List<Block> excluded = new ArrayList<>();
-
-        excluded.add(BiomeBlocks.TAPPED_BUCKET);
-        excluded.add(BetterBiomeFluids.MAPLE_SYRUP_BLOCK);
+        List<Block> excluded = List.of(BiomeBlocks.TAPPED_BUCKET);
 
         return super.getKnownBlocks().filter(entry -> !excluded.contains(entry.value()));
     }

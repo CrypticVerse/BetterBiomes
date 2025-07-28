@@ -1,4 +1,4 @@
-// 1.21.8	2025-07-26T17:02:13.1506852	Better Biomes Recipes
+// 1.21.8	2025-07-28T19:13:18.8740334	Better Biomes Recipes
 3b5085fd1f80a7e5445fab2efb66e6e1e68ac96b data/betterbiomes/advancement/recipes/food/chocolate_pancake.json
 1d4083bb7777eac4564e95194ac5e10cd36ae8f4 data/betterbiomes/advancement/recipes/food/chocolate_pancake_stack.json
 be583c3da16721176c2a8a1a7416d2c384ebde61 data/betterbiomes/advancement/recipes/food/maple_pancake.json
@@ -14,7 +14,7 @@ f1de60d3a2f18596720156c1ba81cc242bba6a43 data/betterbiomes/advancement/recipes/m
 ed2437558f852609a2de9e6f3e8e15ee2dbb009e data/betterbiomes/advancement/recipes/misc/maple_stairs.json
 2327fefde702cd8dac08e6d4c93fe4af717b8371 data/betterbiomes/advancement/recipes/misc/maple_trapdoor.json
 5c9ec57de2ecce0418066093978f3e651dc7d3ba data/betterbiomes/advancement/recipes/misc/maple_wood.json
-781d7178bec1fcfd56b0349efe4d8a21794b9495 data/betterbiomes/advancement/recipes/misc/tapped_maple_sap_bucket.json
+2a4e48e90436f26060ac4d811455c56a2def07b2 data/betterbiomes/advancement/recipes/misc/tapped_bucket.json
 4acbb87d2b2cb58d9d76999f91dd42e8e0162bfc data/betterbiomes/advancement/recipes/misc/uncured_maple_syrup.json
 be7ca1bc0197bbcf75a1500eede0fa7cb217030a data/betterbiomes/advancement/recipes/transportation/maple_boat.json
 a261250bd5622d9fb4c1ccafa86bd418e25989b0 data/betterbiomes/advancement/recipes/transportation/maple_chest_boat.json
@@ -39,5 +39,5 @@ db506a44bc9b5f1f33954442c7ddc837092af785 data/betterbiomes/recipe/maple_trapdoor
 805bb6e76aa36a4142370b00f7d182f7caec91a6 data/betterbiomes/recipe/maple_wood.json
 4183fbab9a894c775fe4a4edf1c57afb9b9b3c25 data/betterbiomes/recipe/pancake.json
 d19c7ca9b7e4c86eed3792cefc63cb611a2bf1d0 data/betterbiomes/recipe/pancake_stack.json
-8774d2be9dbe6a47ffbe2d262fd49a0de3e64d93 data/betterbiomes/recipe/tapped_maple_sap_bucket.json
+0ee245533a1cc1496e97c1b521280c3283dba266 data/betterbiomes/recipe/tapped_bucket.json
 3ab908475c01f55d8d53cc25d589d91f73056e80 data/betterbiomes/recipe/uncured_maple_syrup.json

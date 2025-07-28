@@ -3,7 +3,6 @@ package net.crypticverse.betterbiomes.item;
 import net.crypticverse.betterbiomes.BetterBiomes;
 import net.crypticverse.betterbiomes.block.BiomeBlocks;
 import net.crypticverse.betterbiomes.entity.BBEntityTypes;
-import net.crypticverse.betterbiomes.fluid.BetterBiomeFluids;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -22,10 +21,10 @@ public class BiomeItems {
     public static final Item MAPLE_BOAT = registerItem("maple_boat", settings -> new BoatItem(BBEntityTypes.MAPLE_BOAT, settings.stacksTo(1)));
     public static final Item MAPLE_CHEST_BOAT = registerItem("maple_chest_boat", settings -> new BoatItem(BBEntityTypes.MAPLE_CHEST_BOAT, settings.stacksTo(1)));
 
-    public static final Item TAPPED_MAPLE_SAP_BUCKET = registerItem("tapped_maple_sap_bucket", createAliasedBlockItem(BiomeBlocks.TAPPED_BUCKET));
+    public static final Item TAPPED_MAPLE_SAP_BUCKET = registerItem("tapped_maple_sap_bucket", Item::new);
 
     public static final Item TAPPED_BUCKET = registerItem("tapped_bucket",
-            settings -> new BucketItem(BetterBiomeFluids.STILL_MAPLE_SYRUP, settings));
+            createAliasedBlockItem(BiomeBlocks.TAPPED_BUCKET));
 
     public static final Item UNCURED_MAPLE_SYRUP = registerItem("uncured_maple_syrup",
             Item::new);

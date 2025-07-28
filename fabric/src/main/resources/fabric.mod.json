@@ -1,6 +1,6 @@
 {
     "schemaVersion": 1,
-    "id": "${mod_id}",
+    "id": "betterbiomes",
     "version": "${version}",
     "name": "${mod_name}",
     "description": "${description}",
@@ -15,10 +15,13 @@
     "environment": "*",
     "entrypoints": {
         "main": [
-          "net.crypticverse.betterbiomes.fabric.BetterBiomesFabric"
+            "net.crypticverse.betterbiomes.fabric.BetterBiomesFabric"
         ],
         "client": [
-            "net.crypticverse.betterbiomes.fabric.BetterBiomesFabricClient"
+            "net.crypticverse.betterbiomes.fabric.BetterBiomesFabric"
+        ],
+        "terrablender": [
+            "net.crypticverse.betterbiomes.fabric.BetterBiomesFabric"
         ]
     },
     "mixins": [
@@ -29,11 +32,9 @@
     "depends": {
         "fabricloader": ">=${fabric_loader_version}",
         "fabric-api": "*",
+        "terrablender": "*",
         "minecraft": "~${minecraft_version}",
         "java": ">=${java_version}"
-    },
-    "suggests": {
-        "another-mod": "*"
     }
 }
   
