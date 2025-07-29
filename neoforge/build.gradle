@@ -7,7 +7,7 @@ plugins {
 neoForge {
     version = neoforge_version
     // Automatically enable neoforge AccessTransformers if the file exists
-    def at = project(':common').file('src/main/resources/accesstransformer.cfg')
+    def at = project(':common').file('src/main/resources/META-INF/accesstransformer.cfg')
     if (at.exists()) {
         accessTransformers.from(at.absolutePath)
     }
@@ -76,7 +76,7 @@ publishMods {
     type = STABLE
     modLoaders.add("neoforge")
     displayName.set("Better Biomes ${project.version} for NeoForge ${minecraft_version}")
-    version = "${version.toString()}"
+    version = "${project.version}"
 
     curseforge {
         projectId = "938715"
@@ -90,6 +90,6 @@ publishMods {
         projectId = "Qs2o8KiI"
         accessToken = System.getenv("MODRINTH_TOKEN")
         minecraftVersions.add("${minecraft_version}")
-        embeds("terrablender")
+        requires("terrablender")
     }
 }

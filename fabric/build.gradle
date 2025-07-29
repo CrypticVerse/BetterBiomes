@@ -46,7 +46,7 @@ publishMods {
     modLoaders.add("fabric")
     modLoaders.add("quilt")
     displayName.set("Better Biomes ${project.version} for Fabric ${minecraft_version}")
-    version = "${version.toString()}"
+    version = "${project.version}"
 
     curseforge {
         projectId = "938715"
