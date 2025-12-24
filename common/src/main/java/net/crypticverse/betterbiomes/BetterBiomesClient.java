@@ -3,7 +3,7 @@ package net.crypticverse.betterbiomes;
 import net.crypticverse.betterbiomes.client.BlockLayerRenderer;
 import net.crypticverse.betterbiomes.client.ModModelLayers;
 import net.crypticverse.betterbiomes.entity.BBEntityTypes;
-import net.minecraft.client.model.BoatModel;
+import net.minecraft.client.model.object.boat.BoatModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.entity.BoatRenderer;

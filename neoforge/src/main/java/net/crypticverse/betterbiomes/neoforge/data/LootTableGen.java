@@ -50,7 +50,7 @@ public class LootTableGen extends BlockLootSubProvider {
 
     @Override
     protected Iterable<Block> getKnownBlocks() {
-        return BuiltInRegistries.BLOCK.entrySet().stream().filter(e -> e.getKey().location().getNamespace().equals(BetterBiomes.MOD_ID)).map(Map.Entry::getValue).toList();
+        return BuiltInRegistries.BLOCK.entrySet().stream().filter(e -> e.getKey().identifier().getNamespace().equals(BetterBiomes.MOD_ID)).map(Map.Entry::getValue).toList();
     }
 
     public static LootTableProvider create(PackOutput output, CompletableFuture<HolderLookup.Provider> provider) {

@@ -6,7 +6,7 @@ import net.crypticverse.betterbiomes.BetterBiomes;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.CreativeModeTab;
@@ -21,7 +21,7 @@ public class BetterBiomesItemGroup {
 
 
     public static final CreativeModeTab BETTER_BIOMES_GROUP = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
-            ResourceLocation.fromNamespaceAndPath(BetterBiomes.MOD_ID, "betterbiomes"),
+            Identifier.fromNamespaceAndPath(BetterBiomes.MOD_ID, "betterbiomes"),
             CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0).icon(() -> new ItemStack(BiomeBlocks.MAPLE_PLANKS))
                     .title(Component.translatable("itemgroup.betterbiomes"))
                     .displayItems((displayContext, entries) -> {
