@@ -1,4 +1,5 @@
-// 1.21.8	2025-07-28T19:13:18.8740334	Better Biomes Recipes
+// 1.21.8	2025-12-29T14:07:01.4756775	Better Biomes Recipes
+ed16a60b93c9e956a10c1ad1691b7a025d4af0be data/betterbiomes/advancement/recipes/building_blocks/maple_planks.json
 3b5085fd1f80a7e5445fab2efb66e6e1e68ac96b data/betterbiomes/advancement/recipes/food/chocolate_pancake.json
 1d4083bb7777eac4564e95194ac5e10cd36ae8f4 data/betterbiomes/advancement/recipes/food/chocolate_pancake_stack.json
 be583c3da16721176c2a8a1a7416d2c384ebde61 data/betterbiomes/advancement/recipes/food/maple_pancake.json
@@ -31,6 +32,7 @@ bf320b49602576e157808406f37a96cc7f73f646 data/betterbiomes/recipe/maple_door.jso
 fa75e297db9ff0222b0c23209e158c83e2f5a133 data/betterbiomes/recipe/maple_hanging_sign.json
 bd56aca8b09f316d196db8af472450ef0814fc74 data/betterbiomes/recipe/maple_pancake.json
 e9c14a61068e0efbde0a36509a765dd3cab75279 data/betterbiomes/recipe/maple_pancake_stack.json
+2737b7c7ceca2a19e79601f54d837e971bb913ff data/betterbiomes/recipe/maple_planks.json
 431e4f0f9ff50a984197713a05250b93b9758331 data/betterbiomes/recipe/maple_pressure_plate.json
 b601d6f9dd21b1739a455a25a1076975e18fa84d data/betterbiomes/recipe/maple_sign.json
 eab6fea779009735077862d5a3f32bf3c3a1952b data/betterbiomes/recipe/maple_slab.json

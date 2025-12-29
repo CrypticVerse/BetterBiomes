@@ -1,6 +1,6 @@
-### 1.21.8 UPDATE
+### 1.21.8 hotfix
 
-- Multiloader added
+- Fixed maple planks being unobtainable
 
-### Happy adventuring!
+### Have fun crafting!
 #### --- CrypticVerse Studios

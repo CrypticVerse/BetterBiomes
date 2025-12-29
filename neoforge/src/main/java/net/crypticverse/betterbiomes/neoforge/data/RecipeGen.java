@@ -40,6 +40,7 @@ public class RecipeGen extends RecipeProvider {
         shaped(RecipeCategory.FOOD, BiomeItems.CHOCOLATE_PANCAKE_STACK, 1).pattern("PPP").pattern("PPP").pattern("PPP").define('P', BiomeItems.CHOCOLATE_PANCAKE).unlockedBy(getHasName(BiomeItems.CHOCOLATE_PANCAKE), has(BiomeItems.CHOCOLATE_PANCAKE)).save(output);
         shapeless(RecipeCategory.FOOD, BiomeItems.MAPLE_PANCAKE, 1).requires(BiomeItems.PANCAKE).requires(BiomeItems.TAPPED_MAPLE_SAP_BUCKET).unlockedBy(getHasName(BiomeItems.PANCAKE), has(BiomeItems.PANCAKE)).unlockedBy(getHasName(BiomeItems.TAPPED_MAPLE_SAP_BUCKET), has(BiomeItems.TAPPED_MAPLE_SAP_BUCKET)).save(output);
         shapeless(RecipeCategory.FOOD, BiomeItems.CHOCOLATE_PANCAKE, 1).requires(BiomeItems.PANCAKE).requires(Items.COCOA_BEANS).unlockedBy(getHasName(BiomeItems.PANCAKE), has(BiomeItems.PANCAKE)).unlockedBy(getHasName(Items.COCOA_BEANS), has(Items.COCOA_BEANS)).save(output);
+	shapeless(RecipeCategory.BUILDING_BLOCKS, BiomeBlocks.MAPLE_PLANKS, 4).requires(BiomeBlocks.MAPLE_LOG).unlockedBy(getHasName(BiomeBlocks.MAPLE_LOG), has(BiomeBlocks.MAPLE_LOG)).save(output);
     }
 
     public static class Runner extends RecipeProvider.Runner {
